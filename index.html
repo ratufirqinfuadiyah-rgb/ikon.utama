@@ -3,600 +3,578 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PT IKON UTAMA - Building Spaces, Realizing Visions</title>
-    <meta name="description" content="PT IKON UTAMA combines architectural precision with a modern, fresh perspective. We transform blueprints into breathtaking realities with transparency and care.">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
+    <title>PT IKON UTAMA | Building Spaces, Realizing Visions</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --baby-blue: #89CFF0;
+            --navy-blue: #0F172A;
+            --pure-white: #FFFFFF;
+            --soft-gray: #F5F5F5;
+            --dark-text: #1E293B;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--pure-white);
+            color: var(--dark-text);
+            scroll-behavior: smooth;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Outfit', sans-serif;
+            color: var(--navy-blue);
+            font-weight: 600; 
+        }
+
+        .bg-baby-blue { background-color: var(--baby-blue); }
+        .text-baby-blue { color: var(--baby-blue); }
+        .bg-navy { background-color: var(--navy-blue); }
+        .text-navy { color: var(--navy-blue); }
+        .border-baby-blue { border-color: var(--baby-blue); }
+        .bg-soft-gray { background-color: var(--soft-gray); }
+
+        .nav-link {
+            position: relative;
+            transition: color 0.3s ease;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -4px;
+            left: 0;
+            background-color: var(--baby-blue);
+            transition: width 0.3s ease;
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        .hero-gradient {
+            background: linear-gradient(to right, rgba(255, 255, 255, 0.98) 25%, rgba(255, 255, 255, 0.4) 100%);
+        }
+
+        /* Detail Hero White Gradation Overlay */
+        .detail-hero-overlay {
+            background: linear-gradient(
+                to bottom, 
+                rgba(255, 255, 255, 0.4) 0%, 
+                rgba(255, 255, 255, 0.1) 40%, 
+                rgba(255, 255, 255, 0.5) 70%,
+                rgba(255, 255, 255, 1) 100%
+            );
+        }
+
+        /* High-End Glass Navigation */
+        .glass-nav {
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+            box-shadow: 0 4px 30px rgba(15, 23, 42, 0.05);
+        }
+
+        .gallery-item {
+            overflow: hidden;
+            position: relative;
+            border: 1px solid #e2e8f0;
+        }
+
+        /* Dark overlay for White text visibility (Photo Ref 2 Style) */
+        .project-text-overlay {
+            background: linear-gradient(to top, rgba(15, 23, 42, 0.95) 0%, rgba(15, 23, 42, 0.3) 50%, transparent 100%);
+            transition: opacity 0.4s ease;
+        }
+
+        .btn-navy-shadow {
+            box-shadow: 0 4px 14px 0 rgba(15, 23, 42, 0.2);
+        }
+
+        .accent-line {
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(to right, var(--navy-blue), var(--baby-blue));
+            border-radius: 2px;
+        }
+
+        #main-content, #detail-page {
+            transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+        }
+
+        .fade-out {
+            opacity: 0;
+            transform: translateY(20px);
+            pointer-events: none;
+        }
+
+        .fade-in {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .detail-photo {
+            transition: transform 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+            cursor: zoom-in;
+        }
+        .detail-photo:hover {
+            transform: scale(1.05);
+        }
+
+        #lightbox {
+            transition: opacity 0.3s ease-out;
+            backdrop-filter: blur(15px);
+        }
+        #lightbox-img-container {
+            transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+            transform: scale(0.9);
+        }
+        #lightbox.active #lightbox-img-container {
+            transform: scale(1);
+        }
+
+        .lb-thumb {
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+        .lb-thumb.active {
+            border-color: var(--baby-blue);
+            transform: translateY(-5px);
+        }
+
+        .lb-nav-btn {
+            background: rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+        }
+        .lb-nav-btn:hover {
+            background: var(--baby-blue);
+            color: var(--navy-blue);
+        }
+    </style>
 </head>
 <body>
-    <!-- Navbar -->
-    <nav class="navbar">
-        <div class="nav-container">
-            <a href="#" class="logo">PT IKON UTAMA</a>
-            <ul class="nav-links">
-                <li><a href="#services">Services</a></li>
-                <li><a href="#portfolio">Portfolio</a></li>
-                <li><a href="#why-us">Why Us</a></li>
-                <li><a href="#clients">Clients</a></li>
-            </ul>
-            <a href="#contact" class="btn btn-primary">Get a Quote</a>
-        </div>
-    </nav>
-    <!-- Hero Section -->
-    <header class="hero" id="home">
-        <div class="hero-overlay"></div>
-        <div class="hero-content">
-            <h1>Building Spaces,<br>Realizing Visions.</h1>
-            <p>PT IKON UTAMA combines architectural precision with a modern, fresh perspective. We transform blueprints into breathtaking realities with transparency and care.</p>
-            <div class="hero-buttons">
-                <a href="#portfolio" class="btn btn-primary">View Portfolio</a>
-                <a href="#contact" class="btn btn-outline">Consult with Us</a>
-            </div>
-        </div>
-    </header>
-    <!-- Services Section -->
-    <section class="services" id="services">
-        <div class="container">
-            <h2 class="section-title">Our Services</h2>
-            <div class="services-grid">
-                <div class="service-card">
-                    <svg class="icon-svg" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10c1.38 0 2.5-1.12 2.5-2.5 0-.61-.23-1.16-.61-1.58-.32-.35-.53-.8-.53-1.28 0-1.04.84-1.89 1.89-1.89h1.75c2.76 0 5-2.24 5-5 0-4.42-4.48-8-10-8zm-4 9c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm3.5-4.5c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm4.5 0c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm3.5 4.5c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2z"/>
-                    </svg>
-                    <h3>Interior Design</h3>
-                    <p>Conceptualizing aesthetic and functional environments for your brand.</p>
-                </div>
-                <div class="service-card">
-                    <svg class="icon-svg" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M12 2L2 12h3v8h14v-8h3L12 2zm3 16h-6v-5h6v5z"/>
-                    </svg>
-                    <h3>Civil & Construction</h3>
-                    <p>Robust structural solutions with a focus on durability and integrity.</p>
-                </div>
-                <div class="service-card">
-                    <svg class="icon-svg" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M20 2H4c-1.1 0-1.99.9-1.99 2L2 22l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-2 12H6v-2h12v2zm0-3H6V9h12v2zm0-3H6V6h12v2z"/>
-                    </svg>
-                    <h3>Custom Furniture</h3>
-                    <p>Bespoke furniture pieces crafted with premium materials.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- Why Choose Us -->
-    <section class="why-us" id="why-us">
-        <div class="container">
-            <h2 class="section-title">The IKON Standard</h2>
-            <div class="features-list">
-                <div class="feature-item">
-                    <div class="feature-icon">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M12 2L22 7L12 12L2 7L12 2Z"/><path d="M2 17L12 22L22 17M2 12L12 17L22 12"/></svg>
+
+    <!-- Main Landing Page Wrapper -->
+    <div id="main-content">
+        <nav class="fixed top-0 w-full z-50 bg-white/90 backdrop-blur-md border-b border-gray-100 shadow-sm">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex justify-between items-center h-20">
+                    <div class="flex-shrink-0 flex items-center">
+                        <span class="text-2xl font-bold tracking-tight text-navy">
+                            PT IKON <span class="text-baby-blue font-light">UTAMA</span>
+                        </span>
                     </div>
-                    <div class="feature-text">
-                        <h4>Uncompromising Quality</h4>
-                        <p>Premium materials for a high-end, lasting finish.</p>
+                    <div class="hidden md:flex space-x-10">
+                        <a href="#services" class="nav-link text-slate-600 hover:text-navy font-semibold text-sm uppercase tracking-wider">Services</a>
+                        <a href="#portfolio" class="nav-link text-slate-600 hover:text-navy font-semibold text-sm uppercase tracking-wider">Portfolio</a>
+                        <a href="#contact-section" class="nav-link text-slate-600 hover:text-navy font-semibold text-sm uppercase tracking-wider">Contact</a>
                     </div>
-                </div>
-                <div class="feature-item">
-                    <div class="feature-icon">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z"/><path d="M12 6V12L16 14"/></svg>
+                    <div class="hidden md:block">
+                        <a href="#contact-section" class="bg-navy text-white px-7 py-3 rounded-full font-bold btn-navy-shadow hover:bg-slate-800 transition-all text-sm">Contact</a>
                     </div>
-                    <div class="feature-text">
-                        <h4>Punctual Delivery</h4>
-                        <p>Optimized workflows for on-time project completion.</p>
-                    </div>
-                </div>
-                <div class="feature-item">
-                    <div class="feature-icon">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M12 2V22M17 5H9.5C8.57174 5 7.6815 5.36875 7.02513 6.02513C6.36875 6.6815 6 7.57174 6 8.5C6 9.42826 6.36875 10.3185 7.02513 10.9749C7.6815 11.6313 8.57174 12 9.5 12H14.5C15.4283 12 16.3185 12.3687 16.9749 13.0251C17.6313 13.6815 18 14.5717 18 15.5C18 16.4283 17.6313 17.3185 16.9749 17.9749C16.3185 18.6313 15.4283 19 14.5 19H6"/></svg>
-                    </div>
-                    <div class="feature-text">
-                        <h4>Budget Transparency</h4>
-                        <p>Clear, honest breakdowns for every phase.</p>
+                    <div class="md:hidden flex items-center">
+                        <button id="mobile-menu-button" class="text-navy">
+                            <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" /></svg>
+                        </button>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
-    <!-- Project Gallery -->
-    <section class="portfolio" id="portfolio">
-        <div class="container">
-            <h2 class="section-title">Featured Works</h2>
-            <div class="gallery-grid">
-                <div class="gallery-item">
-                    <img src="commercial.png" alt="Commercial Project">
-                    <div class="gallery-overlay">
-                        <h3>Commercial: The Zenith Office Suite</h3>
+        </nav>
+
+        <section class="relative h-[90vh] flex items-center overflow-hidden pt-20">
+            <div class="absolute inset-0 z-0">
+                <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=2070" class="w-full h-full object-cover">
+                <div class="absolute inset-0 hero-gradient"></div>
+            </div>
+            <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+                <div class="max-w-2xl">
+                    <div class="flex items-center space-x-3 mb-6">
+                        <span class="h-[2px] w-8 bg-baby-blue"></span>
+                        <span class="text-baby-blue font-bold text-sm uppercase tracking-[0.3em]">Architectural Visionary</span>
                     </div>
-                </div>
-                <div class="gallery-item">
-                    <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=800&q=80" alt="Residential Project">
-                    <div class="gallery-overlay">
-                        <h3>Residential: The Obsidian Villa</h3>
-                    </div>
-                </div>
-                <div class="gallery-item">
-                    <img src="https://images.unsplash.com/photo-1567401893414-76b7b1e5a7a5?auto=format&fit=crop&w=800&q=80" alt="Retail Project">
-                    <div class="gallery-overlay">
-                        <h3>Retail: Aura Boutique</h3>
+                    <h1 class="text-5xl md:text-7xl font-semibold text-navy leading-[1.1] mb-6">Building Spaces, <br><span class="text-baby-blue">Realizing Visions.</span></h1>
+                    <p class="text-lg md:text-xl text-slate-600 mb-10 leading-relaxed font-light">PT IKON UTAMA combines <span class="font-semibold text-navy">architectural precision</span> with a modern, fresh perspective.</p>
+                    <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
+                        <a href="#portfolio" class="bg-navy text-white px-10 py-4 rounded-xl font-bold text-center btn-navy-shadow hover:bg-slate-800 transition-all">View Portfolio</a>
+                        <a href="#contact-section" class="bg-white border-2 border-baby-blue text-navy px-10 py-4 rounded-xl font-bold text-center hover:bg-sky-50 transition-all">Consult with Us</a>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
-    <!-- Contact Section -->
-    <section class="contact" id="contact">
-        <div class="container">
-            <div class="contact-card">
-                <h2 class="section-title">Ready to elevate your space?</h2>
-                <form id="contact-form">
-                    <div class="form-group">
-                        <label for="name">Name</label>
-                        <input type="text" id="name" name="name" required placeholder="John Doe">
-                    </div>
-                    <div class="form-group">
-                        <label for="project-type">Project Type</label>
-                        <select id="project-type" name="project-type" required>
-                            <option value="" disabled selected>Select a project type</option>
-                            <option value="interior">Interior Design</option>
-                            <option value="civil">Civil & Construction</option>
-                            <option value="furniture">Custom Furniture</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label for="message">Message</label>
-                        <textarea id="message" name="message" rows="5" required placeholder="Tell us about your project..."></textarea>
-                    </div>
-                    <button type="submit" class="btn btn-primary btn-block">Submit Inquiry</button>
-                </form>
+        </section>
+
+        <!-- Services -->
+        <section id="services" class="py-24 bg-soft-gray">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center mb-20">
+                <p class="text-baby-blue font-bold tracking-widest text-xs uppercase mb-3">What We Do</p>
+                <h2 class="text-3xl md:text-5xl font-semibold mb-6 text-navy">Specialized Expertise</h2>
+                <div class="accent-line mx-auto"></div>
             </div>
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-3 gap-10">
+                <div class="bg-white p-12 rounded-3xl shadow-sm flex flex-col items-center text-center">
+                    <div class="mb-8 p-5 rounded-2xl bg-slate-50 border border-blue-50">
+                        <svg class="w-10 h-10 text-baby-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" /></svg>
+                    </div>
+                    <h3 class="text-2xl font-semibold mb-4 text-navy">Interior Design</h3>
+                    <p class="text-slate-500 leading-relaxed">Conceptualizing aesthetic and functional environments tailored to your brand.</p>
+                </div>
+                <div class="bg-white p-12 rounded-3xl shadow-sm flex flex-col items-center text-center">
+                    <div class="mb-8 p-5 rounded-2xl bg-slate-50 border border-blue-50">
+                        <svg class="w-10 h-10 text-baby-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" /></svg>
+                    </div>
+                    <h3 class="text-2xl font-semibold mb-4 text-navy">Civil & Construction</h3>
+                    <p class="text-slate-500 leading-relaxed">Robust structural solutions with a focus on durability and integrity.</p>
+                </div>
+                <div class="bg-white p-12 rounded-3xl shadow-sm flex flex-col items-center text-center">
+                    <div class="mb-8 p-5 rounded-2xl bg-slate-50 border border-blue-50">
+                        <svg class="w-10 h-10 text-baby-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" /></svg>
+                    </div>
+                    <h3 class="text-2xl font-semibold mb-4 text-navy">Custom Furniture</h3>
+                    <p class="text-slate-500 leading-relaxed">Bespoke furniture pieces crafted with premium materials and artisanal care.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Why Choose Us -->
+        <section id="why-us" class="py-24 bg-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-2 gap-20 items-center">
+                <div class="relative">
+                    <div class="absolute -top-10 -left-10 w-48 h-48 bg-blue-50/50 rounded-full blur-3xl"></div>
+                    <img src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&q=80&w=1200" class="relative z-10 rounded-[2.5rem] shadow-2xl border-8 border-soft-gray w-full h-[500px] object-cover">
+                    <div class="absolute -top-6 right-6 lg:-right-10 lg:top-10 bg-navy p-8 rounded-2xl shadow-2xl z-20">
+                        <p class="text-baby-blue font-bold text-4xl">20+</p>
+                        <p class="text-white text-xs font-bold uppercase tracking-widest mt-1 text-center">Years Excellence</p>
+                    </div>
+                </div>
+                <div class="space-y-12">
+                   <div>
+                        <p class="text-baby-blue font-bold tracking-widest text-xs uppercase mb-3">Our Core Values</p>
+                        <h2 class="text-4xl font-semibold mb-10 leading-tight text-navy">The <span class="text-baby-blue italic font-light">IKON</span> Standard</h2>
+                        <div class="space-y-10">
+                            <div class="flex items-start group">
+                                <div class="flex-shrink-0 bg-navy p-4 rounded-xl mr-6 transition-colors group-hover:bg-baby-blue"><svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+                                <div>
+                                    <h4 class="text-xl font-semibold mb-2 text-navy">Uncompromising Quality</h4>
+                                    <p class="text-slate-500 font-light text-sm">Finest materials for high-end, lasting finish.</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start group">
+                                <div class="flex-shrink-0 bg-navy p-4 rounded-xl mr-6 transition-colors group-hover:bg-baby-blue"><svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+                                <div>
+                                    <h4 class="text-xl font-semibold mb-2 text-navy">Punctual Delivery</h4>
+                                    <p class="text-slate-500 font-light text-sm">Optimized workflows for on-time completion.</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start group">
+                                <div class="flex-shrink-0 bg-navy p-4 rounded-xl mr-6 transition-colors group-hover:bg-baby-blue"><svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+                                <div>
+                                    <h4 class="text-xl font-semibold mb-2 text-navy">Budget Transparency</h4>
+                                    <p class="text-slate-500 font-light text-sm">Clear, honest breakdowns for every phase.</p>
+                                </div>
+                            </div>
+                        </div>
+                   </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Main Portfolio (Photo Style Reference 2) -->
+        <section id="portfolio" class="py-24 bg-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center mb-16">
+                <p class="text-baby-blue font-bold tracking-widest text-xs uppercase mb-3">Portfolio</p>
+                <h2 class="text-3xl md:text-5xl font-semibold mb-6 text-navy">Flagship Projects</h2>
+                <div class="accent-line mx-auto"></div>
+            </div>
+            <div id="portfolio-grid" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+                <!-- JS populated with White titles -->
+            </div>
+        </section>
+
+        <!-- Connect With Us (Minimalist - Form Erased) -->
+        <section id="contact-section" class="py-24 bg-soft-gray">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center md:text-left">
+                <div class="flex flex-col md:flex-row justify-between items-center gap-12">
+                    <div class="max-w-2xl">
+                        <p class="text-baby-blue font-bold tracking-widest text-xs uppercase mb-4">Connect With Us</p>
+                        <h2 class="text-4xl md:text-6xl font-semibold text-navy leading-tight mb-8">Ready to elevate <br>your space?</h2>
+                        <p class="text-slate-500 text-lg font-light leading-relaxed mb-12">
+                            Consult with our expert architects and designers today. We provide comprehensive consultations to turn your ideas into executable plans.
+                        </p>
+                        
+                        <div class="flex flex-col sm:flex-row flex-wrap gap-8 justify-center md:justify-start">
+                            <div class="flex items-center space-x-4">
+                                <div class="w-10 h-10 bg-white rounded-full flex items-center justify-center text-navy shadow-sm">
+                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+                                </div>
+                                <span class="text-navy font-semibold">info@ikonutama.com</span>
+                            </div>
+                            <div class="flex items-center space-x-4">
+                                <div class="w-10 h-10 bg-white rounded-full flex items-center justify-center text-navy shadow-sm">
+                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+                                </div>
+                                <span class="text-navy font-semibold">+62 21 555 0123</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="bg-navy pt-24 pb-16">
+            <div class="max-w-7xl mx-auto px-8 md:px-16 grid grid-cols-1 md:grid-cols-3 gap-16 md:gap-24 text-left">
+                <div>
+                    <h5 class="text-3xl font-bold text-baby-blue mb-6 uppercase tracking-tight">IKON UTAMA</h5>
+                    <p class="text-white text-lg font-light leading-relaxed max-w-xs">
+                        Leading the way in modern architecture and bespoke interiors since 2015.
+                    </p>
+                </div>
+                
+                <div>
+                    <h6 class="text-white font-bold text-xl mb-8">Navigation</h6>
+                    <ul class="space-y-4 text-slate-400">
+                        <li><a href="#" class="hover:text-white transition-colors">Home</a></li>
+                        <li><a href="#services" class="hover:text-white transition-colors">Services</a></li>
+                        <li><a href="#portfolio" class="hover:text-white transition-colors">Portfolio</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h6 class="text-white font-bold text-xl mb-8">Follow Us</h6>
+                    <ul class="space-y-4 text-slate-400 mb-10">
+                        <li><a href="#" class="hover:text-white transition-colors">Instagram</a></li>
+                    </ul>
+                    
+                    <h6 class="text-white font-bold text-lg mb-4">Location</h6>
+                    <p class="text-slate-400 text-sm font-light leading-relaxed">
+                        Jl. Hankam Raya No.15, RT.1/RW.3, Setu, Kec. Cipayung, Kota Jakarta Timur, Daerah Khusus Ibukota Jakarta 13880
+                    </p>
+                </div>
+            </div>
+            <div class="max-w-7xl mx-auto px-8 md:px-16 mt-24 pt-8 border-t border-slate-800 text-slate-500 text-xs tracking-wider text-center md:text-left">
+                <p>&copy; 2024 PT IKON UTAMA.</p>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Detailed Project Page -->
+    <div id="detail-page" class="hidden fixed inset-0 z-[100] bg-white overflow-y-auto">
+        <nav class="sticky top-0 w-full z-[110] glass-nav py-8 px-6 md:px-16 flex justify-between items-center transition-all">
+            <button onclick="closeProjectView()" class="flex items-center text-navy font-bold text-base transition-all hover:text-baby-blue hover:-translate-x-1">
+                <svg class="w-6 h-6 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M10 19l-7-7m0 0l7-7m-7 7h18"/></svg>
+                BACK TO PORTFOLIO
+            </button>
+            <span id="detail-nav-id" class="text-baby-blue font-black text-2xl opacity-60">01</span>
+        </nav>
+
+        <header id="detail-hero" class="w-full h-[65vh] md:h-[85vh] relative overflow-hidden -mt-[100px]">
+            <img id="detail-main-img" src="" class="w-full h-full object-cover">
+            <div class="absolute inset-0 detail-hero-overlay flex items-end p-10 md:p-24">
+                <div class="max-w-5xl">
+                    <span id="detail-cat-hero" class="text-navy font-bold tracking-[0.5em] uppercase text-xs mb-4 block">CATEGORY</span>
+                    <h2 id="detail-title-hero" class="text-5xl md:text-8xl font-semibold text-navy leading-none">Project Name</h2>
+                </div>
+            </div>
+        </header>
+
+        <!-- Minimalist Project Identity Row -->
+        <section class="bg-white py-16 border-b border-gray-100">
+            <div class="max-w-7xl mx-auto px-6">
+                <div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-12 text-left">
+                    <div class="flex-1">
+                        <p class="text-baby-blue font-bold tracking-[0.2em] text-[10px] uppercase mb-2">Project Identity</p>
+                        <h3 id="detailing-project-name" class="text-4xl md:text-5xl font-semibold text-navy leading-tight">Project Name</h3>
+                    </div>
+                    <div class="flex flex-wrap gap-10 md:gap-16 text-sm font-medium">
+                        <div class="border-l-2 border-baby-blue/30 pl-6">
+                            <p class="text-gray-400 text-[10px] font-bold uppercase tracking-widest mb-1">Service</p>
+                            <!-- Updated as requested -->
+                            <span id="detailing-service" class="text-base font-semibold text-navy leading-tight block max-w-[200px]">Commercial Interior, Bedroom & Kitchen</span>
+                        </div>
+                        <div class="border-l-2 border-baby-blue/30 pl-6">
+                            <p class="text-gray-400 text-[10px] font-bold uppercase tracking-widest mb-1">Location</p>
+                            <span id="detailing-location" class="text-base font-semibold text-navy"></span>
+                        </div>
+                        <div class="border-l-2 border-baby-blue/30 pl-6">
+                            <p class="text-gray-400 text-[10px] font-bold uppercase tracking-widest mb-1">Date</p>
+                            <span id="detailing-date" class="text-base font-semibold text-navy"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Detailing Gallery Grid -->
+        <section class="bg-soft-gray py-24 md:py-32">
+            <div class="max-w-7xl mx-auto px-6 text-center mb-16">
+                <h3 class="text-3xl md:text-5xl font-semibold text-navy mb-4 tracking-tight">Precision Detailing</h3>
+                <p class="text-lg text-slate-500 font-light">Explore high-definition perspectives of our architectural results.</p>
+            </div>
+            <div id="detail-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10"></div>
+        </section>
+
+        <!-- Discovery Row (Style designs like Photo Ref 2) -->
+        <section class="py-24 md:py-32 bg-white">
+            <div class="max-w-7xl mx-auto px-6">
+                <div class="flex justify-between items-end mb-16">
+                    <div>
+                        <p class="text-baby-blue font-bold tracking-widest text-xs uppercase mb-3">Discovery</p>
+                        <h3 class="text-4xl md:text-6xl font-semibold text-navy">Explore More</h3>
+                    </div>
+                    <button onclick="closeProjectView()" class="text-navy font-bold hover:text-baby-blue border-b-2 border-navy hover:border-baby-blue transition-all pb-1">Full Portfolio</button>
+                </div>
+                <div id="more-projects-grid" class="grid grid-cols-1 md:grid-cols-3 gap-10"></div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Lightbox Pop-up -->
+    <div id="lightbox" class="hidden fixed inset-0 z-[200] bg-navy/98 flex flex-col items-center justify-center p-6 opacity-0">
+        <button onclick="closeLightbox()" class="absolute top-8 right-8 text-white/40 hover:text-white transition-all z-[210]">
+            <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+        </button>
+        <button onclick="prevImage()" class="lb-nav-btn absolute left-4 md:left-8 top-1/2 -translate-y-1/2 w-16 h-16 md:w-20 md:h-20 rounded-full flex items-center justify-center text-white z-[210]">
+            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M15 19l-7-7 7-7"/></svg>
+        </button>
+        <div id="lightbox-img-container" class="relative max-w-full max-h-[70vh] flex items-center justify-center">
+            <img id="lightbox-img" src="" class="max-w-full max-h-[70vh] object-contain rounded-xl shadow-2xl">
         </div>
-    </section>
-    <footer>
-        <div class="container">
-            <p>&copy; 2026 PT IKON UTAMA. All Rights Reserved.</p>
-        </div>
-    </footer>
-    <script src="script.js"></script>
+        <button onclick="nextImage()" class="lb-nav-btn absolute right-4 md:right-8 top-1/2 -translate-y-1/2 w-16 h-16 md:w-20 md:h-20 rounded-full flex items-center justify-center text-white z-[210]">
+            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M9 5l7 7-7 7"/></svg>
+        </button>
+        <div id="lightbox-thumbs" class="mt-12 flex space-x-3 md:space-x-6 px-6 overflow-x-auto max-w-full no-scrollbar py-2"></div>
+    </div>
+
+    <script>
+        const projects = {
+            1: { title: "The Zenith Office", cat: "Commercial Interior", loc: "SCBD, Jakarta", year: "2023", services: "Commercial Interior, Bedroom & Kitchen", images: ["https://images.unsplash.com/photo-1497366216548-37526070297c?w=1200", "https://images.unsplash.com/photo-1497215728101-856f4ea42174?w=1200", "https://images.unsplash.com/photo-1431540015161-0bf868a2d407?w=1200", "https://images.unsplash.com/photo-1497366753149-79efd3fc9bbd?w=1200", "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=1200", "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=1200"] },
+            2: { title: "The Obsidian Villa", cat: "Luxury Residential", loc: "Uluwatu, Bali", year: "2022", services: "Commercial Interior, Bedroom & Kitchen", images: ["https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1200", "https://images.unsplash.com/photo-1613490493576-7fde63acd811?w=1200", "https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?w=1200", "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=1200", "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?w=1200", "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=1200"] },
+            3: { title: "Aura Boutique", cat: "High-End Retail", loc: "Senayan City, Jakarta", year: "2023", services: "Commercial Interior, Bedroom & Kitchen", images: ["https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=1200", "https://images.unsplash.com/photo-1441984967741-2133035ebe43?w=1200", "https://images.unsplash.com/photo-1472851294608-062f824d29cc?w=1200", "https://images.unsplash.com/photo-1567401893414-76b7b1e5a7a5?w=1200", "https://images.unsplash.com/photo-1441986236893-3b3ed54c7811?w=1200", "https://images.unsplash.com/photo-1534452203293-494d7ddbf7e0?w=1200"] },
+            4: { title: "Azure Grand Resort", cat: "Hospitality", loc: "Lombok, NTB", year: "2021", services: "Commercial Interior, Bedroom & Kitchen", images: ["https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?w=1200", "https://images.unsplash.com/photo-1540541338287-41700207dee6?w=1200", "https://images.unsplash.com/photo-1566073771259-6a8506099945?w=1200", "https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?w=1200", "https://images.unsplash.com/photo-1571896349842-33c89424de2d?w=1200", "https://images.unsplash.com/photo-1521783988139-89397d761dce?w=1200"] },
+            5: { title: "Nexus Tech Hub", cat: "Technology Hub", loc: "BSD City, Tangerang", year: "2022", services: "Commercial Interior, Bedroom & Kitchen", images: ["https://images.unsplash.com/photo-1497215728101-856f4ea42174?w=1200", "https://images.unsplash.com/photo-1497366216548-37526070297c?w=1200", "https://images.unsplash.com/photo-1497215728101-856f4ea42174?w=1200", "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=1200", "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1200", "https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=1200"] },
+            6: { title: "Sky Garden Towers", cat: "Urban Civil", loc: "Menteng, Jakarta", year: "2024", services: "Commercial Interior, Bedroom & Kitchen", images: ["https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1200", "https://images.unsplash.com/photo-1470075801209-17f9ec0cad62?w=1200", "https://images.unsplash.com/photo-1449156001935-d28615058765?w=1200", "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=1200", "https://images.unsplash.com/photo-1454165833767-027ffea9e77b?w=1200", "https://images.unsplash.com/photo-1518005020252-3b8c5c70ad45?w=1200"] }
+        };
+
+        let currentImgList = [];
+        let currentImgIdx = 0;
+
+        // Photo Reference 2 Style logic
+        function renderPortfolioItem(p, id) {
+            const item = document.createElement('div');
+            item.className = "gallery-item rounded-[2.5rem] aspect-[4/5] relative shadow-lg group cursor-pointer overflow-hidden";
+            item.onclick = () => openProjectView(id);
+            item.innerHTML = `
+                <img src="${p.images[0]}" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                <div class="project-text-overlay absolute inset-0 flex flex-col justify-end p-8 text-white">
+                    <span class="text-baby-blue font-bold text-sm uppercase tracking-[0.2em] mb-2">${p.cat}</span>
+                    <h4 class="text-3xl font-semibold leading-tight text-white drop-shadow-md">${p.title}</h4>
+                </div>
+            `;
+            return item;
+        }
+
+        const gridContainer = document.getElementById('portfolio-grid');
+        Object.keys(projects).forEach(id => {
+            gridContainer.appendChild(renderPortfolioItem(projects[id], id));
+        });
+
+        function openProjectView(id) {
+            const p = projects[id];
+            currentImgList = p.images;
+            const detailPage = document.getElementById('detail-page');
+            const landing = document.getElementById('main-content');
+
+            document.getElementById('detail-nav-id').innerText = `0${id}`;
+            document.getElementById('detail-main-img').src = p.images[0];
+            document.getElementById('detail-cat-hero').innerText = p.cat;
+            document.getElementById('detail-title-hero').innerText = p.title;
+
+            document.getElementById('detailing-project-name').innerText = p.title;
+            document.getElementById('detailing-service').innerText = p.services;
+            document.getElementById('detailing-location').innerText = p.loc;
+            document.getElementById('detailing-date').innerText = p.year;
+
+            const grid = document.getElementById('detail-grid');
+            grid.innerHTML = '';
+            p.images.forEach((img, idx) => {
+                grid.innerHTML += `<div class="rounded-[2.5rem] overflow-hidden aspect-[4/5] bg-white shadow-md group/photo"><img src="${img}" class="w-full h-full object-cover detail-photo" onclick="openLightbox(${idx})"></div>`;
+            });
+
+            const moreGrid = document.getElementById('more-projects-grid');
+            moreGrid.innerHTML = '';
+            const others = Object.keys(projects).filter(k => k !== id).slice(0, 3);
+            others.forEach(key => {
+                moreGrid.appendChild(renderPortfolioItem(projects[key], key));
+            });
+
+            landing.classList.add('fade-out');
+            setTimeout(() => {
+                landing.classList.add('hidden');
+                detailPage.classList.remove('hidden');
+                detailPage.scrollTop = 0;
+                detailPage.classList.add('fade-in');
+            }, 500);
+        }
+
+        function closeProjectView() {
+            const detailPage = document.getElementById('detail-page');
+            const landing = document.getElementById('main-content');
+            detailPage.classList.remove('fade-in');
+            detailPage.classList.add('fade-out');
+            setTimeout(() => {
+                detailPage.classList.add('hidden');
+                detailPage.classList.remove('fade-out');
+                landing.classList.remove('hidden');
+                landing.classList.remove('fade-out');
+                landing.classList.add('fade-in');
+            }, 500);
+        }
+
+        const lb = document.getElementById('lightbox');
+        const lbImg = document.getElementById('lightbox-img');
+        const lbThumbs = document.getElementById('lightbox-thumbs');
+
+        function openLightbox(idx) {
+            currentImgIdx = idx;
+            lb.classList.remove('hidden');
+            lb.classList.add('flex');
+            updateLightboxUI();
+            setTimeout(() => { lb.classList.add('active'); lb.style.opacity = '1'; }, 10);
+            document.body.style.overflow = 'hidden';
+        }
+
+        function updateLightboxUI() {
+            lbImg.src = currentImgList[currentImgIdx];
+            lbThumbs.innerHTML = '';
+            currentImgList.forEach((src, index) => {
+                const thumb = document.createElement('img');
+                thumb.src = src;
+                thumb.className = `lb-thumb w-20 h-20 md:w-32 object-cover rounded-xl cursor-pointer ${index === currentImgIdx ? 'active' : 'opacity-40 hover:opacity-70'}`;
+                thumb.onclick = () => { currentImgIdx = index; updateLightboxUI(); };
+                lbThumbs.appendChild(thumb);
+            });
+        }
+
+        function nextImage() { currentImgIdx = (currentImgIdx + 1) % currentImgList.length; updateLightboxUI(); }
+        function prevImage() { currentImgIdx = (currentImgIdx - 1 + currentImgList.length) % currentImgList.length; updateLightboxUI(); }
+        function closeLightbox() { lb.classList.remove('active'); lb.style.opacity = '0'; setTimeout(() => { lb.classList.add('hidden'); lb.classList.remove('flex'); document.body.style.overflow = 'auto'; }, 300); }
+
+        document.addEventListener('keydown', (e) => {
+            if (lb.classList.contains('hidden')) return;
+            if (e.key === 'ArrowRight') nextImage();
+            if (e.key === 'ArrowLeft') prevImage();
+            if (e.key === 'Escape') closeLightbox();
+        });
+
+        lb.addEventListener('click', (e) => { if (e.target === lb || e.target.id === 'lightbox-img-container') closeLightbox(); });
+
+        const mobileBtn = document.getElementById('mobile-menu-button');
+        const menu = document.querySelector('#mobile-menu');
+        if(mobileBtn) mobileBtn.addEventListener('click', () => menu && menu.classList.toggle('hidden'));
+    </script>
 </body>
 </html>
-:root {
-    --primary: #89CFF0;
-    --primary-dark: #6ba7c4;
-    --secondary: #FFFFFF;
-    --accent: #F5F5F5;
-    --text-main: #333333;
-    --text-muted: #666666;
-    --transition: all 0.3s ease;
-}
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-html {
-    scroll-behavior: smooth;
-    font-family: 'Inter', sans-serif;
-    color: var(--text-main);
-}
-body {
-    background-color: var(--secondary);
-    line-height: 1.6;
-    overflow-x: hidden;
-}
-.container {
-    width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 2rem;
-}
-/* Typography */
-h1, h2, h3, h4 {
-    color: var(--text-main);
-    line-height: 1.2;
-}
-.section-title {
-    text-align: center;
-    font-size: 2.5rem;
-    margin-bottom: 3.5rem;
-    font-weight: 700;
-}
-/* Buttons */
-.btn {
-    display: inline-block;
-    padding: 0.8rem 1.8rem;
-    border-radius: 4px;
-    text-decoration: none;
-    font-weight: 600;
-    transition: var(--transition);
-    cursor: pointer;
-    border: none;
-    font-size: 1rem;
-}
-.btn-primary {
-    background-color: var(--primary);
-    color: var(--secondary);
-}
-.btn-primary:hover {
-    background-color: var(--primary-dark);
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(137, 207, 240, 0.4);
-}
-.btn-outline {
-    background-color: transparent;
-    color: var(--secondary);
-    border: 2px solid var(--secondary);
-}
-.btn-outline:hover {
-    background-color: var(--secondary);
-    color: var(--text-main);
-}
-.btn-block {
-    display: block;
-    width: 100%;
-    text-align: center;
-}
-/* Navbar */
-.navbar {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    background-color: var(--secondary);
-    border-bottom: 1px solid rgba(137, 207, 240, 0.3);
-    z-index: 1000;
-    padding: 1rem 0;
-    transition: var(--transition);
-}
-.navbar.scrolled {
-    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-    padding: 0.8rem 0;
-}
-.nav-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 2rem;
-}
-.logo {
-    color: var(--primary);
-    font-weight: 700;
-    font-size: 1.5rem;
-    text-decoration: none;
-    letter-spacing: -0.5px;
-}
-.nav-links {
-    display: flex;
-    list-style: none;
-    gap: 2.5rem;
-}
-.nav-links a {
-    text-decoration: none;
-    color: var(--text-main);
-    font-weight: 500;
-    transition: var(--transition);
-}
-.nav-links a:hover {
-    color: var(--primary);
-}
-/* Hero Section */
-.hero {
-    height: 100vh;
-    background: url('hero.png') center/cover no-repeat;
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    padding: 0 1rem;
-    margin-top: 60px; /* Offset for fixed navbar */
-}
-.hero-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(to bottom, rgba(255,255,255,0.9), rgba(255,255,255,0.3));
-}
-.hero-content {
-    position: relative;
-    z-index: 1;
-    max-width: 800px;
-    animation: fadeIn 1s ease-out forwards;
-}
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-.hero-content h1 {
-    font-size: 4rem;
-    margin-bottom: 1.5rem;
-    color: var(--text-main);
-    letter-spacing: -1px;
-}
-.hero-content p {
-    font-size: 1.25rem;
-    margin-bottom: 2.5rem;
-    color: var(--text-main);
-    font-weight: 400;
-}
-.hero-buttons {
-    display: flex;
-    gap: 1.5rem;
-    justify-content: center;
-}
-.hero-buttons .btn-outline {
-    border-color: var(--text-main);
-    color: var(--text-main);
-}
-.hero-buttons .btn-outline:hover {
-    background-color: var(--text-main);
-    color: var(--secondary);
-}
-/* Services */
-.services {
-    padding: 7rem 0;
-    background-color: var(--secondary); /* Wait, Our Services background was asked to be Pure White? Oh, Why Choose Us is alternating. Let's make Services secondary. */
-}
-.services-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2.5rem;
-}
-.service-card {
-    background: var(--secondary);
-    padding: 3rem 2rem;
-    border-radius: 12px;
-    text-align: center;
-    transition: var(--transition);
-    box-shadow: 0 4px 20px rgba(0,0,0,0.03);
-    border: 1px solid rgba(0,0,0,0.02);
-}
-.service-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 15px 30px rgba(137, 207, 240, 0.15);
-}
-.icon-svg {
-    width: 54px;
-    height: 54px;
-    fill: var(--primary);
-    margin: 0 auto 1.5rem auto;
-}
-.service-card h3 {
-    margin-bottom: 1rem;
-    font-size: 1.5rem;
-}
-.service-card p {
-    color: var(--text-muted);
-}
-/* Why Us */
-.why-us {
-    padding: 7rem 0;
-    /* Alternating sections of Pure White and very light Baby Blue backgrounds. Let's use a light gradient or solid very light blue here */
-    background-color: #f2faff; /* very light baby blue */
-}
-.features-list {
-    max-width: 900px;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-}
-.feature-item {
-    display: flex;
-    align-items: center;
-    gap: 2rem;
-    background: var(--secondary);
-    padding: 2.5rem;
-    border-radius: 12px;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.03);
-    transition: var(--transition);
-}
-.feature-item:hover {
-    transform: translateX(10px);
-    box-shadow: 0 8px 25px rgba(137, 207, 240, 0.2);
-}
-.feature-icon {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 60px;
-    height: 60px;
-    background-color: #e6f6fd;
-    border-radius: 50%;
-    color: var(--primary);
-    flex-shrink: 0;
-}
-.feature-text h4 {
-    margin-bottom: 0.5rem;
-    font-size: 1.25rem;
-}
-.feature-text p {
-    color: var(--text-muted);
-}
-/* Portfolio */
-.portfolio {
-    padding: 7rem 0;
-    background-color: var(--secondary);
-}
-.gallery-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2.5rem;
-}
-.gallery-item {
-    position: relative;
-    border-radius: 12px;
-    overflow: hidden;
-    aspect-ratio: 4/3;
-    border: 6px solid var(--secondary);
-    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-    cursor: pointer;
-    background-color: var(--accent); /* placeholder color before image loads */
-}
-.gallery-item img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
-}
-.gallery-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(255,255,255,0.95);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    opacity: 0;
-    transition: var(--transition);
-}
-.gallery-item:hover img {
-    transform: scale(1.08);
-}
-.gallery-item:hover .gallery-overlay {
-    opacity: 1;
-}
-.gallery-overlay h3 {
-    color: var(--primary);
-    transform: translateY(20px);
-    transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
-    font-size: 1.5rem;
-    text-align: center;
-    padding: 0 2rem;
-}
-.gallery-item:hover .gallery-overlay h3 {
-    transform: translateY(0);
-}
-/* Contact */
-.contact {
-    padding: 7rem 0;
-    background-color: var(--accent);
-}
-.contact-card {
-    max-width: 600px;
-    margin: 0 auto;
-    background: var(--secondary);
-    padding: 3.5rem;
-    border-radius: 12px;
-    box-shadow: 0 15px 40px rgba(0,0,0,0.05);
-}
-.form-group {
-    margin-bottom: 1.5rem;
-}
-.form-group label {
-    display: block;
-    margin-bottom: 0.5rem;
-    font-weight: 500;
-    color: var(--text-main);
-    font-size: 0.95rem;
-}
-.form-group input,
-.form-group select,
-.form-group textarea {
-    width: 100%;
-    padding: 0.9rem;
-    border: 2px solid #eaeaea;
-    border-radius: 6px;
-    font-family: inherit;
-    font-size: 1rem;
-    transition: var(--transition);
-    background-color: #fafafa;
-    color: var(--text-main);
-}
-.form-group input:focus,
-.form-group select:focus,
-.form-group textarea:focus {
-    outline: none;
-    border-color: var(--primary);
-    background-color: var(--secondary);
-    box-shadow: 0 0 0 4px rgba(137, 207, 240, 0.15);
-}
-/* Footer */
-footer {
-    background-color: var(--secondary);
-    padding: 2.5rem 0;
-    text-align: center;
-    border-top: 1px solid rgba(137, 207, 240, 0.2);
-}
-footer p {
-    color: var(--text-muted);
-}
-/* Responsive */
-@media (max-width: 768px) {
-    .nav-links {
-        display: none; 
-    }
-    
-    .hero-content h1 {
-        font-size: 2.8rem;
-    }
-    
-    .hero-content p {
-        font-size: 1.1rem;
-    }
-    
-    .hero-buttons {
-        flex-direction: column;
-    }
-    
-    .section-title {
-        font-size: 2rem;
-    }
-    
-    .contact-card {
-        padding: 2rem;
-    }
-}
-document.addEventListener('DOMContentLoaded', () => {
-    const navbar = document.querySelector('.navbar');
-    // Smooth scroll for anchor links
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-            e.preventDefault();
-            const target = document.querySelector(this.getAttribute('href'));
-            if(target) {
-                target.scrollIntoView({
-                    behavior: 'smooth'
-                });
-            }
-        });
-    });
-    // Navbar scroll effect
-    window.addEventListener('scroll', () => {
-        if (window.scrollY > 50) {
-            navbar.classList.add('scrolled');
-        } else {
-            navbar.classList.remove('scrolled');
-        }
-    });
-    // Form submission simulation
-    const form = document.getElementById('contact-form');
-    if(form) {
-        form.addEventListener('submit', (e) => {
-            e.preventDefault();
-            const btn = form.querySelector('button[type="submit"]');
-            const originalText = btn.innerText;
-            btn.innerText = 'Sending...';
-            btn.disabled = true;
-            // Simulate API call
-            setTimeout(() => {
-                btn.innerText = 'Inquiry Sent Successfully!';
-                btn.style.backgroundColor = '#4caf50'; // Green success
-                form.reset();
-                setTimeout(() => {
-                    btn.innerText = originalText;
-                    btn.style.backgroundColor = ''; // Reset to default
-                    btn.disabled = false;
-                }, 3000);
-            }, 1500);
-        });
-    }
-});
