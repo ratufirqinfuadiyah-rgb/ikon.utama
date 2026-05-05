@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PT IKON UTAMA - Premium Architectural Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap');
+
+        :root {
+            --navy: #0a192f;
+            --baby-blue: #7dd3fc;
+            --white: #ffffff;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: var(--white);
+            color: var(--navy);
+            overflow-x: hidden;
+        }
+
+        /* Hover Scale Effect for Thumbnails */
+        .project-card {
+            transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+            overflow: hidden;
+        }
+
+        .project-card img {
+            transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .project-card:hover img {
+            transform: scale(1.12);
+        }
+
+        /* Glass Navigation */
+        .glass-nav {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(15, 23, 42, 0.05);
+        }
+
+        .hero-overlay {
+            background: linear-gradient(90deg, rgba(255,255,255,0.95) 0%, rgba(255,255,255,0.8) 50%, rgba(255,255,255,0) 100%);
+        }
+
+        @keyframes fadeInScale {
+            from { opacity: 0; transform: scale(1.05); }
+            to { opacity: 1; transform: scale(1); }
+        }
+
+        .animate-hero-bg { animation: fadeInScale 1.5s ease-out forwards; }
+
+        /* Shared Element Transition Helpers */
+        ::view-transition-old(project-image),
+        ::view-transition-new(project-image) {
+            animation: none;
+            mix-blend-mode: normal;
+        }
+
+        ::-webkit-scrollbar { width: 5px; }
+        ::-webkit-scrollbar-track { background: var(--white); }
+        ::-webkit-scrollbar-thumb { background: var(--navy); border-radius: 10px; }
+    </style>
+</head>
+<body class="min-h-screen selection:bg-sky-200 selection:text-navy">
+
+    <!-- Navigasi -->
+    <nav class="fixed top-0 w-full z-50 glass-nav">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+            <div class="font-bold text-xl tracking-tighter cursor-pointer text-[var(--navy)]" onclick="goHome()">
+                PT IKON <span class="text-sky-500">UTAMA</span>
+            </div>
+            <div class="hidden md:flex space-x-10 text-[11px] font-bold uppercase tracking-[0.25em] text-slate-500">
+                <a href="#" onclick="goHome()" class="hover:text-[var(--navy)] transition-colors">Beranda</a>
+                <a href="#tentang" class="hover:text-[var(--navy)] transition-colors">Tentang</a>
+                <a href="#projects" class="hover:text-[var(--navy)] transition-colors">Proyek</a>
+                <a href="#proses" class="hover:text-[var(--navy)] transition-colors">Proses</a>
+                <a href="#kontak" class="hover:text-[var(--navy)] transition-colors">Kontak</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- App Container -->
+    <main id="app-container">
+        <!-- JS will render content here -->
+    </main>
+
+    <script>
+        const contactInfo = {
+            phone: "+62 588 7973 673",
+            email: "ikon.utama@gmail.com",
+            address: "Jl. Bambu Kuning No.66, RT.12/RW.2, Bambu Apus, Kec. Cipayung, Jakarta Timur 13890"
+        };
+
+        const projects = [
+            {
+                id: 1,
+                title: "Novotel Suite & Resort",
+                category: "Hospitality",
+                image: "image_2bc743.png",
+                secondaryImages: [
+                    "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=800&q=80",
+                    "https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=800&q=80",
+                    "https://images.unsplash.com/photo-1590490360182-c33d57733427?auto=format&fit=crop&w=800&q=80"
+                ],
+                client: "Accor Hotels Group",
+                year: "2024",
+                service: "Full Interior Design & FF&E",
+                location: "Bali, Indonesia",
+                description: "Transformasi ruang komersial menjadi destinasi penginapan mewah yang memadukan kenyamanan modern dengan sentuhan lokal kontemporer untuk brand Novotel."
+            },
+            {
+                id: 2,
+                title: "Ikon HQ Tower",
+                category: "Office",
+                image: "IMG_20191004_210400.jpg",
+                secondaryImages: [
+                    "https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=800&q=80",
+                    "https://images.unsplash.com/photo-1497215728101-856f4ea42174?auto=format&fit=crop&w=800&q=80",
+                    "https://images.unsplash.com/photo-1524758631624-e2822e304c36?auto=format&fit=crop&w=800&q=80"
+                ],
+                client: "Ikon Utama Corp",
+                year: "2022",
+                service: "Interior Architecture",
+                location: "SCBD, Jakarta",
+                description: "Kantor pusat yang dirancang untuk meningkatkan kolaborasi tim dengan konsep open-plan dan pencahayaan maksimal."
+            },
+            {
+                id: 3,
+                title: "The Zenith Residence",
+                category: "Residential",
+                image: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80",
+                secondaryImages: [
+                    "https://images.unsplash.com/photo-1600607687940-c52af04657b3?auto=format&fit=crop&w=800&q=80",
+                    "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=800&q=80",
+                    "https://images.unsplash.com/photo-1613490493576-7fde63acd811?auto=format&fit=crop&w=800&q=80"
+                ],
+                client: "Zenith Land Dev",
+                year: "2023",
+                service: "Private Residence Design",
+                location: "Menteng, Jakarta",
+                description: "Hunian pribadi eksklusif yang mengedepankan privasi dengan fasad minimalis dan interior yang hangat."
+            }
+        ];
+
+        // Logic for Shared Element Transition
+        function transitionTo(renderFn) {
+            if (!document.startViewTransition) {
+                renderFn();
+            } else {
+                document.startViewTransition(renderFn);
+            }
+        }
+
+        function goHome() {
+            transitionTo(() => renderHome());
+        }
+
+        function navigateToDetail(projectId) {
+            const project = projects.find(p => p.id === projectId);
+            
+            // Set unique view-transition-name to the clicked element's image
+            const clickedImg = document.querySelector(`[data-id="${projectId}"] img`);
+            if(clickedImg) clickedImg.style.viewTransitionName = 'project-image';
+            
+            transitionTo(() => renderDetail(project));
+        }
+
+        function renderHome() {
+            const container = document.getElementById('app-container');
+            container.innerHTML = `
+                <section class="relative h-[85vh] md:h-screen w-full flex items-center overflow-hidden">
+                    <div class="absolute inset-0 z-0">
+                        <img src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=2000&q=90" 
+                             class="w-full h-full object-cover animate-hero-bg" alt="Luxury Interior">
+                        <div class="absolute inset-0 hero-overlay"></div>
+                    </div>
+                    <div class="max-w-7xl mx-auto px-6 relative z-10 w-full">
+                        <div class="max-w-4xl pt-16 md:pt-24">
+                            <h1 class="text-7xl md:text-[8rem] lg:text-[10rem] font-bold mb-6 md:mb-10 tracking-tighter leading-[0.85] text-[var(--navy)]">
+                                Harmoni <br> <span class="text-sky-500">Interior</span> <br> Modern.
+                            </h1>
+                            <p class="text-slate-600 text-lg md:text-2xl mb-10 md:mb-12 leading-relaxed max-w-2xl font-light">
+                                Studio desain premium yang menggabungkan kemewahan visual dengan kenyamanan spasial untuk menciptakan ikon hunian masa depan.
+                            </p>
+                            <div class="flex flex-wrap gap-4 md:gap-6">
+                                <button onclick="document.getElementById('projects').scrollIntoView()" class="px-8 py-4 md:px-10 md:py-5 bg-[var(--navy)] text-white rounded-xl font-bold text-xs md:text-sm uppercase tracking-widest hover:bg-sky-600 transition-all shadow-lg">Mulai Eksplorasi</button>
+                                <button onclick="document.getElementById('tentang').scrollIntoView()" class="px-8 py-4 md:px-10 md:py-5 border border-slate-300 text-slate-700 bg-white/50 backdrop-blur-sm rounded-xl font-bold text-xs md:text-sm uppercase tracking-widest hover:bg-white transition-all">Tentang Kami</button>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="tentang" class="bg-white py-24 border-b border-slate-100">
+                    <div class="max-w-7xl mx-auto px-6">
+                        <div class="mb-16 md:text-center">
+                            <span class="text-sky-500 text-xs font-bold uppercase tracking-[0.3em] mb-4 block">Tentang</span>
+                            <h2 class="text-4xl md:text-5xl font-bold tracking-tighter mb-4 text-[var(--navy)]">MENGAPA MEMILIH KAMI</h2>
+                        </div>
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+                            <div class="bg-white border border-slate-200 p-10 rounded-3xl hover:shadow-lg transition-all">
+                                <h3 class="text-xl font-bold mb-4 text-[var(--navy)]">Ketepatan Waktu</h3>
+                                <p class="text-slate-500 text-sm leading-relaxed">Manajemen proyek kami menjamin kepatuhan ketat pada tenggat waktu pembangunan.</p>
+                            </div>
+                            <div class="bg-white border border-slate-200 p-10 rounded-3xl hover:shadow-lg transition-all">
+                                <h3 class="text-xl font-bold mb-4 text-[var(--navy)]">Transparansi</h3>
+                                <p class="text-slate-500 text-sm leading-relaxed">BOQ terperinci disediakan dengan sumber material dan harga yang jujur tanpa biaya tersembunyi.</p>
+                            </div>
+                            <div class="bg-white border border-slate-200 p-10 rounded-3xl hover:shadow-lg transition-all">
+                                <h3 class="text-xl font-bold mb-4 text-[var(--navy)]">Kualitas Premium</h3>
+                                <p class="text-slate-500 text-sm leading-relaxed">Kami hanya menggunakan material kelas atas yang menjamin daya tahan dan estetika tinggi.</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="projects" class="max-w-7xl mx-auto px-6 py-24">
+                    <div class="flex justify-between items-end mb-16">
+                        <div>
+                            <span class="text-sky-500 text-xs font-bold uppercase tracking-[0.3em] mb-2 block">Pekerjaan Kami</span>
+                            <h2 class="text-4xl font-bold tracking-tighter text-[var(--navy)]">Proyek Terpilih</h2>
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                        ${projects.map(p => `
+                            <div class="project-card group relative aspect-[4/5] rounded-3xl overflow-hidden cursor-pointer shadow-sm" data-id="${p.id}" onclick="navigateToDetail(${p.id})">
+                                <img src="${p.image}" alt="${p.title}" class="w-full h-full object-cover group-hover:brightness-110">
+                                <div class="absolute inset-0 bg-gradient-to-t from-slate-900/90 via-transparent to-transparent opacity-80 group-hover:opacity-100 transition-opacity"></div>
+                                <div class="absolute bottom-0 left-0 p-8 w-full">
+                                    <span class="text-sky-300 text-[10px] font-bold uppercase tracking-[0.3em] mb-1 block">${p.category}</span>
+                                    <h3 class="text-xl font-bold tracking-tight text-white">${p.title}</h3>
+                                </div>
+                            </div>
+                        `).join('')}
+                    </div>
+                </section>
+
+                <section id="proses" class="bg-slate-50 py-24 border-t border-slate-100">
+                    <div class="max-w-7xl mx-auto px-6 text-center">
+                        <span class="text-sky-500 text-xs font-bold uppercase tracking-[0.3em] mb-4 block">Metodologi</span>
+                        <h2 class="text-4xl md:text-5xl font-bold tracking-tighter mb-20 text-[var(--navy)]">Bagaimana Kami Membangun</h2>
+                        <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                            <div class="text-left bg-white p-8 rounded-3xl border border-sky-100 shadow-sm">
+                                <div class="text-4xl font-black text-sky-100 mb-6">01</div>
+                                <h4 class="text-lg font-bold mb-3 text-[var(--navy)]">Konsultasi</h4>
+                                <p class="text-xs text-slate-500 leading-relaxed">Diskusi visi untuk memahami estetika dan fungsionalitas yang Anda inginkan.</p>
+                            </div>
+                            <div class="text-left bg-white p-8 rounded-3xl border border-sky-100 shadow-sm">
+                                <div class="text-4xl font-black text-sky-100 mb-6">02</div>
+                                <h4 class="text-lg font-bold mb-3 text-[var(--navy)]">Visualisasi</h4>
+                                <p class="text-xs text-slate-500 leading-relaxed">Penyusunan konsep 3D realistis agar Anda bisa melihat masa depan bangunan Anda.</p>
+                            </div>
+                            <div class="text-left bg-white p-8 rounded-3xl border border-sky-100 shadow-sm">
+                                <div class="text-4xl font-black text-sky-100 mb-6">03</div>
+                                <h4 class="text-lg font-bold mb-3 text-[var(--navy)]">Presisi</h4>
+                                <p class="text-xs text-slate-500 leading-relaxed">Pembuatan gambar teknis mendalam untuk menjamin kualitas konstruksi.</p>
+                            </div>
+                            <div class="text-left bg-white p-8 rounded-3xl border border-sky-100 shadow-sm">
+                                <div class="text-4xl font-black text-sky-100 mb-6">04</div>
+                                <h4 class="text-lg font-bold mb-3 text-[var(--navy)]">Realisasi</h4>
+                                <p class="text-xs text-slate-500 leading-relaxed">Pengerjaan dengan standar tinggi hingga proses serah terima.</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                ${renderFooterMarkup()}
+            `;
+        }
+
+        function renderDetail(p) {
+            const container = document.getElementById('app-container');
+            container.innerHTML = `
+                <div class="bg-white min-h-screen">
+                    <!-- Hero Section - Morphed via Shared Element -->
+                    <div class="relative h-[70vh] w-full overflow-hidden group cursor-pointer" onclick="openLightbox(${p.id}, 0)">
+                        <img src="${p.image}" style="view-transition-name: project-image" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                        <div class="absolute inset-0 bg-[var(--navy)]/30 transition-colors duration-500 group-hover:bg-[var(--navy)]/10"></div>
+                        <div class="absolute bottom-0 left-0 w-full p-10 md:p-20 bg-gradient-to-t from-white via-white/80 to-transparent pointer-events-none">
+                            <div class="max-w-7xl mx-auto pointer-events-auto" onclick="event.stopPropagation()">
+                                <button onclick="goHome()" class="mb-6 text-[10px] uppercase font-bold tracking-widest flex items-center text-slate-500 hover:text-sky-500 transition-colors">
+                                    <span class="mr-2">←</span> Kembali ke Portfolio
+                                </button>
+                                <span class="text-sky-500 text-xs font-bold uppercase tracking-[0.3em] mb-4 block">${p.category}</span>
+                                <h1 class="text-5xl md:text-7xl font-bold tracking-tighter text-[var(--navy)]">${p.title}</h1>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project Content & Metadata Layout -->
+                    <div class="max-w-7xl mx-auto px-6 py-20">
+                        <div class="grid grid-cols-1 lg:grid-cols-12 gap-16">
+                            <!-- Left: Detailed Content -->
+                            <div class="lg:col-span-8">
+                                <div class="mb-20">
+                                    <h2 class="text-2xl font-bold mb-8 text-[var(--navy)]">Visi Proyek</h2>
+                                    <p class="text-xl text-slate-500 leading-relaxed font-light">${p.description}</p>
+                                </div>
+                                
+                                <!-- Secondary Gallery Grid -->
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                                    <div class="md:col-span-2 overflow-hidden rounded-3xl cursor-pointer group" onclick="openLightbox(${p.id}, 1)">
+                                         <img src="${p.secondaryImages[0]}" class="w-full h-[500px] object-cover shadow-xl transition-transform duration-700 group-hover:scale-105">
+                                    </div>
+                                    <div class="overflow-hidden rounded-3xl cursor-pointer group" onclick="openLightbox(${p.id}, 2)">
+                                         <img src="${p.secondaryImages[1]}" class="w-full h-80 object-cover shadow-lg transition-transform duration-700 group-hover:scale-110">
+                                    </div>
+                                    <div class="overflow-hidden rounded-3xl cursor-pointer group" onclick="openLightbox(${p.id}, 3)">
+                                         <img src="${p.secondaryImages[2]}" class="w-full h-80 object-cover shadow-lg transition-transform duration-700 group-hover:scale-110">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Right: Metadata Sidebar -->
+                            <div class="lg:col-span-4">
+                                <div class="bg-slate-50 p-10 rounded-[2rem] border border-slate-200 sticky top-32">
+                                    <h3 class="text-sm font-bold uppercase tracking-widest mb-10 border-b border-slate-200 pb-4">Detail Teknis</h3>
+                                    <div class="space-y-10">
+                                        <div class="flex flex-col">
+                                            <span class="text-[10px] uppercase tracking-widest text-slate-400 mb-2">Klien Strategis</span>
+                                            <span class="text-lg font-bold text-[var(--navy)]">${p.client}</span>
+                                        </div>
+                                        <div class="flex flex-col">
+                                            <span class="text-[10px] uppercase tracking-widest text-slate-400 mb-2">Tahun Selesai</span>
+                                            <span class="text-lg font-bold text-[var(--navy)]">${p.year}</span>
+                                        </div>
+                                        <div class="flex flex-col">
+                                            <span class="text-[10px] uppercase tracking-widest text-slate-400 mb-2">Layanan Utama</span>
+                                            <span class="text-lg font-bold text-[var(--navy)]">${p.service}</span>
+                                        </div>
+                                        <div class="flex flex-col">
+                                            <span class="text-[10px] uppercase tracking-widest text-slate-400 mb-2">Lokasi Fisik</span>
+                                            <span class="text-lg font-bold text-[var(--navy)]">${p.location}</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Call to Action -->
+                    <section class="bg-sky-500 py-20">
+                        <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center text-white">
+                            <h2 class="text-3xl md:text-4xl font-bold tracking-tighter mb-8 md:mb-0">Siap Membangun Ikon Anda?</h2>
+                            <button onclick="goHome()" class="px-10 py-5 bg-[var(--navy)] rounded-full font-bold uppercase tracking-widest text-xs hover:bg-white hover:text-[var(--navy)] transition-all">Mulai Konsultasi</button>
+                        </div>
+                    </section>
+
+                    <!-- Lightbox Modal Overlay -->
+                    <div id="lightbox" class="fixed inset-0 z-[100] hidden items-center justify-center bg-black/95 backdrop-blur-md opacity-0 transition-opacity duration-300" onclick="closeLightbox()">
+                        <button class="absolute top-6 right-6 text-white/70 hover:text-white transition-colors z-50 p-2" onclick="closeLightbox()">
+                            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M6 18L18 6M6 6l12 12"></path></svg>
+                        </button>
+                        
+                        <button onclick="prevImage(event)" class="absolute left-4 md:left-10 text-white/50 hover:text-white transition-colors z-50 p-4">
+                            <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 19l-7-7 7-7"></path></svg>
+                        </button>
+                        
+                        <img id="lightbox-img" src="" class="w-[95vw] h-[90vh] md:h-[95vh] object-contain transition-all duration-300 scale-95" onclick="event.stopPropagation()">
+                        
+                        <button onclick="nextImage(event)" class="absolute right-4 md:right-10 text-white/50 hover:text-white transition-colors z-50 p-4">
+                            <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 5l7 7-7 7"></path></svg>
+                        </button>
+                        
+                        <div class="absolute bottom-8 left-1/2 -translate-x-1/2 text-white/70 font-mono text-xs tracking-[0.3em]" onclick="event.stopPropagation()">
+                            <span id="lightbox-counter">1</span> / <span id="lightbox-total">4</span>
+                        </div>
+                    </div>
+
+                    ${renderFooterMarkup()}
+                </div>
+            `;
+            window.scrollTo(0, 0);
+        }
+
+        function renderFooterMarkup() {
+            return `
+                <footer id="kontak" class="bg-[var(--navy)] py-24 text-white">
+                    <div class="max-w-7xl mx-auto px-6">
+                        <div class="flex flex-col items-center text-center">
+                            <h2 class="text-4xl font-bold tracking-tighter mb-8">Hubungi <span class="text-sky-400">IKON UTAMA</span></h2>
+                            <p class="text-slate-400 mb-12 max-w-xl">Siap mewujudkan impian arsitektur Anda dengan presisi dan kemewahan. Kami melayani konsultasi mendalam untuk setiap proyek unik Anda.</p>
+                            
+                            <div class="grid grid-cols-1 md:grid-cols-3 gap-12 w-full max-w-4xl border-t border-white/10 pt-16">
+                                <div>
+                                    <p class="text-sky-400 font-bold uppercase tracking-widest text-[10px] mb-2">Email</p>
+                                    <p class="text-lg">${contactInfo.email}</p>
+                                </div>
+                                <div>
+                                    <p class="text-sky-400 font-bold uppercase tracking-widest text-[10px] mb-2">Telepon</p>
+                                    <p class="text-lg">${contactInfo.phone}</p>
+                                </div>
+                                <div>
+                                    <p class="text-sky-400 font-bold uppercase tracking-widest text-[10px] mb-2">Alamat Kantor</p>
+                                    <p class="text-sm text-slate-400 leading-relaxed">${contactInfo.address}</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="pt-20 mt-20 border-t border-white/5 text-center">
+                            <p class="text-[10px] text-slate-500 uppercase tracking-widest">&copy; 2024 PT IKON UTAMA. Seluruh Hak Cipta Dilindungi.</p>
+                        </div>
+                    </div>
+                </footer>
+            `;
+        }
+
+        // --- Lightbox Logic ---
+        let currentGallery = [];
+        let currentIndex = 0;
+
+        function openLightbox(projectId, index) {
+            const project = projects.find(p => p.id === projectId);
+            if(!project) return;
+            
+            // Gabungkan foto sampul dan foto sekunder menjadi satu galeri
+            currentGallery = [project.image, ...project.secondaryImages];
+            currentIndex = index;
+            
+            updateLightboxImage();
+            
+            const lightbox = document.getElementById('lightbox');
+            document.getElementById('lightbox-total').textContent = currentGallery.length;
+            
+            lightbox.classList.remove('hidden');
+            lightbox.classList.add('flex'); // Menambahkan class flex secara eksplisit
+            
+            // Memicu reflow browser agar animasi transisi bekerja
+            void lightbox.offsetWidth; 
+            lightbox.classList.remove('opacity-0');
+            lightbox.classList.add('opacity-100');
+            document.getElementById('lightbox-img').classList.remove('scale-95');
+            document.getElementById('lightbox-img').classList.add('scale-100');
+            
+            document.body.style.overflow = 'hidden'; // Mencegah scrolling saat pop-up terbuka
+            document.addEventListener('keydown', handleLightboxKey);
+        }
+
+        function closeLightbox() {
+            const lightbox = document.getElementById('lightbox');
+            lightbox.classList.remove('opacity-100');
+            lightbox.classList.add('opacity-0');
+            document.getElementById('lightbox-img').classList.remove('scale-100');
+            document.getElementById('lightbox-img').classList.add('scale-95');
+            
+            setTimeout(() => {
+                lightbox.classList.remove('flex'); // Menghapus class flex kembali
+                lightbox.classList.add('hidden');
+                document.body.style.overflow = '';
+            }, 300);
+            
+            document.removeEventListener('keydown', handleLightboxKey);
+        }
+
+        function updateLightboxImage() {
+            const img = document.getElementById('lightbox-img');
+            const counter = document.getElementById('lightbox-counter');
+            
+            img.style.opacity = '0';
+            setTimeout(() => {
+                img.src = currentGallery[currentIndex];
+                img.style.opacity = '1';
+            }, 150);
+            
+            counter.textContent = currentIndex + 1;
+        }
+
+        function nextImage(e) {
+            if(e) e.stopPropagation();
+            currentIndex = (currentIndex + 1) % currentGallery.length;
+            updateLightboxImage();
+        }
+
+        function prevImage(e) {
+            if(e) e.stopPropagation();
+            currentIndex = (currentIndex - 1 + currentGallery.length) % currentGallery.length;
+            updateLightboxImage();
+        }
+
+        function handleLightboxKey(e) {
+            if (e.key === 'Escape') closeLightbox();
+            if (e.key === 'ArrowRight') nextImage();
+            if (e.key === 'ArrowLeft') prevImage();
+        }
+
+        window.onload = renderHome;
+    </script>
+</body>
+</html>
