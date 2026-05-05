@@ -1,495 +1,602 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PT IKON UTAMA - Premium Architectural Portfolio</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap');
-
-        :root {
-            --navy: #0a192f;
-            --baby-blue: #7dd3fc;
-            --white: #ffffff;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
-        body {
-            font-family: 'Plus Jakarta Sans', sans-serif;
-            background-color: var(--white);
-            color: var(--navy);
-            overflow-x: hidden;
-        }
-
-        /* Hover Scale Effect for Thumbnails */
-        .project-card {
-            transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
-            overflow: hidden;
-        }
-
-        .project-card img {
-            transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
-        }
-
-        .project-card:hover img {
-            transform: scale(1.12);
-        }
-
-        /* Glass Navigation */
-        .glass-nav {
-            background: rgba(255, 255, 255, 0.85);
-            backdrop-filter: blur(12px);
-            border-bottom: 1px solid rgba(15, 23, 42, 0.05);
-        }
-
-        .hero-overlay {
-            background: linear-gradient(90deg, rgba(255,255,255,0.95) 0%, rgba(255,255,255,0.8) 50%, rgba(255,255,255,0) 100%);
-        }
-
-        @keyframes fadeInScale {
-            from { opacity: 0; transform: scale(1.05); }
-            to { opacity: 1; transform: scale(1); }
-        }
-
-        .animate-hero-bg { animation: fadeInScale 1.5s ease-out forwards; }
-
-        /* Shared Element Transition Helpers */
-        ::view-transition-old(project-image),
-        ::view-transition-new(project-image) {
-            animation: none;
-            mix-blend-mode: normal;
-        }
-
-        ::-webkit-scrollbar { width: 5px; }
-        ::-webkit-scrollbar-track { background: var(--white); }
-        ::-webkit-scrollbar-thumb { background: var(--navy); border-radius: 10px; }
-    </style>
+    <title>PT IKON UTAMA - Building Spaces, Realizing Visions</title>
+    <meta name="description" content="PT IKON UTAMA combines architectural precision with a modern, fresh perspective. We transform blueprints into breathtaking realities with transparency and care.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
 </head>
-<body class="min-h-screen selection:bg-sky-200 selection:text-navy">
-
-    <!-- Navigasi -->
-    <nav class="fixed top-0 w-full z-50 glass-nav">
-        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
-            <div class="font-bold text-xl tracking-tighter cursor-pointer text-[var(--navy)]" onclick="goHome()">
-                PT IKON <span class="text-sky-500">UTAMA</span>
-            </div>
-            <div class="hidden md:flex space-x-10 text-[11px] font-bold uppercase tracking-[0.25em] text-slate-500">
-                <a href="#" onclick="goHome()" class="hover:text-[var(--navy)] transition-colors">Beranda</a>
-                <a href="#tentang" class="hover:text-[var(--navy)] transition-colors">Tentang</a>
-                <a href="#projects" class="hover:text-[var(--navy)] transition-colors">Proyek</a>
-                <a href="#proses" class="hover:text-[var(--navy)] transition-colors">Proses</a>
-                <a href="#kontak" class="hover:text-[var(--navy)] transition-colors">Kontak</a>
-            </div>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="#" class="logo">PT IKON UTAMA</a>
+            <ul class="nav-links">
+                <li><a href="#services">Services</a></li>
+                <li><a href="#portfolio">Portfolio</a></li>
+                <li><a href="#why-us">Why Us</a></li>
+                <li><a href="#clients">Clients</a></li>
+            </ul>
+            <a href="#contact" class="btn btn-primary">Get a Quote</a>
         </div>
     </nav>
-
-    <!-- App Container -->
-    <main id="app-container">
-        <!-- JS will render content here -->
-    </main>
-
-    <script>
-        const contactInfo = {
-            phone: "+62 588 7973 673",
-            email: "ikon.utama@gmail.com",
-            address: "Jl. Bambu Kuning No.66, RT.12/RW.2, Bambu Apus, Kec. Cipayung, Jakarta Timur 13890"
-        };
-
-        const projects = [
-            {
-                id: 1,
-                title: "Novotel Suite & Resort",
-                category: "Hospitality",
-                image: "image_2bc743.png",
-                secondaryImages: [
-                    "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=800&q=80",
-                    "https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=800&q=80",
-                    "https://images.unsplash.com/photo-1590490360182-c33d57733427?auto=format&fit=crop&w=800&q=80"
-                ],
-                client: "Accor Hotels Group",
-                year: "2024",
-                service: "Full Interior Design & FF&E",
-                location: "Bali, Indonesia",
-                description: "Transformasi ruang komersial menjadi destinasi penginapan mewah yang memadukan kenyamanan modern dengan sentuhan lokal kontemporer untuk brand Novotel."
-            },
-            {
-                id: 2,
-                title: "Ikon HQ Tower",
-                category: "Office",
-                image: "IMG_20191004_210400.jpg",
-                secondaryImages: [
-                    "https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=800&q=80",
-                    "https://images.unsplash.com/photo-1497215728101-856f4ea42174?auto=format&fit=crop&w=800&q=80",
-                    "https://images.unsplash.com/photo-1524758631624-e2822e304c36?auto=format&fit=crop&w=800&q=80"
-                ],
-                client: "Ikon Utama Corp",
-                year: "2022",
-                service: "Interior Architecture",
-                location: "SCBD, Jakarta",
-                description: "Kantor pusat yang dirancang untuk meningkatkan kolaborasi tim dengan konsep open-plan dan pencahayaan maksimal."
-            },
-            {
-                id: 3,
-                title: "The Zenith Residence",
-                category: "Residential",
-                image: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80",
-                secondaryImages: [
-                    "https://images.unsplash.com/photo-1600607687940-c52af04657b3?auto=format&fit=crop&w=800&q=80",
-                    "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=800&q=80",
-                    "https://images.unsplash.com/photo-1613490493576-7fde63acd811?auto=format&fit=crop&w=800&q=80"
-                ],
-                client: "Zenith Land Dev",
-                year: "2023",
-                service: "Private Residence Design",
-                location: "Menteng, Jakarta",
-                description: "Hunian pribadi eksklusif yang mengedepankan privasi dengan fasad minimalis dan interior yang hangat."
-            }
-        ];
-
-        // Logic for Shared Element Transition
-        function transitionTo(renderFn) {
-            if (!document.startViewTransition) {
-                renderFn();
-            } else {
-                document.startViewTransition(renderFn);
-            }
-        }
-
-        function goHome() {
-            transitionTo(() => renderHome());
-        }
-
-        function navigateToDetail(projectId) {
-            const project = projects.find(p => p.id === projectId);
-            
-            // Set unique view-transition-name to the clicked element's image
-            const clickedImg = document.querySelector(`[data-id="${projectId}"] img`);
-            if(clickedImg) clickedImg.style.viewTransitionName = 'project-image';
-            
-            transitionTo(() => renderDetail(project));
-        }
-
-        function renderHome() {
-            const container = document.getElementById('app-container');
-            container.innerHTML = `
-                <section class="relative h-[85vh] md:h-screen w-full flex items-center overflow-hidden">
-                    <div class="absolute inset-0 z-0">
-                        <img src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=2000&q=90" 
-                             class="w-full h-full object-cover animate-hero-bg" alt="Luxury Interior">
-                        <div class="absolute inset-0 hero-overlay"></div>
-                    </div>
-                    <div class="max-w-7xl mx-auto px-6 relative z-10 w-full">
-                        <div class="max-w-4xl pt-16 md:pt-24">
-                            <h1 class="text-7xl md:text-[8rem] lg:text-[10rem] font-bold mb-6 md:mb-10 tracking-tighter leading-[0.85] text-[var(--navy)]">
-                                Harmoni <br> <span class="text-sky-500">Interior</span> <br> Modern.
-                            </h1>
-                            <p class="text-slate-600 text-lg md:text-2xl mb-10 md:mb-12 leading-relaxed max-w-2xl font-light">
-                                Studio desain premium yang menggabungkan kemewahan visual dengan kenyamanan spasial untuk menciptakan ikon hunian masa depan.
-                            </p>
-                            <div class="flex flex-wrap gap-4 md:gap-6">
-                                <button onclick="document.getElementById('projects').scrollIntoView()" class="px-8 py-4 md:px-10 md:py-5 bg-[var(--navy)] text-white rounded-xl font-bold text-xs md:text-sm uppercase tracking-widest hover:bg-sky-600 transition-all shadow-lg">Mulai Eksplorasi</button>
-                                <button onclick="document.getElementById('tentang').scrollIntoView()" class="px-8 py-4 md:px-10 md:py-5 border border-slate-300 text-slate-700 bg-white/50 backdrop-blur-sm rounded-xl font-bold text-xs md:text-sm uppercase tracking-widest hover:bg-white transition-all">Tentang Kami</button>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-
-                <section id="tentang" class="bg-white py-24 border-b border-slate-100">
-                    <div class="max-w-7xl mx-auto px-6">
-                        <div class="mb-16 md:text-center">
-                            <span class="text-sky-500 text-xs font-bold uppercase tracking-[0.3em] mb-4 block">Tentang</span>
-                            <h2 class="text-4xl md:text-5xl font-bold tracking-tighter mb-4 text-[var(--navy)]">MENGAPA MEMILIH KAMI</h2>
-                        </div>
-                        <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
-                            <div class="bg-white border border-slate-200 p-10 rounded-3xl hover:shadow-lg transition-all">
-                                <h3 class="text-xl font-bold mb-4 text-[var(--navy)]">Ketepatan Waktu</h3>
-                                <p class="text-slate-500 text-sm leading-relaxed">Manajemen proyek kami menjamin kepatuhan ketat pada tenggat waktu pembangunan.</p>
-                            </div>
-                            <div class="bg-white border border-slate-200 p-10 rounded-3xl hover:shadow-lg transition-all">
-                                <h3 class="text-xl font-bold mb-4 text-[var(--navy)]">Transparansi</h3>
-                                <p class="text-slate-500 text-sm leading-relaxed">BOQ terperinci disediakan dengan sumber material dan harga yang jujur tanpa biaya tersembunyi.</p>
-                            </div>
-                            <div class="bg-white border border-slate-200 p-10 rounded-3xl hover:shadow-lg transition-all">
-                                <h3 class="text-xl font-bold mb-4 text-[var(--navy)]">Kualitas Premium</h3>
-                                <p class="text-slate-500 text-sm leading-relaxed">Kami hanya menggunakan material kelas atas yang menjamin daya tahan dan estetika tinggi.</p>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-
-                <section id="projects" class="max-w-7xl mx-auto px-6 py-24">
-                    <div class="flex justify-between items-end mb-16">
-                        <div>
-                            <span class="text-sky-500 text-xs font-bold uppercase tracking-[0.3em] mb-2 block">Pekerjaan Kami</span>
-                            <h2 class="text-4xl font-bold tracking-tighter text-[var(--navy)]">Proyek Terpilih</h2>
-                        </div>
-                    </div>
-                    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                        ${projects.map(p => `
-                            <div class="project-card group relative aspect-[4/5] rounded-3xl overflow-hidden cursor-pointer shadow-sm" data-id="${p.id}" onclick="navigateToDetail(${p.id})">
-                                <img src="${p.image}" alt="${p.title}" class="w-full h-full object-cover group-hover:brightness-110">
-                                <div class="absolute inset-0 bg-gradient-to-t from-slate-900/90 via-transparent to-transparent opacity-80 group-hover:opacity-100 transition-opacity"></div>
-                                <div class="absolute bottom-0 left-0 p-8 w-full">
-                                    <span class="text-sky-300 text-[10px] font-bold uppercase tracking-[0.3em] mb-1 block">${p.category}</span>
-                                    <h3 class="text-xl font-bold tracking-tight text-white">${p.title}</h3>
-                                </div>
-                            </div>
-                        `).join('')}
-                    </div>
-                </section>
-
-                <section id="proses" class="bg-slate-50 py-24 border-t border-slate-100">
-                    <div class="max-w-7xl mx-auto px-6 text-center">
-                        <span class="text-sky-500 text-xs font-bold uppercase tracking-[0.3em] mb-4 block">Metodologi</span>
-                        <h2 class="text-4xl md:text-5xl font-bold tracking-tighter mb-20 text-[var(--navy)]">Bagaimana Kami Membangun</h2>
-                        <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
-                            <div class="text-left bg-white p-8 rounded-3xl border border-sky-100 shadow-sm">
-                                <div class="text-4xl font-black text-sky-100 mb-6">01</div>
-                                <h4 class="text-lg font-bold mb-3 text-[var(--navy)]">Konsultasi</h4>
-                                <p class="text-xs text-slate-500 leading-relaxed">Diskusi visi untuk memahami estetika dan fungsionalitas yang Anda inginkan.</p>
-                            </div>
-                            <div class="text-left bg-white p-8 rounded-3xl border border-sky-100 shadow-sm">
-                                <div class="text-4xl font-black text-sky-100 mb-6">02</div>
-                                <h4 class="text-lg font-bold mb-3 text-[var(--navy)]">Visualisasi</h4>
-                                <p class="text-xs text-slate-500 leading-relaxed">Penyusunan konsep 3D realistis agar Anda bisa melihat masa depan bangunan Anda.</p>
-                            </div>
-                            <div class="text-left bg-white p-8 rounded-3xl border border-sky-100 shadow-sm">
-                                <div class="text-4xl font-black text-sky-100 mb-6">03</div>
-                                <h4 class="text-lg font-bold mb-3 text-[var(--navy)]">Presisi</h4>
-                                <p class="text-xs text-slate-500 leading-relaxed">Pembuatan gambar teknis mendalam untuk menjamin kualitas konstruksi.</p>
-                            </div>
-                            <div class="text-left bg-white p-8 rounded-3xl border border-sky-100 shadow-sm">
-                                <div class="text-4xl font-black text-sky-100 mb-6">04</div>
-                                <h4 class="text-lg font-bold mb-3 text-[var(--navy)]">Realisasi</h4>
-                                <p class="text-xs text-slate-500 leading-relaxed">Pengerjaan dengan standar tinggi hingga proses serah terima.</p>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-
-                ${renderFooterMarkup()}
-            `;
-        }
-
-        function renderDetail(p) {
-            const container = document.getElementById('app-container');
-            container.innerHTML = `
-                <div class="bg-white min-h-screen">
-                    <!-- Hero Section - Morphed via Shared Element -->
-                    <div class="relative h-[70vh] w-full overflow-hidden group cursor-pointer" onclick="openLightbox(${p.id}, 0)">
-                        <img src="${p.image}" style="view-transition-name: project-image" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
-                        <div class="absolute inset-0 bg-[var(--navy)]/30 transition-colors duration-500 group-hover:bg-[var(--navy)]/10"></div>
-                        <div class="absolute bottom-0 left-0 w-full p-10 md:p-20 bg-gradient-to-t from-white via-white/80 to-transparent pointer-events-none">
-                            <div class="max-w-7xl mx-auto pointer-events-auto" onclick="event.stopPropagation()">
-                                <button onclick="goHome()" class="mb-6 text-[10px] uppercase font-bold tracking-widest flex items-center text-slate-500 hover:text-sky-500 transition-colors">
-                                    <span class="mr-2">←</span> Kembali ke Portfolio
-                                </button>
-                                <span class="text-sky-500 text-xs font-bold uppercase tracking-[0.3em] mb-4 block">${p.category}</span>
-                                <h1 class="text-5xl md:text-7xl font-bold tracking-tighter text-[var(--navy)]">${p.title}</h1>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Project Content & Metadata Layout -->
-                    <div class="max-w-7xl mx-auto px-6 py-20">
-                        <div class="grid grid-cols-1 lg:grid-cols-12 gap-16">
-                            <!-- Left: Detailed Content -->
-                            <div class="lg:col-span-8">
-                                <div class="mb-20">
-                                    <h2 class="text-2xl font-bold mb-8 text-[var(--navy)]">Visi Proyek</h2>
-                                    <p class="text-xl text-slate-500 leading-relaxed font-light">${p.description}</p>
-                                </div>
-                                
-                                <!-- Secondary Gallery Grid -->
-                                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                                    <div class="md:col-span-2 overflow-hidden rounded-3xl cursor-pointer group" onclick="openLightbox(${p.id}, 1)">
-                                         <img src="${p.secondaryImages[0]}" class="w-full h-[500px] object-cover shadow-xl transition-transform duration-700 group-hover:scale-105">
-                                    </div>
-                                    <div class="overflow-hidden rounded-3xl cursor-pointer group" onclick="openLightbox(${p.id}, 2)">
-                                         <img src="${p.secondaryImages[1]}" class="w-full h-80 object-cover shadow-lg transition-transform duration-700 group-hover:scale-110">
-                                    </div>
-                                    <div class="overflow-hidden rounded-3xl cursor-pointer group" onclick="openLightbox(${p.id}, 3)">
-                                         <img src="${p.secondaryImages[2]}" class="w-full h-80 object-cover shadow-lg transition-transform duration-700 group-hover:scale-110">
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Right: Metadata Sidebar -->
-                            <div class="lg:col-span-4">
-                                <div class="bg-slate-50 p-10 rounded-[2rem] border border-slate-200 sticky top-32">
-                                    <h3 class="text-sm font-bold uppercase tracking-widest mb-10 border-b border-slate-200 pb-4">Detail Teknis</h3>
-                                    <div class="space-y-10">
-                                        <div class="flex flex-col">
-                                            <span class="text-[10px] uppercase tracking-widest text-slate-400 mb-2">Klien Strategis</span>
-                                            <span class="text-lg font-bold text-[var(--navy)]">${p.client}</span>
-                                        </div>
-                                        <div class="flex flex-col">
-                                            <span class="text-[10px] uppercase tracking-widest text-slate-400 mb-2">Tahun Selesai</span>
-                                            <span class="text-lg font-bold text-[var(--navy)]">${p.year}</span>
-                                        </div>
-                                        <div class="flex flex-col">
-                                            <span class="text-[10px] uppercase tracking-widest text-slate-400 mb-2">Layanan Utama</span>
-                                            <span class="text-lg font-bold text-[var(--navy)]">${p.service}</span>
-                                        </div>
-                                        <div class="flex flex-col">
-                                            <span class="text-[10px] uppercase tracking-widest text-slate-400 mb-2">Lokasi Fisik</span>
-                                            <span class="text-lg font-bold text-[var(--navy)]">${p.location}</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Call to Action -->
-                    <section class="bg-sky-500 py-20">
-                        <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center text-white">
-                            <h2 class="text-3xl md:text-4xl font-bold tracking-tighter mb-8 md:mb-0">Siap Membangun Ikon Anda?</h2>
-                            <button onclick="goHome()" class="px-10 py-5 bg-[var(--navy)] rounded-full font-bold uppercase tracking-widest text-xs hover:bg-white hover:text-[var(--navy)] transition-all">Mulai Konsultasi</button>
-                        </div>
-                    </section>
-
-                    <!-- Lightbox Modal Overlay -->
-                    <div id="lightbox" class="fixed inset-0 z-[100] hidden items-center justify-center bg-black/95 backdrop-blur-md opacity-0 transition-opacity duration-300" onclick="closeLightbox()">
-                        <button class="absolute top-6 right-6 text-white/70 hover:text-white transition-colors z-50 p-2" onclick="closeLightbox()">
-                            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M6 18L18 6M6 6l12 12"></path></svg>
-                        </button>
-                        
-                        <button onclick="prevImage(event)" class="absolute left-4 md:left-10 text-white/50 hover:text-white transition-colors z-50 p-4">
-                            <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 19l-7-7 7-7"></path></svg>
-                        </button>
-                        
-                        <img id="lightbox-img" src="" class="w-[95vw] h-[90vh] md:h-[95vh] object-contain transition-all duration-300 scale-95" onclick="event.stopPropagation()">
-                        
-                        <button onclick="nextImage(event)" class="absolute right-4 md:right-10 text-white/50 hover:text-white transition-colors z-50 p-4">
-                            <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 5l7 7-7 7"></path></svg>
-                        </button>
-                        
-                        <div class="absolute bottom-8 left-1/2 -translate-x-1/2 text-white/70 font-mono text-xs tracking-[0.3em]" onclick="event.stopPropagation()">
-                            <span id="lightbox-counter">1</span> / <span id="lightbox-total">4</span>
-                        </div>
-                    </div>
-
-                    ${renderFooterMarkup()}
+    <!-- Hero Section -->
+    <header class="hero" id="home">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1>Building Spaces,<br>Realizing Visions.</h1>
+            <p>PT IKON UTAMA combines architectural precision with a modern, fresh perspective. We transform blueprints into breathtaking realities with transparency and care.</p>
+            <div class="hero-buttons">
+                <a href="#portfolio" class="btn btn-primary">View Portfolio</a>
+                <a href="#contact" class="btn btn-outline">Consult with Us</a>
+            </div>
+        </div>
+    </header>
+    <!-- Services Section -->
+    <section class="services" id="services">
+        <div class="container">
+            <h2 class="section-title">Our Services</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <svg class="icon-svg" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10c1.38 0 2.5-1.12 2.5-2.5 0-.61-.23-1.16-.61-1.58-.32-.35-.53-.8-.53-1.28 0-1.04.84-1.89 1.89-1.89h1.75c2.76 0 5-2.24 5-5 0-4.42-4.48-8-10-8zm-4 9c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm3.5-4.5c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm4.5 0c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm3.5 4.5c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2z"/>
+                    </svg>
+                    <h3>Interior Design</h3>
+                    <p>Conceptualizing aesthetic and functional environments for your brand.</p>
                 </div>
-            `;
-            window.scrollTo(0, 0);
-        }
-
-        function renderFooterMarkup() {
-            return `
-                <footer id="kontak" class="bg-[var(--navy)] py-24 text-white">
-                    <div class="max-w-7xl mx-auto px-6">
-                        <div class="flex flex-col items-center text-center">
-                            <h2 class="text-4xl font-bold tracking-tighter mb-8">Hubungi <span class="text-sky-400">IKON UTAMA</span></h2>
-                            <p class="text-slate-400 mb-12 max-w-xl">Siap mewujudkan impian arsitektur Anda dengan presisi dan kemewahan. Kami melayani konsultasi mendalam untuk setiap proyek unik Anda.</p>
-                            
-                            <div class="grid grid-cols-1 md:grid-cols-3 gap-12 w-full max-w-4xl border-t border-white/10 pt-16">
-                                <div>
-                                    <p class="text-sky-400 font-bold uppercase tracking-widest text-[10px] mb-2">Email</p>
-                                    <p class="text-lg">${contactInfo.email}</p>
-                                </div>
-                                <div>
-                                    <p class="text-sky-400 font-bold uppercase tracking-widest text-[10px] mb-2">Telepon</p>
-                                    <p class="text-lg">${contactInfo.phone}</p>
-                                </div>
-                                <div>
-                                    <p class="text-sky-400 font-bold uppercase tracking-widest text-[10px] mb-2">Alamat Kantor</p>
-                                    <p class="text-sm text-slate-400 leading-relaxed">${contactInfo.address}</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="pt-20 mt-20 border-t border-white/5 text-center">
-                            <p class="text-[10px] text-slate-500 uppercase tracking-widest">&copy; 2024 PT IKON UTAMA. Seluruh Hak Cipta Dilindungi.</p>
-                        </div>
+                <div class="service-card">
+                    <svg class="icon-svg" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 2L2 12h3v8h14v-8h3L12 2zm3 16h-6v-5h6v5z"/>
+                    </svg>
+                    <h3>Civil & Construction</h3>
+                    <p>Robust structural solutions with a focus on durability and integrity.</p>
+                </div>
+                <div class="service-card">
+                    <svg class="icon-svg" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M20 2H4c-1.1 0-1.99.9-1.99 2L2 22l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-2 12H6v-2h12v2zm0-3H6V9h12v2zm0-3H6V6h12v2z"/>
+                    </svg>
+                    <h3>Custom Furniture</h3>
+                    <p>Bespoke furniture pieces crafted with premium materials.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Why Choose Us -->
+    <section class="why-us" id="why-us">
+        <div class="container">
+            <h2 class="section-title">The IKON Standard</h2>
+            <div class="features-list">
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M12 2L22 7L12 12L2 7L12 2Z"/><path d="M2 17L12 22L22 17M2 12L12 17L22 12"/></svg>
                     </div>
-                </footer>
-            `;
-        }
-
-        // --- Lightbox Logic ---
-        let currentGallery = [];
-        let currentIndex = 0;
-
-        function openLightbox(projectId, index) {
-            const project = projects.find(p => p.id === projectId);
-            if(!project) return;
-            
-            // Gabungkan foto sampul dan foto sekunder menjadi satu galeri
-            currentGallery = [project.image, ...project.secondaryImages];
-            currentIndex = index;
-            
-            updateLightboxImage();
-            
-            const lightbox = document.getElementById('lightbox');
-            document.getElementById('lightbox-total').textContent = currentGallery.length;
-            
-            lightbox.classList.remove('hidden');
-            lightbox.classList.add('flex'); // Menambahkan class flex secara eksplisit
-            
-            // Memicu reflow browser agar animasi transisi bekerja
-            void lightbox.offsetWidth; 
-            lightbox.classList.remove('opacity-0');
-            lightbox.classList.add('opacity-100');
-            document.getElementById('lightbox-img').classList.remove('scale-95');
-            document.getElementById('lightbox-img').classList.add('scale-100');
-            
-            document.body.style.overflow = 'hidden'; // Mencegah scrolling saat pop-up terbuka
-            document.addEventListener('keydown', handleLightboxKey);
-        }
-
-        function closeLightbox() {
-            const lightbox = document.getElementById('lightbox');
-            lightbox.classList.remove('opacity-100');
-            lightbox.classList.add('opacity-0');
-            document.getElementById('lightbox-img').classList.remove('scale-100');
-            document.getElementById('lightbox-img').classList.add('scale-95');
-            
-            setTimeout(() => {
-                lightbox.classList.remove('flex'); // Menghapus class flex kembali
-                lightbox.classList.add('hidden');
-                document.body.style.overflow = '';
-            }, 300);
-            
-            document.removeEventListener('keydown', handleLightboxKey);
-        }
-
-        function updateLightboxImage() {
-            const img = document.getElementById('lightbox-img');
-            const counter = document.getElementById('lightbox-counter');
-            
-            img.style.opacity = '0';
-            setTimeout(() => {
-                img.src = currentGallery[currentIndex];
-                img.style.opacity = '1';
-            }, 150);
-            
-            counter.textContent = currentIndex + 1;
-        }
-
-        function nextImage(e) {
-            if(e) e.stopPropagation();
-            currentIndex = (currentIndex + 1) % currentGallery.length;
-            updateLightboxImage();
-        }
-
-        function prevImage(e) {
-            if(e) e.stopPropagation();
-            currentIndex = (currentIndex - 1 + currentGallery.length) % currentGallery.length;
-            updateLightboxImage();
-        }
-
-        function handleLightboxKey(e) {
-            if (e.key === 'Escape') closeLightbox();
-            if (e.key === 'ArrowRight') nextImage();
-            if (e.key === 'ArrowLeft') prevImage();
-        }
-
-        window.onload = renderHome;
-    </script>
+                    <div class="feature-text">
+                        <h4>Uncompromising Quality</h4>
+                        <p>Premium materials for a high-end, lasting finish.</p>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z"/><path d="M12 6V12L16 14"/></svg>
+                    </div>
+                    <div class="feature-text">
+                        <h4>Punctual Delivery</h4>
+                        <p>Optimized workflows for on-time project completion.</p>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M12 2V22M17 5H9.5C8.57174 5 7.6815 5.36875 7.02513 6.02513C6.36875 6.6815 6 7.57174 6 8.5C6 9.42826 6.36875 10.3185 7.02513 10.9749C7.6815 11.6313 8.57174 12 9.5 12H14.5C15.4283 12 16.3185 12.3687 16.9749 13.0251C17.6313 13.6815 18 14.5717 18 15.5C18 16.4283 17.6313 17.3185 16.9749 17.9749C16.3185 18.6313 15.4283 19 14.5 19H6"/></svg>
+                    </div>
+                    <div class="feature-text">
+                        <h4>Budget Transparency</h4>
+                        <p>Clear, honest breakdowns for every phase.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Project Gallery -->
+    <section class="portfolio" id="portfolio">
+        <div class="container">
+            <h2 class="section-title">Featured Works</h2>
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="commercial.png" alt="Commercial Project">
+                    <div class="gallery-overlay">
+                        <h3>Commercial: The Zenith Office Suite</h3>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=800&q=80" alt="Residential Project">
+                    <div class="gallery-overlay">
+                        <h3>Residential: The Obsidian Villa</h3>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1567401893414-76b7b1e5a7a5?auto=format&fit=crop&w=800&q=80" alt="Retail Project">
+                    <div class="gallery-overlay">
+                        <h3>Retail: Aura Boutique</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <div class="contact-card">
+                <h2 class="section-title">Ready to elevate your space?</h2>
+                <form id="contact-form">
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" name="name" required placeholder="John Doe">
+                    </div>
+                    <div class="form-group">
+                        <label for="project-type">Project Type</label>
+                        <select id="project-type" name="project-type" required>
+                            <option value="" disabled selected>Select a project type</option>
+                            <option value="interior">Interior Design</option>
+                            <option value="civil">Civil & Construction</option>
+                            <option value="furniture">Custom Furniture</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" rows="5" required placeholder="Tell us about your project..."></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-block">Submit Inquiry</button>
+                </form>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 PT IKON UTAMA. All Rights Reserved.</p>
+        </div>
+    </footer>
+    <script src="script.js"></script>
 </body>
 </html>
+:root {
+    --primary: #89CFF0;
+    --primary-dark: #6ba7c4;
+    --secondary: #FFFFFF;
+    --accent: #F5F5F5;
+    --text-main: #333333;
+    --text-muted: #666666;
+    --transition: all 0.3s ease;
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html {
+    scroll-behavior: smooth;
+    font-family: 'Inter', sans-serif;
+    color: var(--text-main);
+}
+body {
+    background-color: var(--secondary);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+/* Typography */
+h1, h2, h3, h4 {
+    color: var(--text-main);
+    line-height: 1.2;
+}
+.section-title {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 3.5rem;
+    font-weight: 700;
+}
+/* Buttons */
+.btn {
+    display: inline-block;
+    padding: 0.8rem 1.8rem;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: var(--transition);
+    cursor: pointer;
+    border: none;
+    font-size: 1rem;
+}
+.btn-primary {
+    background-color: var(--primary);
+    color: var(--secondary);
+}
+.btn-primary:hover {
+    background-color: var(--primary-dark);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(137, 207, 240, 0.4);
+}
+.btn-outline {
+    background-color: transparent;
+    color: var(--secondary);
+    border: 2px solid var(--secondary);
+}
+.btn-outline:hover {
+    background-color: var(--secondary);
+    color: var(--text-main);
+}
+.btn-block {
+    display: block;
+    width: 100%;
+    text-align: center;
+}
+/* Navbar */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: var(--secondary);
+    border-bottom: 1px solid rgba(137, 207, 240, 0.3);
+    z-index: 1000;
+    padding: 1rem 0;
+    transition: var(--transition);
+}
+.navbar.scrolled {
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    padding: 0.8rem 0;
+}
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+.logo {
+    color: var(--primary);
+    font-weight: 700;
+    font-size: 1.5rem;
+    text-decoration: none;
+    letter-spacing: -0.5px;
+}
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 2.5rem;
+}
+.nav-links a {
+    text-decoration: none;
+    color: var(--text-main);
+    font-weight: 500;
+    transition: var(--transition);
+}
+.nav-links a:hover {
+    color: var(--primary);
+}
+/* Hero Section */
+.hero {
+    height: 100vh;
+    background: url('hero.png') center/cover no-repeat;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 0 1rem;
+    margin-top: 60px; /* Offset for fixed navbar */
+}
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(255,255,255,0.9), rgba(255,255,255,0.3));
+}
+.hero-content {
+    position: relative;
+    z-index: 1;
+    max-width: 800px;
+    animation: fadeIn 1s ease-out forwards;
+}
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+.hero-content h1 {
+    font-size: 4rem;
+    margin-bottom: 1.5rem;
+    color: var(--text-main);
+    letter-spacing: -1px;
+}
+.hero-content p {
+    font-size: 1.25rem;
+    margin-bottom: 2.5rem;
+    color: var(--text-main);
+    font-weight: 400;
+}
+.hero-buttons {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+}
+.hero-buttons .btn-outline {
+    border-color: var(--text-main);
+    color: var(--text-main);
+}
+.hero-buttons .btn-outline:hover {
+    background-color: var(--text-main);
+    color: var(--secondary);
+}
+/* Services */
+.services {
+    padding: 7rem 0;
+    background-color: var(--secondary); /* Wait, Our Services background was asked to be Pure White? Oh, Why Choose Us is alternating. Let's make Services secondary. */
+}
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2.5rem;
+}
+.service-card {
+    background: var(--secondary);
+    padding: 3rem 2rem;
+    border-radius: 12px;
+    text-align: center;
+    transition: var(--transition);
+    box-shadow: 0 4px 20px rgba(0,0,0,0.03);
+    border: 1px solid rgba(0,0,0,0.02);
+}
+.service-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(137, 207, 240, 0.15);
+}
+.icon-svg {
+    width: 54px;
+    height: 54px;
+    fill: var(--primary);
+    margin: 0 auto 1.5rem auto;
+}
+.service-card h3 {
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+}
+.service-card p {
+    color: var(--text-muted);
+}
+/* Why Us */
+.why-us {
+    padding: 7rem 0;
+    /* Alternating sections of Pure White and very light Baby Blue backgrounds. Let's use a light gradient or solid very light blue here */
+    background-color: #f2faff; /* very light baby blue */
+}
+.features-list {
+    max-width: 900px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+.feature-item {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    background: var(--secondary);
+    padding: 2.5rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.03);
+    transition: var(--transition);
+}
+.feature-item:hover {
+    transform: translateX(10px);
+    box-shadow: 0 8px 25px rgba(137, 207, 240, 0.2);
+}
+.feature-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+    height: 60px;
+    background-color: #e6f6fd;
+    border-radius: 50%;
+    color: var(--primary);
+    flex-shrink: 0;
+}
+.feature-text h4 {
+    margin-bottom: 0.5rem;
+    font-size: 1.25rem;
+}
+.feature-text p {
+    color: var(--text-muted);
+}
+/* Portfolio */
+.portfolio {
+    padding: 7rem 0;
+    background-color: var(--secondary);
+}
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2.5rem;
+}
+.gallery-item {
+    position: relative;
+    border-radius: 12px;
+    overflow: hidden;
+    aspect-ratio: 4/3;
+    border: 6px solid var(--secondary);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    cursor: pointer;
+    background-color: var(--accent); /* placeholder color before image loads */
+}
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+}
+.gallery-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255,255,255,0.95);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: var(--transition);
+}
+.gallery-item:hover img {
+    transform: scale(1.08);
+}
+.gallery-item:hover .gallery-overlay {
+    opacity: 1;
+}
+.gallery-overlay h3 {
+    color: var(--primary);
+    transform: translateY(20px);
+    transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+    font-size: 1.5rem;
+    text-align: center;
+    padding: 0 2rem;
+}
+.gallery-item:hover .gallery-overlay h3 {
+    transform: translateY(0);
+}
+/* Contact */
+.contact {
+    padding: 7rem 0;
+    background-color: var(--accent);
+}
+.contact-card {
+    max-width: 600px;
+    margin: 0 auto;
+    background: var(--secondary);
+    padding: 3.5rem;
+    border-radius: 12px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.05);
+}
+.form-group {
+    margin-bottom: 1.5rem;
+}
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    color: var(--text-main);
+    font-size: 0.95rem;
+}
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 0.9rem;
+    border: 2px solid #eaeaea;
+    border-radius: 6px;
+    font-family: inherit;
+    font-size: 1rem;
+    transition: var(--transition);
+    background-color: #fafafa;
+    color: var(--text-main);
+}
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--primary);
+    background-color: var(--secondary);
+    box-shadow: 0 0 0 4px rgba(137, 207, 240, 0.15);
+}
+/* Footer */
+footer {
+    background-color: var(--secondary);
+    padding: 2.5rem 0;
+    text-align: center;
+    border-top: 1px solid rgba(137, 207, 240, 0.2);
+}
+footer p {
+    color: var(--text-muted);
+}
+/* Responsive */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none; 
+    }
+    
+    .hero-content h1 {
+        font-size: 2.8rem;
+    }
+    
+    .hero-content p {
+        font-size: 1.1rem;
+    }
+    
+    .hero-buttons {
+        flex-direction: column;
+    }
+    
+    .section-title {
+        font-size: 2rem;
+    }
+    
+    .contact-card {
+        padding: 2rem;
+    }
+}
+document.addEventListener('DOMContentLoaded', () => {
+    const navbar = document.querySelector('.navbar');
+    // Smooth scroll for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if(target) {
+                target.scrollIntoView({
+                    behavior: 'smooth'
+                });
+            }
+        });
+    });
+    // Navbar scroll effect
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 50) {
+            navbar.classList.add('scrolled');
+        } else {
+            navbar.classList.remove('scrolled');
+        }
+    });
+    // Form submission simulation
+    const form = document.getElementById('contact-form');
+    if(form) {
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const btn = form.querySelector('button[type="submit"]');
+            const originalText = btn.innerText;
+            btn.innerText = 'Sending...';
+            btn.disabled = true;
+            // Simulate API call
+            setTimeout(() => {
+                btn.innerText = 'Inquiry Sent Successfully!';
+                btn.style.backgroundColor = '#4caf50'; // Green success
+                form.reset();
+                setTimeout(() => {
+                    btn.innerText = originalText;
+                    btn.style.backgroundColor = ''; // Reset to default
+                    btn.disabled = false;
+                }, 3000);
+            }, 1500);
+        });
+    }
+});
