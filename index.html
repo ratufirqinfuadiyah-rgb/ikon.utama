@@ -8,7 +8,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --baby-blue: #89CFF0;
+            --baby-blue: #00AEEF;
             --navy-blue: #0F172A;
             --pure-white: #FFFFFF;
             --soft-gray: #F5F5F5;
@@ -56,11 +56,11 @@
             width: 100%;
         }
 
+        /* Updated Hero Gradient to match the bright reference image fade */
         .hero-gradient {
-            background: linear-gradient(to right, rgba(255, 255, 255, 0.98) 25%, rgba(255, 255, 255, 0.4) 100%);
+            background: linear-gradient(to right, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0.8) 45%, rgba(255, 255, 255, 0) 100%);
         }
 
-        /* Detail Hero White Gradation Overlay */
         .detail-hero-overlay {
             background: linear-gradient(
                 to bottom, 
@@ -71,7 +71,6 @@
             );
         }
 
-        /* High-End Glass Navigation */
         .glass-nav {
             background: rgba(255, 255, 255, 0.2);
             backdrop-filter: blur(15px);
@@ -86,7 +85,6 @@
             border: 1px solid #e2e8f0;
         }
 
-        /* Dark overlay for White text visibility (Photo Ref 2 Style) */
         .project-text-overlay {
             background: linear-gradient(to top, rgba(15, 23, 42, 0.95) 0%, rgba(15, 23, 42, 0.3) 50%, transparent 100%);
             transition: opacity 0.4s ease;
@@ -155,6 +153,16 @@
             background: var(--baby-blue);
             color: var(--navy-blue);
         }
+        
+        .service-card {
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .service-card:hover {
+            transform: translateY(-12px);
+            box-shadow: 0 25px 50px -12px rgba(15, 23, 42, 0.15);
+            border-color: var(--baby-blue);
+        }
     </style>
 </head>
 <body>
@@ -188,7 +196,8 @@
 
         <section class="relative h-[90vh] flex items-center overflow-hidden pt-20">
             <div class="absolute inset-0 z-0">
-                <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=2070" class="w-full h-full object-cover">
+                <!-- Updated background image to a bright, modern interior matching the reference -->
+                <img src="https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?auto=format&fit=crop&q=80&w=2070" class="w-full h-full object-cover">
                 <div class="absolute inset-0 hero-gradient"></div>
             </div>
             <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
@@ -198,7 +207,7 @@
                         <span class="text-baby-blue font-bold text-sm uppercase tracking-[0.3em]">Architectural Visionary</span>
                     </div>
                     <h1 class="text-5xl md:text-7xl font-semibold text-navy leading-[1.1] mb-6">Building Spaces, <br><span class="text-baby-blue">Realizing Visions.</span></h1>
-                    <p class="text-lg md:text-xl text-slate-600 mb-10 leading-relaxed font-light">PT IKON UTAMA combines <span class="font-semibold text-navy">architectural precision</span> with a modern, fresh perspective.</p>
+                    <p class="text-lg md:text-xl text-slate-600 mb-10 leading-relaxed font-light max-w-lg">PT IKON UTAMA combines <span class="font-semibold text-navy">architectural precision</span> with a modern, fresh perspective.</p>
                     <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
                         <a href="#portfolio" class="bg-navy text-white px-10 py-4 rounded-xl font-bold text-center btn-navy-shadow hover:bg-slate-800 transition-all">View Portfolio</a>
                         <a href="#contact-section" class="bg-white border-2 border-baby-blue text-navy px-10 py-4 rounded-xl font-bold text-center hover:bg-sky-50 transition-all">Consult with Us</a>
@@ -214,27 +223,23 @@
                 <h2 class="text-3xl md:text-5xl font-semibold mb-6 text-navy">Specialized Expertise</h2>
                 <div class="accent-line mx-auto"></div>
             </div>
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-3 gap-10">
-                <div class="bg-white p-12 rounded-3xl shadow-sm flex flex-col items-center text-center">
-                    <div class="mb-8 p-5 rounded-2xl bg-slate-50 border border-blue-50">
-                        <svg class="w-10 h-10 text-baby-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" /></svg>
-                    </div>
-                    <h3 class="text-2xl font-semibold mb-4 text-navy">Interior Design</h3>
-                    <p class="text-slate-500 leading-relaxed">Conceptualizing aesthetic and functional environments tailored to your brand.</p>
-                </div>
-                <div class="bg-white p-12 rounded-3xl shadow-sm flex flex-col items-center text-center">
-                    <div class="mb-8 p-5 rounded-2xl bg-slate-50 border border-blue-50">
-                        <svg class="w-10 h-10 text-baby-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" /></svg>
-                    </div>
-                    <h3 class="text-2xl font-semibold mb-4 text-navy">Civil & Construction</h3>
-                    <p class="text-slate-500 leading-relaxed">Robust structural solutions with a focus on durability and integrity.</p>
-                </div>
-                <div class="bg-white p-12 rounded-3xl shadow-sm flex flex-col items-center text-center">
+            <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-2 gap-10">
+                <!-- Service 1: Custom Furniture -->
+                <div class="service-card bg-white p-12 rounded-3xl shadow-sm flex flex-col items-center text-center">
                     <div class="mb-8 p-5 rounded-2xl bg-slate-50 border border-blue-50">
                         <svg class="w-10 h-10 text-baby-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" /></svg>
                     </div>
                     <h3 class="text-2xl font-semibold mb-4 text-navy">Custom Furniture</h3>
                     <p class="text-slate-500 leading-relaxed">Bespoke furniture pieces crafted with premium materials and artisanal care.</p>
+                </div>
+                
+                <!-- Service 2: Build In & Loose -->
+                <div class="service-card bg-white p-12 rounded-3xl shadow-sm flex flex-col items-center text-center">
+                    <div class="mb-8 p-5 rounded-2xl bg-slate-50 border border-blue-50">
+                        <svg class="w-10 h-10 text-baby-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" /></svg>
+                    </div>
+                    <h3 class="text-2xl font-semibold mb-4 text-navy">Build In & Loose</h3>
+                    <p class="text-slate-500 leading-relaxed">Seamlessly integrated cabinetry and curated loose furnishings tailored perfectly to your space.</p>
                 </div>
             </div>
         </section>
@@ -252,27 +257,27 @@
                 </div>
                 <div class="space-y-12">
                    <div>
-                        <p class="text-baby-blue font-bold tracking-widest text-xs uppercase mb-3">Our Core Values</p>
-                        <h2 class="text-4xl font-semibold mb-10 leading-tight text-navy">The <span class="text-baby-blue italic font-light">IKON</span> Standard</h2>
+                        <p class="text-navy font-bold tracking-widest text-xs uppercase mb-3">Our Core Values</p>
+                        <h2 class="text-4xl font-semibold mb-10 leading-tight text-navy">The <span class="italic font-light">IKON</span> Standard</h2>
                         <div class="space-y-10">
-                            <div class="flex items-start group">
-                                <div class="flex-shrink-0 bg-navy p-4 rounded-xl mr-6 transition-colors group-hover:bg-baby-blue"><svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+                            <div class="flex items-start group cursor-default">
+                                <div class="flex-shrink-0 bg-slate-100 p-4 rounded-xl mr-6 transition-all duration-300 group-hover:bg-white group-hover:shadow-lg group-hover:-translate-y-1.5"><svg class="w-6 h-6 text-navy transition-colors duration-300 group-hover:text-baby-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
                                 <div>
-                                    <h4 class="text-xl font-semibold mb-2 text-navy">Uncompromising Quality</h4>
+                                    <h4 class="text-xl font-semibold mb-2 text-navy transition-colors duration-300 group-hover:text-baby-blue">Uncompromising Quality</h4>
                                     <p class="text-slate-500 font-light text-sm">Finest materials for high-end, lasting finish.</p>
                                 </div>
                             </div>
-                            <div class="flex items-start group">
-                                <div class="flex-shrink-0 bg-navy p-4 rounded-xl mr-6 transition-colors group-hover:bg-baby-blue"><svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+                            <div class="flex items-start group cursor-default">
+                                <div class="flex-shrink-0 bg-slate-100 p-4 rounded-xl mr-6 transition-all duration-300 group-hover:bg-white group-hover:shadow-lg group-hover:-translate-y-1.5"><svg class="w-6 h-6 text-navy transition-colors duration-300 group-hover:text-baby-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
                                 <div>
-                                    <h4 class="text-xl font-semibold mb-2 text-navy">Punctual Delivery</h4>
+                                    <h4 class="text-xl font-semibold mb-2 text-navy transition-colors duration-300 group-hover:text-baby-blue">Punctual Delivery</h4>
                                     <p class="text-slate-500 font-light text-sm">Optimized workflows for on-time completion.</p>
                                 </div>
                             </div>
-                            <div class="flex items-start group">
-                                <div class="flex-shrink-0 bg-navy p-4 rounded-xl mr-6 transition-colors group-hover:bg-baby-blue"><svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+                            <div class="flex items-start group cursor-default">
+                                <div class="flex-shrink-0 bg-slate-100 p-4 rounded-xl mr-6 transition-all duration-300 group-hover:bg-white group-hover:shadow-lg group-hover:-translate-y-1.5"><svg class="w-6 h-6 text-navy transition-colors duration-300 group-hover:text-baby-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
                                 <div>
-                                    <h4 class="text-xl font-semibold mb-2 text-navy">Budget Transparency</h4>
+                                    <h4 class="text-xl font-semibold mb-2 text-navy transition-colors duration-300 group-hover:text-baby-blue">Budget Transparency</h4>
                                     <p class="text-slate-500 font-light text-sm">Clear, honest breakdowns for every phase.</p>
                                 </div>
                             </div>
@@ -282,11 +287,11 @@
             </div>
         </section>
 
-        <!-- Main Portfolio (Photo Style Reference 2) -->
+        <!-- Main Portfolio -->
         <section id="portfolio" class="py-24 bg-white">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center mb-16">
                 <p class="text-baby-blue font-bold tracking-widest text-xs uppercase mb-3">Portfolio</p>
-                <h2 class="text-3xl md:text-5xl font-semibold mb-6 text-navy">Flagship Projects</h2>
+                <h2 class="text-3xl md:text-5xl font-semibold mb-6 text-navy">Featured Works</h2>
                 <div class="accent-line mx-auto"></div>
             </div>
             <div id="portfolio-grid" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
@@ -294,7 +299,7 @@
             </div>
         </section>
 
-        <!-- Connect With Us (Minimalist - Form Erased) -->
+        <!-- Connect With Us -->
         <section id="contact-section" class="py-24 bg-soft-gray">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center md:text-left">
                 <div class="flex flex-col md:flex-row justify-between items-center gap-12">
@@ -307,16 +312,16 @@
                         
                         <div class="flex flex-col sm:flex-row flex-wrap gap-8 justify-center md:justify-start">
                             <div class="flex items-center space-x-4">
-                                <div class="w-10 h-10 bg-white rounded-full flex items-center justify-center text-navy shadow-sm">
-                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+                                <div class="w-14 h-14 bg-white rounded-full flex items-center justify-center text-navy shadow-sm">
+                                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
                                 </div>
-                                <span class="text-navy font-semibold">info@ikonutama.com</span>
+                                <span class="text-navy font-semibold text-lg">info@ikonutama.com</span>
                             </div>
                             <div class="flex items-center space-x-4">
-                                <div class="w-10 h-10 bg-white rounded-full flex items-center justify-center text-navy shadow-sm">
-                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+                                <div class="w-14 h-14 bg-white rounded-full flex items-center justify-center text-navy shadow-sm">
+                                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
                                 </div>
-                                <span class="text-navy font-semibold">+62 21 555 0123</span>
+                                <span class="text-navy font-semibold text-lg">+62 21 555 0123</span>
                             </div>
                         </div>
                     </div>
@@ -392,7 +397,6 @@
                     <div class="flex flex-wrap gap-10 md:gap-16 text-sm font-medium">
                         <div class="border-l-2 border-baby-blue/30 pl-6">
                             <p class="text-gray-400 text-[10px] font-bold uppercase tracking-widest mb-1">Service</p>
-                            <!-- Updated as requested -->
                             <span id="detailing-service" class="text-base font-semibold text-navy leading-tight block max-w-[200px]">Commercial Interior, Bedroom & Kitchen</span>
                         </div>
                         <div class="border-l-2 border-baby-blue/30 pl-6">
@@ -417,7 +421,7 @@
             <div id="detail-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10"></div>
         </section>
 
-        <!-- Discovery Row (Style designs like Photo Ref 2) -->
+        <!-- Discovery Row -->
         <section class="py-24 md:py-32 bg-white">
             <div class="max-w-7xl mx-auto px-6">
                 <div class="flex justify-between items-end mb-16">
@@ -462,7 +466,6 @@
         let currentImgList = [];
         let currentImgIdx = 0;
 
-        // Photo Reference 2 Style logic
         function renderPortfolioItem(p, id) {
             const item = document.createElement('div');
             item.className = "gallery-item rounded-[2.5rem] aspect-[4/5] relative shadow-lg group cursor-pointer overflow-hidden";
