@@ -1,11 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PT IKON UTAMA | Building Spaces, Realizing Visions</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
     <style>
         :root {
             --baby-blue: #00AEEF;
@@ -14,7 +17,7 @@
             --soft-gray: #F5F5F5;
             --dark-text: #1E293B;
         }
-        
+
         body {
             font-family: 'Inter', sans-serif;
             background-color: var(--pure-white);
@@ -23,18 +26,40 @@
             overflow-x: hidden;
         }
 
-        h1, h2, h3, h4, h5, h6 {
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
             font-family: 'Outfit', sans-serif;
             color: var(--navy-blue);
-            font-weight: 600; 
+            font-weight: 600;
         }
 
-        .bg-baby-blue { background-color: var(--baby-blue); }
-        .text-baby-blue { color: var(--baby-blue); }
-        .bg-navy { background-color: var(--navy-blue); }
-        .text-navy { color: var(--navy-blue); }
-        .border-baby-blue { border-color: var(--baby-blue); }
-        .bg-soft-gray { background-color: var(--soft-gray); }
+        .bg-baby-blue {
+            background-color: var(--baby-blue);
+        }
+
+        .text-baby-blue {
+            color: var(--baby-blue);
+        }
+
+        .bg-navy {
+            background-color: var(--navy-blue);
+        }
+
+        .text-navy {
+            color: var(--navy-blue);
+        }
+
+        .border-baby-blue {
+            border-color: var(--baby-blue);
+        }
+
+        .bg-soft-gray {
+            background-color: var(--soft-gray);
+        }
 
         .nav-link {
             position: relative;
@@ -62,13 +87,11 @@
         }
 
         .detail-hero-overlay {
-            background: linear-gradient(
-                to bottom, 
-                rgba(255, 255, 255, 0.4) 0%, 
-                rgba(255, 255, 255, 0.1) 40%, 
-                rgba(255, 255, 255, 0.5) 70%,
-                rgba(255, 255, 255, 1) 100%
-            );
+            background: linear-gradient(to bottom,
+                    rgba(255, 255, 255, 0.4) 0%,
+                    rgba(255, 255, 255, 0.1) 40%,
+                    rgba(255, 255, 255, 0.5) 70%,
+                    rgba(255, 255, 255, 1) 100%);
         }
 
         .glass-nav {
@@ -128,7 +151,7 @@
             transform: scale(1.15);
             transition: transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
         }
-        
+
         #detail-page.detail-slide-up #detail-main-img {
             transform: scale(1);
         }
@@ -145,22 +168,56 @@
         }
 
         /* Scroll Reveal Utility Classes */
-        .reveal-up { opacity: 0; transform: translateY(50px); transition: all 1s cubic-bezier(0.16, 1, 0.3, 1); }
-        .reveal-left { opacity: 0; transform: translateX(-50px); transition: all 1s cubic-bezier(0.16, 1, 0.3, 1); }
-        .reveal-right { opacity: 0; transform: translateX(50px); transition: all 1s cubic-bezier(0.16, 1, 0.3, 1); }
-        .reveal-scale { opacity: 0; transform: scale(0.9); transition: all 1s cubic-bezier(0.16, 1, 0.3, 1); }
-        
-        .reveal-active { opacity: 1 !important; transform: translate(0) scale(1) !important; }
-        
-        .delay-100 { transition-delay: 100ms; }
-        .delay-200 { transition-delay: 200ms; }
-        .delay-300 { transition-delay: 300ms; }
-        .delay-400 { transition-delay: 400ms; }
+        .reveal-up {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 1s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .reveal-left {
+            opacity: 0;
+            transform: translateX(-50px);
+            transition: all 1s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .reveal-right {
+            opacity: 0;
+            transform: translateX(50px);
+            transition: all 1s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .reveal-scale {
+            opacity: 0;
+            transform: scale(0.9);
+            transition: all 1s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .reveal-active {
+            opacity: 1 !important;
+            transform: translate(0) scale(1) !important;
+        }
+
+        .delay-100 {
+            transition-delay: 100ms;
+        }
+
+        .delay-200 {
+            transition-delay: 200ms;
+        }
+
+        .delay-300 {
+            transition-delay: 300ms;
+        }
+
+        .delay-400 {
+            transition-delay: 400ms;
+        }
 
         .detail-photo {
             transition: transform 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
             cursor: zoom-in;
         }
+
         .detail-photo:hover {
             transform: scale(1.05);
         }
@@ -169,10 +226,12 @@
             transition: opacity 0.3s ease-out;
             backdrop-filter: blur(15px);
         }
+
         #lightbox-img-container {
             transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
             transform: scale(0.9);
         }
+
         #lightbox.active #lightbox-img-container {
             transform: scale(1);
         }
@@ -181,6 +240,7 @@
             transition: all 0.3s ease;
             border: 2px solid transparent;
         }
+
         .lb-thumb.active {
             border-color: var(--baby-blue);
             transform: translateY(-5px);
@@ -190,11 +250,12 @@
             background: rgba(255, 255, 255, 0.1);
             transition: all 0.3s ease;
         }
+
         .lb-nav-btn:hover {
             background: var(--baby-blue);
             color: var(--navy-blue);
         }
-        
+
         .service-card {
             transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
             transform-style: preserve-3d;
@@ -206,22 +267,24 @@
             border-color: rgba(0, 174, 239, 0.3);
         }
 
-        .service-card > div:first-child, .service-card h3, .service-card p {
+        .service-card>div:first-child,
+        .service-card h3,
+        .service-card p {
             transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), background-color 0.3s, color 0.3s, box-shadow 0.3s;
         }
-        
-        .service-card > div:first-child svg {
+
+        .service-card>div:first-child svg {
             transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), color 0.3s;
         }
 
-        .service-card:hover > div:first-child {
+        .service-card:hover>div:first-child {
             transform: translateZ(40px) translateY(-10px);
             background-color: var(--baby-blue);
             border-color: var(--baby-blue);
             box-shadow: 0 15px 30px -10px rgba(0, 174, 239, 0.5);
         }
 
-        .service-card:hover > div:first-child svg {
+        .service-card:hover>div:first-child svg {
             color: white;
             transform: scale(1.1);
         }
@@ -236,6 +299,7 @@
         }
     </style>
 </head>
+
 <body>
 
     <!-- Main Landing Page Wrapper -->
@@ -249,16 +313,23 @@
                         </span>
                     </div>
                     <div class="hidden md:flex space-x-10">
-                        <a href="#services" class="nav-link text-slate-600 hover:text-navy font-semibold text-sm uppercase tracking-wider">Services</a>
-                        <a href="#portfolio" class="nav-link text-slate-600 hover:text-navy font-semibold text-sm uppercase tracking-wider">Portfolio</a>
-                        <a href="#contact-section" class="nav-link text-slate-600 hover:text-navy font-semibold text-sm uppercase tracking-wider">Contact</a>
+                        <a href="#services"
+                            class="nav-link text-slate-600 hover:text-navy font-semibold text-sm uppercase tracking-wider">Services</a>
+                        <a href="#portfolio"
+                            class="nav-link text-slate-600 hover:text-navy font-semibold text-sm uppercase tracking-wider">Portfolio</a>
+                        <a href="#contact-section"
+                            class="nav-link text-slate-600 hover:text-navy font-semibold text-sm uppercase tracking-wider">Contact</a>
                     </div>
                     <div class="hidden md:block">
-                        <a href="#contact-section" class="bg-navy text-white px-7 py-3 rounded-full font-bold btn-navy-shadow hover:bg-slate-800 transition-all text-sm">Contact</a>
+                        <a href="#contact-section"
+                            class="bg-navy text-white px-7 py-3 rounded-full font-bold btn-navy-shadow hover:bg-slate-800 transition-all text-sm">Contact</a>
                     </div>
                     <div class="md:hidden flex items-center">
                         <button id="mobile-menu-button" class="text-navy">
-                            <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" /></svg>
+                            <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M4 6h16M4 12h16M4 18h16" />
+                            </svg>
                         </button>
                     </div>
                 </div>
@@ -268,20 +339,30 @@
         <section class="relative h-[90vh] flex items-center overflow-hidden pt-20">
             <div class="absolute inset-0 z-0">
                 <!-- Updated background image to a bright, modern interior matching the reference -->
-                <img src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&q=80&w=2070" class="w-full h-full object-cover">
+                <img src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&q=80&w=2070"
+                    class="w-full h-full object-cover">
                 <div class="absolute inset-0 hero-gradient"></div>
             </div>
             <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
                 <div class="max-w-2xl">
                     <div class="flex items-center space-x-3 mb-6 reveal-up">
                         <span class="h-[2px] w-8 bg-baby-blue"></span>
-                        <span class="text-baby-blue font-bold text-sm uppercase tracking-[0.3em]">Architectural Visionary</span>
+                        <span class="text-baby-blue font-bold text-sm uppercase tracking-[0.3em]">Architectural
+                            Visionary</span>
                     </div>
-                    <h1 class="text-5xl md:text-7xl font-semibold text-navy leading-[1.1] mb-6 reveal-up delay-100">Building Spaces, <br><span class="text-baby-blue">Realizing Visions.</span></h1>
-                    <p class="text-lg md:text-xl text-slate-600 mb-10 leading-relaxed font-light max-w-lg reveal-up delay-200">PT IKON UTAMA combines <span class="font-semibold text-navy">architectural precision</span> with a modern, fresh perspective.</p>
+                    <h1 class="text-5xl md:text-7xl font-semibold text-navy leading-[1.1] mb-6 reveal-up delay-100">
+                        Building Spaces, <br><span class="text-baby-blue">Realizing Visions.</span></h1>
+                    <p
+                        class="text-lg md:text-xl text-slate-600 mb-10 leading-relaxed font-light max-w-lg reveal-up delay-200">
+                        PT IKON UTAMA combines <span class="font-semibold text-navy">architectural precision</span> with
+                        a modern, fresh perspective.</p>
                     <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4 reveal-up delay-300">
-                        <a href="#portfolio" class="bg-navy text-white px-10 py-4 rounded-xl font-bold text-center btn-navy-shadow hover:bg-slate-800 transition-all">View Portfolio</a>
-                        <a href="#contact-section" class="bg-white border-2 border-baby-blue text-navy px-10 py-4 rounded-xl font-bold text-center hover:bg-sky-50 transition-all">Consult with Us</a>
+                        <a href="#portfolio"
+                            class="bg-navy text-white px-10 py-4 rounded-xl font-bold text-center btn-navy-shadow hover:bg-slate-800 transition-all">View
+                            Portfolio</a>
+                        <a href="#contact-section"
+                            class="bg-white border-2 border-baby-blue text-navy px-10 py-4 rounded-xl font-bold text-center hover:bg-sky-50 transition-all">Consult
+                            with Us</a>
                     </div>
                 </div>
             </div>
@@ -296,21 +377,31 @@
             </div>
             <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-2 gap-10">
                 <!-- Service 1: Custom Furniture -->
-                <div class="service-card bg-white p-12 rounded-3xl shadow-sm flex flex-col items-center text-center reveal-up delay-100">
+                <div
+                    class="service-card bg-white p-12 rounded-3xl shadow-sm flex flex-col items-center text-center reveal-up delay-100">
                     <div class="mb-8 p-5 rounded-2xl bg-slate-50 border border-blue-50">
-                        <svg class="w-10 h-10 text-baby-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" /></svg>
+                        <svg class="w-10 h-10 text-baby-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />
+                        </svg>
                     </div>
                     <h3 class="text-2xl font-semibold mb-4 text-navy">Custom Furniture</h3>
-                    <p class="text-slate-500 leading-relaxed">Bespoke furniture pieces crafted with premium materials and artisanal care.</p>
+                    <p class="text-slate-500 leading-relaxed">Bespoke furniture pieces crafted with premium materials
+                        and artisanal care.</p>
                 </div>
-                
+
                 <!-- Service 2: Build In & Loose -->
-                <div class="service-card bg-white p-12 rounded-3xl shadow-sm flex flex-col items-center text-center reveal-up delay-200">
+                <div
+                    class="service-card bg-white p-12 rounded-3xl shadow-sm flex flex-col items-center text-center reveal-up delay-200">
                     <div class="mb-8 p-5 rounded-2xl bg-slate-50 border border-blue-50">
-                        <svg class="w-10 h-10 text-baby-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" /></svg>
+                        <svg class="w-10 h-10 text-baby-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
+                        </svg>
                     </div>
                     <h3 class="text-2xl font-semibold mb-4 text-navy">Build In & Loose</h3>
-                    <p class="text-slate-500 leading-relaxed">Seamlessly integrated cabinetry and curated loose furnishings tailored perfectly to your space.</p>
+                    <p class="text-slate-500 leading-relaxed">Seamlessly integrated cabinetry and curated loose
+                        furnishings tailored perfectly to your space.</p>
                 </div>
             </div>
         </section>
@@ -320,40 +411,71 @@
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-2 gap-20 items-center">
                 <div class="relative reveal-left">
                     <div class="absolute -top-10 -left-10 w-48 h-48 bg-blue-50/50 rounded-full blur-3xl"></div>
-                    <img src="https://images.unsplash.com/photo-1583847268964-b28ce7d24222?auto=format&fit=crop&q=80&w=1200" class="relative z-10 rounded-[2.5rem] shadow-2xl border-8 border-soft-gray w-full h-[500px] object-cover">
+                    <img src="https://images.unsplash.com/photo-1583847268964-b28ce7d24222?auto=format&fit=crop&q=80&w=1200"
+                        class="relative z-10 rounded-[2.5rem] shadow-2xl border-8 border-soft-gray w-full h-[500px] object-cover">
                     <div class="absolute -top-6 right-6 lg:-right-10 lg:top-10 bg-navy p-8 rounded-2xl shadow-2xl z-20">
                         <p class="text-baby-blue font-bold text-4xl">20+</p>
-                        <p class="text-white text-xs font-bold uppercase tracking-widest mt-1 text-center">Years Excellence</p>
+                        <p class="text-white text-xs font-bold uppercase tracking-widest mt-1 text-center">Years
+                            Excellence</p>
                     </div>
                 </div>
                 <div class="space-y-12 reveal-right">
-                   <div>
+                    <div>
                         <p class="text-navy font-bold tracking-widest text-xs uppercase mb-3">Our Core Values</p>
-                        <h2 class="text-4xl font-semibold mb-10 leading-tight text-navy">The <span class="italic font-light">IKON</span> Standard</h2>
+                        <h2 class="text-4xl font-semibold mb-10 leading-tight text-navy">The <span
+                                class="italic font-light">IKON</span> Standard</h2>
                         <div class="space-y-10">
                             <div class="flex items-start group cursor-default">
-                                <div class="flex-shrink-0 bg-slate-100 p-4 rounded-xl mr-6 transition-all duration-300 group-hover:bg-white group-hover:shadow-lg group-hover:-translate-y-1.5"><svg class="w-6 h-6 text-navy transition-colors duration-300 group-hover:text-baby-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+                                <div
+                                    class="flex-shrink-0 bg-slate-100 p-4 rounded-xl mr-6 transition-all duration-300 group-hover:bg-white group-hover:shadow-lg group-hover:-translate-y-1.5">
+                                    <svg class="w-6 h-6 text-navy transition-colors duration-300 group-hover:text-baby-blue"
+                                        fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path d="M5 13l4 4L19 7" stroke-width="2" stroke-linecap="round"
+                                            stroke-linejoin="round" />
+                                    </svg></div>
                                 <div>
-                                    <h4 class="text-xl font-semibold mb-2 text-navy transition-colors duration-300 group-hover:text-baby-blue">Uncompromising Quality</h4>
-                                    <p class="text-slate-500 font-light text-sm">Finest materials for high-end, lasting finish.</p>
+                                    <h4
+                                        class="text-xl font-semibold mb-2 text-navy transition-colors duration-300 group-hover:text-baby-blue">
+                                        Uncompromising Quality</h4>
+                                    <p class="text-slate-500 font-light text-sm">Finest materials for high-end, lasting
+                                        finish.</p>
                                 </div>
                             </div>
                             <div class="flex items-start group cursor-default">
-                                <div class="flex-shrink-0 bg-slate-100 p-4 rounded-xl mr-6 transition-all duration-300 group-hover:bg-white group-hover:shadow-lg group-hover:-translate-y-1.5"><svg class="w-6 h-6 text-navy transition-colors duration-300 group-hover:text-baby-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+                                <div
+                                    class="flex-shrink-0 bg-slate-100 p-4 rounded-xl mr-6 transition-all duration-300 group-hover:bg-white group-hover:shadow-lg group-hover:-translate-y-1.5">
+                                    <svg class="w-6 h-6 text-navy transition-colors duration-300 group-hover:text-baby-blue"
+                                        fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round" />
+                                    </svg></div>
                                 <div>
-                                    <h4 class="text-xl font-semibold mb-2 text-navy transition-colors duration-300 group-hover:text-baby-blue">Punctual Delivery</h4>
-                                    <p class="text-slate-500 font-light text-sm">Optimized workflows for on-time completion.</p>
+                                    <h4
+                                        class="text-xl font-semibold mb-2 text-navy transition-colors duration-300 group-hover:text-baby-blue">
+                                        Punctual Delivery</h4>
+                                    <p class="text-slate-500 font-light text-sm">Optimized workflows for on-time
+                                        completion.</p>
                                 </div>
                             </div>
                             <div class="flex items-start group cursor-default">
-                                <div class="flex-shrink-0 bg-slate-100 p-4 rounded-xl mr-6 transition-all duration-300 group-hover:bg-white group-hover:shadow-lg group-hover:-translate-y-1.5"><svg class="w-6 h-6 text-navy transition-colors duration-300 group-hover:text-baby-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+                                <div
+                                    class="flex-shrink-0 bg-slate-100 p-4 rounded-xl mr-6 transition-all duration-300 group-hover:bg-white group-hover:shadow-lg group-hover:-translate-y-1.5">
+                                    <svg class="w-6 h-6 text-navy transition-colors duration-300 group-hover:text-baby-blue"
+                                        fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path
+                                            d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z"
+                                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                    </svg></div>
                                 <div>
-                                    <h4 class="text-xl font-semibold mb-2 text-navy transition-colors duration-300 group-hover:text-baby-blue">Budget Transparency</h4>
-                                    <p class="text-slate-500 font-light text-sm">Clear, honest breakdowns for every phase.</p>
+                                    <h4
+                                        class="text-xl font-semibold mb-2 text-navy transition-colors duration-300 group-hover:text-baby-blue">
+                                        Budget Transparency</h4>
+                                    <p class="text-slate-500 font-light text-sm">Clear, honest breakdowns for every
+                                        phase.</p>
                                 </div>
                             </div>
                         </div>
-                   </div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -365,7 +487,8 @@
                 <h2 class="text-3xl md:text-5xl font-semibold mb-6 text-navy">Featured Works</h2>
                 <div class="accent-line mx-auto"></div>
             </div>
-            <div id="portfolio-grid" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+            <div id="portfolio-grid"
+                class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
                 <!-- JS populated with White titles -->
             </div>
         </section>
@@ -376,21 +499,31 @@
                 <div class="flex flex-col md:flex-row justify-between items-center gap-12">
                     <div class="max-w-2xl">
                         <p class="text-baby-blue font-bold tracking-widest text-xs uppercase mb-4">Connect With Us</p>
-                        <h2 class="text-4xl md:text-6xl font-semibold text-navy leading-tight mb-8">Ready to elevate <br>your space?</h2>
+                        <h2 class="text-4xl md:text-6xl font-semibold text-navy leading-tight mb-8">Ready to elevate
+                            <br>your space?</h2>
                         <p class="text-slate-500 text-lg font-light leading-relaxed mb-12">
-                            Consult with our expert architects and designers today. We provide comprehensive consultations to turn your ideas into executable plans.
+                            Consult with our expert architects and designers today. We provide comprehensive
+                            consultations to turn your ideas into executable plans.
                         </p>
-                        
+
                         <div class="flex flex-col sm:flex-row flex-wrap gap-8 justify-center md:justify-start">
                             <div class="flex items-center space-x-4">
-                                <div class="w-14 h-14 bg-white rounded-full flex items-center justify-center text-navy shadow-sm">
-                                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+                                <div
+                                    class="w-14 h-14 bg-white rounded-full flex items-center justify-center text-navy shadow-sm">
+                                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                                    </svg>
                                 </div>
                                 <span class="text-navy font-semibold text-lg">info@ikonutama.com</span>
                             </div>
                             <div class="flex items-center space-x-4">
-                                <div class="w-14 h-14 bg-white rounded-full flex items-center justify-center text-navy shadow-sm">
-                                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+                                <div
+                                    class="w-14 h-14 bg-white rounded-full flex items-center justify-center text-navy shadow-sm">
+                                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                                    </svg>
                                 </div>
                                 <span class="text-navy font-semibold text-lg">+62 21 555 0123</span>
                             </div>
@@ -402,14 +535,15 @@
 
         <!-- Footer -->
         <footer class="bg-navy pt-24 pb-16">
-            <div class="max-w-7xl mx-auto px-8 md:px-16 grid grid-cols-1 md:grid-cols-3 gap-16 md:gap-24 text-left reveal-up">
+            <div
+                class="max-w-7xl mx-auto px-8 md:px-16 grid grid-cols-1 md:grid-cols-3 gap-16 md:gap-24 text-left reveal-up">
                 <div>
                     <h5 class="text-3xl font-bold text-baby-blue mb-6 uppercase tracking-tight">IKON UTAMA</h5>
                     <p class="text-white text-lg font-light leading-relaxed max-w-xs">
                         Leading the way in modern architecture and bespoke interiors since 2015.
                     </p>
                 </div>
-                
+
                 <div>
                     <h6 class="text-white font-bold text-xl mb-8">Navigation</h6>
                     <ul class="space-y-4 text-slate-400">
@@ -424,14 +558,16 @@
                     <ul class="space-y-4 text-slate-400 mb-10">
                         <li><a href="#" class="hover:text-white transition-colors">Instagram</a></li>
                     </ul>
-                    
+
                     <h6 class="text-white font-bold text-lg mb-4">Location</h6>
                     <p class="text-slate-400 text-sm font-light leading-relaxed">
-                        Jl. Hankam Raya No.15, RT.1/RW.3, Setu, Kec. Cipayung, Kota Jakarta Timur, Daerah Khusus Ibukota Jakarta 13880
+                        Jl. Hankam Raya No.15, RT.1/RW.3, Setu, Kec. Cipayung, Kota Jakarta Timur, Daerah Khusus Ibukota
+                        Jakarta 13880
                     </p>
                 </div>
             </div>
-            <div class="max-w-7xl mx-auto px-8 md:px-16 mt-24 pt-8 border-t border-slate-800 text-slate-500 text-xs tracking-wider text-center md:text-left">
+            <div
+                class="max-w-7xl mx-auto px-8 md:px-16 mt-24 pt-8 border-t border-slate-800 text-slate-500 text-xs tracking-wider text-center md:text-left">
                 <p>&copy; 2024 PT IKON UTAMA.</p>
             </div>
         </footer>
@@ -439,9 +575,14 @@
 
     <!-- Detailed Project Page -->
     <div id="detail-page" class="hidden fixed inset-0 z-[100] bg-white overflow-y-auto">
-        <nav class="sticky top-0 w-full z-[110] glass-nav py-8 px-6 md:px-16 flex justify-between items-center transition-all">
-            <button onclick="closeProjectView()" class="flex items-center text-navy font-bold text-base transition-all hover:text-baby-blue hover:-translate-x-1">
-                <svg class="w-6 h-6 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M10 19l-7-7m0 0l7-7m-7 7h18"/></svg>
+        <nav
+            class="sticky top-0 w-full z-[110] glass-nav py-8 px-6 md:px-16 flex justify-between items-center transition-all">
+            <button onclick="closeProjectView()"
+                class="flex items-center text-navy font-bold text-base transition-all hover:text-baby-blue hover:-translate-x-1">
+                <svg class="w-6 h-6 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"
+                        d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+                </svg>
                 BACK TO PORTFOLIO
             </button>
             <span id="detail-nav-id" class="text-baby-blue font-black text-2xl opacity-60">01</span>
@@ -451,8 +592,10 @@
             <img id="detail-main-img" src="" class="w-full h-full object-cover">
             <div class="absolute inset-0 detail-hero-overlay flex items-end p-10 md:p-24">
                 <div class="max-w-5xl hero-text-animate">
-                    <span id="detail-cat-hero" class="text-navy font-bold tracking-[0.5em] uppercase text-xs mb-4 block">CATEGORY</span>
-                    <h2 id="detail-title-hero" class="text-5xl md:text-8xl font-semibold text-navy leading-none">Project Name</h2>
+                    <span id="detail-cat-hero"
+                        class="text-navy font-bold tracking-[0.5em] uppercase text-xs mb-4 block">CATEGORY</span>
+                    <h2 id="detail-title-hero" class="text-5xl md:text-8xl font-semibold text-navy leading-none">Project
+                        Name</h2>
                 </div>
             </div>
         </header>
@@ -462,13 +605,17 @@
             <div class="max-w-7xl mx-auto px-6">
                 <div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-12 text-left">
                     <div class="flex-1">
-                        <p class="text-baby-blue font-bold tracking-[0.2em] text-[10px] uppercase mb-2">Project Identity</p>
-                        <h3 id="detailing-project-name" class="text-4xl md:text-5xl font-semibold text-navy leading-tight">Project Name</h3>
+                        <p class="text-baby-blue font-bold tracking-[0.2em] text-[10px] uppercase mb-2">Project Identity
+                        </p>
+                        <h3 id="detailing-project-name"
+                            class="text-4xl md:text-5xl font-semibold text-navy leading-tight">Project Name</h3>
                     </div>
                     <div class="flex flex-wrap gap-10 md:gap-16 text-sm font-medium">
                         <div class="border-l-2 border-baby-blue/30 pl-6">
                             <p class="text-gray-400 text-[10px] font-bold uppercase tracking-widest mb-1">Service</p>
-                            <span id="detailing-service" class="text-base font-semibold text-navy leading-tight block max-w-[200px]">Commercial Interior, Bedroom & Kitchen</span>
+                            <span id="detailing-service"
+                                class="text-base font-semibold text-navy leading-tight block max-w-[200px]">Commercial
+                                Interior, Bedroom & Kitchen</span>
                         </div>
                         <div class="border-l-2 border-baby-blue/30 pl-6">
                             <p class="text-gray-400 text-[10px] font-bold uppercase tracking-widest mb-1">Location</p>
@@ -487,7 +634,8 @@
         <section class="bg-soft-gray py-24 md:py-32">
             <div class="max-w-7xl mx-auto px-6 text-center mb-16 reveal-up">
                 <h3 class="text-3xl md:text-5xl font-semibold text-navy mb-4 tracking-tight">Precision Detailing</h3>
-                <p class="text-lg text-slate-500 font-light">Explore high-definition perspectives of our architectural results.</p>
+                <p class="text-lg text-slate-500 font-light">Explore high-definition perspectives of our architectural
+                    results.</p>
             </div>
             <div id="detail-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10"></div>
         </section>
@@ -500,7 +648,9 @@
                         <p class="text-baby-blue font-bold tracking-widest text-xs uppercase mb-3">Discovery</p>
                         <h3 class="text-4xl md:text-6xl font-semibold text-navy">Explore More</h3>
                     </div>
-                    <button onclick="closeProjectView()" class="text-navy font-bold hover:text-baby-blue border-b-2 border-navy hover:border-baby-blue transition-all pb-1">Full Portfolio</button>
+                    <button onclick="closeProjectView()"
+                        class="text-navy font-bold hover:text-baby-blue border-b-2 border-navy hover:border-baby-blue transition-all pb-1">Full
+                        Portfolio</button>
                 </div>
                 <div id="more-projects-grid" class="grid grid-cols-1 md:grid-cols-3 gap-10"></div>
             </div>
@@ -508,72 +658,97 @@
     </div>
 
     <!-- Lightbox Pop-up -->
-    <div id="lightbox" class="hidden fixed inset-0 z-[200] bg-navy/98 flex flex-col items-center justify-center p-6 opacity-0">
-        <button onclick="closeLightbox()" class="absolute top-8 right-8 text-white/40 hover:text-white transition-all z-[210]">
-            <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+    <div id="lightbox"
+        class="hidden fixed inset-0 z-[200] bg-navy/98 flex flex-col items-center justify-center p-6 opacity-0">
+        <button onclick="closeLightbox()"
+            class="absolute top-8 right-8 text-white/40 hover:text-white transition-all z-[210]">
+            <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+            </svg>
         </button>
-        <button onclick="prevImage()" class="lb-nav-btn absolute left-4 md:left-8 top-1/2 -translate-y-1/2 w-16 h-16 md:w-20 md:h-20 rounded-full flex items-center justify-center text-white z-[210]">
-            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M15 19l-7-7 7-7"/></svg>
+        <button onclick="prevImage()"
+            class="lb-nav-btn absolute left-4 md:left-8 top-1/2 -translate-y-1/2 w-16 h-16 md:w-20 md:h-20 rounded-full flex items-center justify-center text-white z-[210]">
+            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M15 19l-7-7 7-7" />
+            </svg>
         </button>
-        <div id="lightbox-img-container" class="relative max-w-full max-h-[70vh] flex items-center justify-center overflow-hidden aspect-video w-full">
+        <div id="lightbox-img-container"
+            class="relative max-w-full max-h-[70vh] flex items-center justify-center overflow-hidden aspect-video w-full">
             <img id="lightbox-img" src="" class="w-full h-full object-cover rounded-xl shadow-2xl">
         </div>
-        <button onclick="nextImage()" class="lb-nav-btn absolute right-4 md:right-8 top-1/2 -translate-y-1/2 w-16 h-16 md:w-20 md:h-20 rounded-full flex items-center justify-center text-white z-[210]">
-            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M9 5l7 7-7 7"/></svg>
+        <button onclick="nextImage()"
+            class="lb-nav-btn absolute right-4 md:right-8 top-1/2 -translate-y-1/2 w-16 h-16 md:w-20 md:h-20 rounded-full flex items-center justify-center text-white z-[210]">
+            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M9 5l7 7-7 7" />
+            </svg>
         </button>
-        <div id="lightbox-thumbs" class="mt-12 flex space-x-3 md:space-x-6 px-6 overflow-x-auto max-w-full no-scrollbar py-2"></div>
+        <div id="lightbox-thumbs"
+            class="mt-12 flex space-x-3 md:space-x-6 px-6 overflow-x-auto max-w-full no-scrollbar py-2"></div>
     </div>
 
     <script>
         const projects = {
-            1: { title: "The Zenith Office", cat: "Commercial Interior", loc: "SCBD, Jakarta", year: "2023", services: "Commercial Interior, Bedroom & Kitchen", images: [
-                "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?w=1920&h=1080&fit=crop&q=80",
-                "https://images.unsplash.com/photo-1583847268964-b28ce7d24222?w=1920&h=1080&fit=crop&q=80",
-                "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=1920&h=1080&fit=crop&q=80",
-                "https://images.unsplash.com/photo-1512918728675-ed5a9ec8f3a4?w=1920&h=1080&fit=crop&q=80",
-                "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1920&h=1080&fit=crop&q=80",
-                "https://images.unsplash.com/photo-1593696140826-c3811446a1e3?w=1920&h=1080&fit=crop&q=80"
-            ] },
-            2: { title: "The Obsidian Villa", cat: "Luxury Residential", loc: "Uluwatu, Bali", year: "2022", services: "Commercial Interior, Bedroom & Kitchen", images: [
-                "https://images.unsplash.com/photo-1505691938895-1758d7bef511?w=1920&h=1080&fit=crop&q=80",
-                "https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?w=1920&h=1080&fit=crop&q=80",
-                "https://images.unsplash.com/photo-1616594039964-b977be42194a?w=1920&h=1080&fit=crop&q=80",
-                "https://images.unsplash.com/photo-1615529182904-14819c350ea6?w=1920&h=1080&fit=crop&q=80",
-                "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=1920&h=1080&fit=crop&q=80",
-                "https://images.unsplash.com/photo-1540518614-ee49ac2524a8?w=1920&h=1080&fit=crop&q=80"
-            ] },
-            3: { title: "Aura Boutique", cat: "High-End Retail", loc: "Senayan City, Jakarta", year: "2023", services: "Commercial Interior, Bedroom & Kitchen", images: [
-                "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=1920&h=1080&fit=crop&q=80",
-                "https://images.unsplash.com/photo-1556912173-3bb406ef7e77?w=1920&h=1080&fit=crop&q=80",
-                "https://images.unsplash.com/photo-1556911220-dd5920210619?w=1920&h=1080&fit=crop&q=80",
-                "https://images.unsplash.com/photo-1556912172-45b7ee98f428?w=1920&h=1080&fit=crop&q=80",
-                "https://images.unsplash.com/photo-1556910103-1c02745aae4d?w=1920&h=1080&fit=crop&q=80",
-                "https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=1920&h=1080&fit=crop&q=80"
-            ] },
-            4: { title: "Azure Grand Resort", cat: "Hospitality", loc: "Lombok, NTB", year: "2021", services: "Commercial Interior, Bedroom & Kitchen", images: [
-                "https://images.unsplash.com/photo-1616047006789-b7bce9dbd27c?w=1920&h=1080&fit=crop&q=80",
-                "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?w=1920&h=1080&fit=crop&q=80",
-                "https://images.unsplash.com/photo-1600607688969-a5bfcd64fc15?w=1920&h=1080&fit=crop&q=80",
-                "https://images.unsplash.com/photo-1552321554-5aaf1f5c66cb?w=1920&h=1080&fit=crop&q=80",
-                "https://images.unsplash.com/photo-1620626011761-996317b8d101?w=1920&h=1080&fit=crop&q=80",
-                "https://images.unsplash.com/photo-1605276374104-a628b0ebfa82?w=1920&h=1080&fit=crop&q=80"
-            ] },
-            5: { title: "Nexus Tech Hub", cat: "Technology Hub", loc: "BSD City, Tangerang", year: "2022", services: "Commercial Interior, Bedroom & Kitchen", images: [
-                "https://images.unsplash.com/photo-1502672260266-1c1c24240f38?w=1920&h=1080&fit=crop&q=80",
-                "https://images.unsplash.com/photo-1560185007-cde436f6a4d0?w=1920&h=1080&fit=crop&q=80",
-                "https://images.unsplash.com/photo-1554995207-c18c203602cb?w=1920&h=1080&fit=crop&q=80",
-                "https://images.unsplash.com/photo-1618221195710-dd6be1e52328?w=1920&h=1080&fit=crop&q=80",
-                "https://images.unsplash.com/photo-1616046229478-9901c5536a45?w=1920&h=1080&fit=crop&q=80",
-                "https://images.unsplash.com/photo-1616137466211-f939a6e9be18?w=1920&h=1080&fit=crop&q=80"
-            ] },
-            6: { title: "Sky Garden Towers", cat: "Urban Civil", loc: "Menteng, Jakarta", year: "2024", services: "Commercial Interior, Bedroom & Kitchen", images: [
-                "https://images.unsplash.com/photo-1593642632823-8f785ba67e45?w=1920&h=1080&fit=crop&q=80",
-                "https://images.unsplash.com/photo-1518455027359-f3f8164ba6bd?w=1920&h=1080&fit=crop&q=80",
-                "https://images.unsplash.com/photo-1524758631624-e2822e304c36?w=1920&h=1080&fit=crop&q=80",
-                "https://images.unsplash.com/photo-1589834390005-5d4fb9bf3d32?w=1920&h=1080&fit=crop&q=80",
-                "https://images.unsplash.com/photo-1528698827591-e59cd90d6cb0?w=1920&h=1080&fit=crop&q=80",
-                "https://images.unsplash.com/photo-1497215171164-1562049e0520?w=1920&h=1080&fit=crop&q=80"
-            ] }
+        const projects = {
+            1: {
+                title: "The Zenith Office", cat: "Commercial Interior", loc: "SCBD, Jakarta", year: "2023", services: "Commercial Interior, Bedroom & Kitchen", images: [
+                    "assets/images/gemini_zenith.png",
+                    "assets/images/gemini_zenith.png",
+                    "assets/images/gemini_zenith.png",
+                    "assets/images/gemini_zenith.png",
+                    "assets/images/gemini_zenith.png",
+                    "assets/images/gemini_zenith.png"
+                ]
+            },
+            2: {
+                title: "The Obsidian Villa", cat: "Luxury Residential", loc: "Uluwatu, Bali", year: "2022", services: "Commercial Interior, Bedroom & Kitchen", images: [
+                    "assets/images/gemini_obsidian.png",
+                    "assets/images/gemini_obsidian.png",
+                    "assets/images/gemini_obsidian.png",
+                    "assets/images/gemini_obsidian.png",
+                    "assets/images/gemini_obsidian.png",
+                    "assets/images/gemini_obsidian.png"
+                ]
+            },
+            3: {
+                title: "Aura Boutique", cat: "High-End Retail", loc: "Senayan City, Jakarta", year: "2023", services: "Commercial Interior, Bedroom & Kitchen", images: [
+                    "assets/images/gemini_aura.png",
+                    "assets/images/gemini_aura.png",
+                    "assets/images/gemini_aura.png",
+                    "assets/images/gemini_aura.png",
+                    "assets/images/gemini_aura.png",
+                    "assets/images/gemini_aura.png"
+                ]
+            },
+            4: {
+                title: "Azure Grand Resort", cat: "Hospitality", loc: "Lombok, NTB", year: "2021", services: "Commercial Interior, Bedroom & Kitchen", images: [
+                    "assets/images/gemini_azure.png",
+                    "assets/images/gemini_azure.png",
+                    "assets/images/gemini_azure.png",
+                    "assets/images/gemini_azure.png",
+                    "assets/images/gemini_azure.png",
+                    "assets/images/gemini_azure.png"
+                ]
+            },
+            5: {
+                title: "Nexus Tech Hub", cat: "Technology Hub", loc: "BSD City, Tangerang", year: "2022", services: "Commercial Interior, Bedroom & Kitchen", images: [
+                    "assets/images/gemini_nexus.png",
+                    "assets/images/gemini_nexus.png",
+                    "assets/images/gemini_nexus.png",
+                    "assets/images/gemini_nexus.png",
+                    "assets/images/gemini_nexus.png",
+                    "assets/images/gemini_nexus.png"
+                ]
+            },
+            6: {
+                title: "Sky Garden Towers", cat: "Urban Civil", loc: "Menteng, Jakarta", year: "2024", services: "Commercial Interior, Bedroom & Kitchen", images: [
+                    "assets/images/gemini_sky.png",
+                    "assets/images/gemini_sky.png",
+                    "assets/images/gemini_sky.png",
+                    "assets/images/gemini_sky.png",
+                    "assets/images/gemini_sky.png",
+                    "assets/images/gemini_sky.png"
+                ]
+            }
         };
 
         let currentImgList = [];
@@ -625,21 +800,21 @@
                     const rect = card.getBoundingClientRect();
                     const x = e.clientX - rect.left;
                     const y = e.clientY - rect.top;
-                    
+
                     const centerX = rect.width / 2;
                     const centerY = rect.height / 2;
-                    
+
                     const rotateX = ((y - centerY) / centerY) * -10;
                     const rotateY = ((x - centerX) / centerX) * 10;
-                    
+
                     card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.02, 1.02, 1.02)`;
                 });
-                
+
                 card.addEventListener('mouseleave', () => {
                     card.style.transform = `perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)`;
                     card.style.transition = 'transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.4s ease';
                 });
-                
+
                 card.addEventListener('mouseenter', () => {
                     card.style.transition = 'none';
                 });
@@ -676,7 +851,7 @@
             others.forEach((key, index) => {
                 moreGrid.appendChild(renderPortfolioItem(projects[key], key, index));
             });
-            
+
             // Re-run observer to catch newly added dynamic elements inside detail view
             observeReveals();
 
@@ -686,7 +861,7 @@
             // Show detail page but keeping it visually off-screen first
             detailPage.classList.remove('hidden');
             detailPage.scrollTop = 0;
-            
+
             // Force browser reflow to ensure transitions apply
             void detailPage.offsetWidth;
 
@@ -697,10 +872,10 @@
         function closeProjectView() {
             const detailPage = document.getElementById('detail-page');
             const landing = document.getElementById('main-content');
-            
+
             detailPage.classList.remove('detail-slide-up');
             landing.classList.remove('main-push-back');
-            
+
             setTimeout(() => {
                 detailPage.classList.add('hidden');
                 document.body.style.overflow = '';
@@ -747,7 +922,8 @@
 
         const mobileBtn = document.getElementById('mobile-menu-button');
         const menu = document.querySelector('#mobile-menu');
-        if(mobileBtn) mobileBtn.addEventListener('click', () => menu && menu.classList.toggle('hidden'));
+        if (mobileBtn) mobileBtn.addEventListener('click', () => menu && menu.classList.toggle('hidden'));
     </script>
 </body>
+
 </html>
