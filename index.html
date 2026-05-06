@@ -101,20 +101,61 @@
             border-radius: 2px;
         }
 
-        #main-content, #detail-page {
-            transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+        #main-content {
+            transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+            will-change: opacity, transform;
         }
 
-        .fade-out {
+        #detail-page {
+            transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+            transform: translateY(100vh);
             opacity: 0;
-            transform: translateY(20px);
+            will-change: transform, opacity;
+        }
+
+        .main-push-back {
+            opacity: 0;
+            transform: translateY(-50px);
             pointer-events: none;
         }
 
-        .fade-in {
-            opacity: 1;
-            transform: translateY(0);
+        .detail-slide-up {
+            transform: translateY(0) !important;
+            opacity: 1 !important;
         }
+
+        #detail-main-img {
+            transform: scale(1.15);
+            transition: transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        
+        #detail-page.detail-slide-up #detail-main-img {
+            transform: scale(1);
+        }
+
+        .hero-text-animate {
+            transform: translateY(40px);
+            opacity: 0;
+            transition: transform 1s cubic-bezier(0.16, 1, 0.3, 1) 0.3s, opacity 1s cubic-bezier(0.16, 1, 0.3, 1) 0.3s;
+        }
+
+        #detail-page.detail-slide-up .hero-text-animate {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        /* Scroll Reveal Utility Classes */
+        .reveal-up { opacity: 0; transform: translateY(50px); transition: all 1s cubic-bezier(0.16, 1, 0.3, 1); }
+        .reveal-left { opacity: 0; transform: translateX(-50px); transition: all 1s cubic-bezier(0.16, 1, 0.3, 1); }
+        .reveal-right { opacity: 0; transform: translateX(50px); transition: all 1s cubic-bezier(0.16, 1, 0.3, 1); }
+        .reveal-scale { opacity: 0; transform: scale(0.9); transition: all 1s cubic-bezier(0.16, 1, 0.3, 1); }
+        
+        .reveal-active { opacity: 1 !important; transform: translate(0) scale(1) !important; }
+        
+        .delay-100 { transition-delay: 100ms; }
+        .delay-200 { transition-delay: 200ms; }
+        .delay-300 { transition-delay: 300ms; }
+        .delay-400 { transition-delay: 400ms; }
 
         .detail-photo {
             transition: transform 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
@@ -202,13 +243,13 @@
             </div>
             <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
                 <div class="max-w-2xl">
-                    <div class="flex items-center space-x-3 mb-6">
+                    <div class="flex items-center space-x-3 mb-6 reveal-up">
                         <span class="h-[2px] w-8 bg-baby-blue"></span>
                         <span class="text-baby-blue font-bold text-sm uppercase tracking-[0.3em]">Architectural Visionary</span>
                     </div>
-                    <h1 class="text-5xl md:text-7xl font-semibold text-navy leading-[1.1] mb-6">Building Spaces, <br><span class="text-baby-blue">Realizing Visions.</span></h1>
-                    <p class="text-lg md:text-xl text-slate-600 mb-10 leading-relaxed font-light max-w-lg">PT IKON UTAMA combines <span class="font-semibold text-navy">architectural precision</span> with a modern, fresh perspective.</p>
-                    <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
+                    <h1 class="text-5xl md:text-7xl font-semibold text-navy leading-[1.1] mb-6 reveal-up delay-100">Building Spaces, <br><span class="text-baby-blue">Realizing Visions.</span></h1>
+                    <p class="text-lg md:text-xl text-slate-600 mb-10 leading-relaxed font-light max-w-lg reveal-up delay-200">PT IKON UTAMA combines <span class="font-semibold text-navy">architectural precision</span> with a modern, fresh perspective.</p>
+                    <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4 reveal-up delay-300">
                         <a href="#portfolio" class="bg-navy text-white px-10 py-4 rounded-xl font-bold text-center btn-navy-shadow hover:bg-slate-800 transition-all">View Portfolio</a>
                         <a href="#contact-section" class="bg-white border-2 border-baby-blue text-navy px-10 py-4 rounded-xl font-bold text-center hover:bg-sky-50 transition-all">Consult with Us</a>
                     </div>
@@ -218,14 +259,14 @@
 
         <!-- Services -->
         <section id="services" class="py-24 bg-soft-gray">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center mb-20">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center mb-20 reveal-up">
                 <p class="text-baby-blue font-bold tracking-widest text-xs uppercase mb-3">What We Do</p>
                 <h2 class="text-3xl md:text-5xl font-semibold mb-6 text-navy">Specialized Expertise</h2>
                 <div class="accent-line mx-auto"></div>
             </div>
             <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-2 gap-10">
                 <!-- Service 1: Custom Furniture -->
-                <div class="service-card bg-white p-12 rounded-3xl shadow-sm flex flex-col items-center text-center">
+                <div class="service-card bg-white p-12 rounded-3xl shadow-sm flex flex-col items-center text-center reveal-up delay-100">
                     <div class="mb-8 p-5 rounded-2xl bg-slate-50 border border-blue-50">
                         <svg class="w-10 h-10 text-baby-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" /></svg>
                     </div>
@@ -234,7 +275,7 @@
                 </div>
                 
                 <!-- Service 2: Build In & Loose -->
-                <div class="service-card bg-white p-12 rounded-3xl shadow-sm flex flex-col items-center text-center">
+                <div class="service-card bg-white p-12 rounded-3xl shadow-sm flex flex-col items-center text-center reveal-up delay-200">
                     <div class="mb-8 p-5 rounded-2xl bg-slate-50 border border-blue-50">
                         <svg class="w-10 h-10 text-baby-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" /></svg>
                     </div>
@@ -247,7 +288,7 @@
         <!-- Why Choose Us -->
         <section id="why-us" class="py-24 bg-white">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-2 gap-20 items-center">
-                <div class="relative">
+                <div class="relative reveal-left">
                     <div class="absolute -top-10 -left-10 w-48 h-48 bg-blue-50/50 rounded-full blur-3xl"></div>
                     <img src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&q=80&w=1200" class="relative z-10 rounded-[2.5rem] shadow-2xl border-8 border-soft-gray w-full h-[500px] object-cover">
                     <div class="absolute -top-6 right-6 lg:-right-10 lg:top-10 bg-navy p-8 rounded-2xl shadow-2xl z-20">
@@ -255,7 +296,7 @@
                         <p class="text-white text-xs font-bold uppercase tracking-widest mt-1 text-center">Years Excellence</p>
                     </div>
                 </div>
-                <div class="space-y-12">
+                <div class="space-y-12 reveal-right">
                    <div>
                         <p class="text-navy font-bold tracking-widest text-xs uppercase mb-3">Our Core Values</p>
                         <h2 class="text-4xl font-semibold mb-10 leading-tight text-navy">The <span class="italic font-light">IKON</span> Standard</h2>
@@ -289,7 +330,7 @@
 
         <!-- Main Portfolio -->
         <section id="portfolio" class="py-24 bg-white">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center mb-16">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center mb-16 reveal-up">
                 <p class="text-baby-blue font-bold tracking-widest text-xs uppercase mb-3">Portfolio</p>
                 <h2 class="text-3xl md:text-5xl font-semibold mb-6 text-navy">Featured Works</h2>
                 <div class="accent-line mx-auto"></div>
@@ -301,7 +342,7 @@
 
         <!-- Connect With Us -->
         <section id="contact-section" class="py-24 bg-soft-gray">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center md:text-left">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center md:text-left reveal-scale">
                 <div class="flex flex-col md:flex-row justify-between items-center gap-12">
                     <div class="max-w-2xl">
                         <p class="text-baby-blue font-bold tracking-widest text-xs uppercase mb-4">Connect With Us</p>
@@ -331,7 +372,7 @@
 
         <!-- Footer -->
         <footer class="bg-navy pt-24 pb-16">
-            <div class="max-w-7xl mx-auto px-8 md:px-16 grid grid-cols-1 md:grid-cols-3 gap-16 md:gap-24 text-left">
+            <div class="max-w-7xl mx-auto px-8 md:px-16 grid grid-cols-1 md:grid-cols-3 gap-16 md:gap-24 text-left reveal-up">
                 <div>
                     <h5 class="text-3xl font-bold text-baby-blue mb-6 uppercase tracking-tight">IKON UTAMA</h5>
                     <p class="text-white text-lg font-light leading-relaxed max-w-xs">
@@ -379,7 +420,7 @@
         <header id="detail-hero" class="w-full h-[65vh] md:h-[85vh] relative overflow-hidden -mt-[100px]">
             <img id="detail-main-img" src="" class="w-full h-full object-cover">
             <div class="absolute inset-0 detail-hero-overlay flex items-end p-10 md:p-24">
-                <div class="max-w-5xl">
+                <div class="max-w-5xl hero-text-animate">
                     <span id="detail-cat-hero" class="text-navy font-bold tracking-[0.5em] uppercase text-xs mb-4 block">CATEGORY</span>
                     <h2 id="detail-title-hero" class="text-5xl md:text-8xl font-semibold text-navy leading-none">Project Name</h2>
                 </div>
@@ -387,7 +428,7 @@
         </header>
 
         <!-- Minimalist Project Identity Row -->
-        <section class="bg-white py-16 border-b border-gray-100">
+        <section class="bg-white py-16 border-b border-gray-100 reveal-up">
             <div class="max-w-7xl mx-auto px-6">
                 <div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-12 text-left">
                     <div class="flex-1">
@@ -414,7 +455,7 @@
 
         <!-- Detailing Gallery Grid -->
         <section class="bg-soft-gray py-24 md:py-32">
-            <div class="max-w-7xl mx-auto px-6 text-center mb-16">
+            <div class="max-w-7xl mx-auto px-6 text-center mb-16 reveal-up">
                 <h3 class="text-3xl md:text-5xl font-semibold text-navy mb-4 tracking-tight">Precision Detailing</h3>
                 <p class="text-lg text-slate-500 font-light">Explore high-definition perspectives of our architectural results.</p>
             </div>
@@ -424,7 +465,7 @@
         <!-- Discovery Row -->
         <section class="py-24 md:py-32 bg-white">
             <div class="max-w-7xl mx-auto px-6">
-                <div class="flex justify-between items-end mb-16">
+                <div class="flex justify-between items-end mb-16 reveal-up">
                     <div>
                         <p class="text-baby-blue font-bold tracking-widest text-xs uppercase mb-3">Discovery</p>
                         <h3 class="text-4xl md:text-6xl font-semibold text-navy">Explore More</h3>
@@ -466,9 +507,26 @@
         let currentImgList = [];
         let currentImgIdx = 0;
 
-        function renderPortfolioItem(p, id) {
+        // Intersection Observer setup for scroll animations
+        const revealObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('reveal-active');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { root: null, rootMargin: '0px', threshold: 0.1 });
+
+        function observeReveals() {
+            document.querySelectorAll('.reveal-up:not(.reveal-active), .reveal-left:not(.reveal-active), .reveal-right:not(.reveal-active), .reveal-scale:not(.reveal-active)').forEach(el => {
+                revealObserver.observe(el);
+            });
+        }
+
+        function renderPortfolioItem(p, id, delayIdx = 0) {
             const item = document.createElement('div');
-            item.className = "gallery-item rounded-[2.5rem] aspect-[4/5] relative shadow-lg group cursor-pointer overflow-hidden";
+            const delayClass = `delay-${(delayIdx % 3) * 100 + 100}`;
+            item.className = `gallery-item rounded-[2.5rem] aspect-[4/5] relative shadow-lg group cursor-pointer overflow-hidden reveal-up ${delayClass}`;
             item.onclick = () => openProjectView(id);
             item.innerHTML = `
                 <img src="${p.images[0]}" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
@@ -481,9 +539,12 @@
         }
 
         const gridContainer = document.getElementById('portfolio-grid');
-        Object.keys(projects).forEach(id => {
-            gridContainer.appendChild(renderPortfolioItem(projects[id], id));
+        Object.keys(projects).forEach((id, index) => {
+            gridContainer.appendChild(renderPortfolioItem(projects[id], id, index));
         });
+
+        document.addEventListener('DOMContentLoaded', observeReveals);
+        observeReveals();
 
         function openProjectView(id) {
             const p = projects[id];
@@ -504,37 +565,45 @@
             const grid = document.getElementById('detail-grid');
             grid.innerHTML = '';
             p.images.forEach((img, idx) => {
-                grid.innerHTML += `<div class="rounded-[2.5rem] overflow-hidden aspect-[4/5] bg-white shadow-md group/photo"><img src="${img}" class="w-full h-full object-cover detail-photo" onclick="openLightbox(${idx})"></div>`;
+                const delayClass = `delay-${(idx % 3) * 100 + 100}`;
+                grid.innerHTML += `<div class="rounded-[2.5rem] overflow-hidden aspect-[4/5] bg-white shadow-md group/photo reveal-up ${delayClass}"><img src="${img}" class="w-full h-full object-cover detail-photo" onclick="openLightbox(${idx})"></div>`;
             });
 
             const moreGrid = document.getElementById('more-projects-grid');
             moreGrid.innerHTML = '';
             const others = Object.keys(projects).filter(k => k !== id).slice(0, 3);
-            others.forEach(key => {
-                moreGrid.appendChild(renderPortfolioItem(projects[key], key));
+            others.forEach((key, index) => {
+                moreGrid.appendChild(renderPortfolioItem(projects[key], key, index));
             });
+            
+            // Re-run observer to catch newly added dynamic elements inside detail view
+            observeReveals();
 
-            landing.classList.add('fade-out');
-            setTimeout(() => {
-                landing.classList.add('hidden');
-                detailPage.classList.remove('hidden');
-                detailPage.scrollTop = 0;
-                detailPage.classList.add('fade-in');
-            }, 500);
+            // Prevent background scrolling and jumping
+            document.body.style.overflow = 'hidden';
+
+            // Show detail page but keeping it visually off-screen first
+            detailPage.classList.remove('hidden');
+            detailPage.scrollTop = 0;
+            
+            // Force browser reflow to ensure transitions apply
+            void detailPage.offsetWidth;
+
+            landing.classList.add('main-push-back');
+            detailPage.classList.add('detail-slide-up');
         }
 
         function closeProjectView() {
             const detailPage = document.getElementById('detail-page');
             const landing = document.getElementById('main-content');
-            detailPage.classList.remove('fade-in');
-            detailPage.classList.add('fade-out');
+            
+            detailPage.classList.remove('detail-slide-up');
+            landing.classList.remove('main-push-back');
+            
             setTimeout(() => {
                 detailPage.classList.add('hidden');
-                detailPage.classList.remove('fade-out');
-                landing.classList.remove('hidden');
-                landing.classList.remove('fade-out');
-                landing.classList.add('fade-in');
-            }, 500);
+                document.body.style.overflow = '';
+            }, 800);
         }
 
         const lb = document.getElementById('lightbox');
