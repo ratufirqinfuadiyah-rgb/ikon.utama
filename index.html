@@ -197,12 +197,42 @@
         
         .service-card {
             transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            transform-style: preserve-3d;
+            border: 1px solid transparent;
         }
 
         .service-card:hover {
-            transform: translateY(-12px);
-            box-shadow: 0 25px 50px -12px rgba(15, 23, 42, 0.15);
+            box-shadow: 0 30px 60px -15px rgba(15, 23, 42, 0.15);
+            border-color: rgba(0, 174, 239, 0.3);
+        }
+
+        .service-card > div:first-child, .service-card h3, .service-card p {
+            transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), background-color 0.3s, color 0.3s, box-shadow 0.3s;
+        }
+        
+        .service-card > div:first-child svg {
+            transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), color 0.3s;
+        }
+
+        .service-card:hover > div:first-child {
+            transform: translateZ(40px) translateY(-10px);
+            background-color: var(--baby-blue);
             border-color: var(--baby-blue);
+            box-shadow: 0 15px 30px -10px rgba(0, 174, 239, 0.5);
+        }
+
+        .service-card:hover > div:first-child svg {
+            color: white;
+            transform: scale(1.1);
+        }
+
+        .service-card:hover h3 {
+            transform: translateZ(30px);
+            color: var(--baby-blue);
+        }
+
+        .service-card:hover p {
+            transform: translateZ(20px);
         }
     </style>
 </head>
@@ -587,6 +617,35 @@
 
         document.addEventListener('DOMContentLoaded', observeReveals);
         observeReveals();
+
+        // 3D Tilt Effect for Service Cards
+        const initServiceCards3D = () => {
+            document.querySelectorAll('.service-card').forEach(card => {
+                card.addEventListener('mousemove', e => {
+                    const rect = card.getBoundingClientRect();
+                    const x = e.clientX - rect.left;
+                    const y = e.clientY - rect.top;
+                    
+                    const centerX = rect.width / 2;
+                    const centerY = rect.height / 2;
+                    
+                    const rotateX = ((y - centerY) / centerY) * -10;
+                    const rotateY = ((x - centerX) / centerX) * 10;
+                    
+                    card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.02, 1.02, 1.02)`;
+                });
+                
+                card.addEventListener('mouseleave', () => {
+                    card.style.transform = `perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)`;
+                    card.style.transition = 'transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.4s ease';
+                });
+                
+                card.addEventListener('mouseenter', () => {
+                    card.style.transition = 'none';
+                });
+            });
+        };
+        initServiceCards3D();
 
         function openProjectView(id) {
             const p = projects[id];
