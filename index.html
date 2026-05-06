@@ -515,8 +515,8 @@
         <button onclick="prevImage()" class="lb-nav-btn absolute left-4 md:left-8 top-1/2 -translate-y-1/2 w-16 h-16 md:w-20 md:h-20 rounded-full flex items-center justify-center text-white z-[210]">
             <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M15 19l-7-7 7-7"/></svg>
         </button>
-        <div id="lightbox-img-container" class="relative max-w-full max-h-[70vh] flex items-center justify-center">
-            <img id="lightbox-img" src="" class="max-w-full max-h-[70vh] object-contain rounded-xl shadow-2xl">
+        <div id="lightbox-img-container" class="relative max-w-full max-h-[70vh] flex items-center justify-center overflow-hidden aspect-video w-full">
+            <img id="lightbox-img" src="" class="w-full h-full object-cover rounded-xl shadow-2xl scale-[1.78]">
         </div>
         <button onclick="nextImage()" class="lb-nav-btn absolute right-4 md:right-8 top-1/2 -translate-y-1/2 w-16 h-16 md:w-20 md:h-20 rounded-full flex items-center justify-center text-white z-[210]">
             <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M9 5l7 7-7 7"/></svg>
@@ -527,52 +527,52 @@
     <script>
         const projects = {
             1: { title: "The Zenith Office", cat: "Commercial Interior", loc: "SCBD, Jakarta", year: "2023", services: "Commercial Interior, Bedroom & Kitchen", images: [
-                "assets/images/zenith_office.png",
-                "assets/images/zenith_office_det1.png",
-                "assets/images/zenith_office_det2.png",
-                "assets/images/zenith_office_det1.png",
-                "assets/images/zenith_office_det2.png",
-                "assets/images/zenith_office.png"
+                "assets/images/zenith_office_1.jpg",
+                "assets/images/zenith_office_2.jpg",
+                "assets/images/zenith_office_3.jpg",
+                "assets/images/zenith_office_4.jpg",
+                "assets/images/zenith_office_5.jpg",
+                "assets/images/zenith_office_6.jpg"
             ] },
             2: { title: "The Obsidian Villa", cat: "Luxury Residential", loc: "Uluwatu, Bali", year: "2022", services: "Commercial Interior, Bedroom & Kitchen", images: [
-                "assets/images/obsidian_villa.png",
-                "assets/images/obsidian_villa_det1.png",
-                "assets/images/obsidian_villa_det2.png",
-                "assets/images/obsidian_villa_det1.png",
-                "assets/images/obsidian_villa_det2.png",
-                "assets/images/obsidian_villa.png"
+                "assets/images/obsidian_villa_1.jpg",
+                "assets/images/obsidian_villa_2.jpg",
+                "assets/images/obsidian_villa_3.jpg",
+                "assets/images/obsidian_villa_4.jpg",
+                "assets/images/obsidian_villa_5.jpg",
+                "assets/images/obsidian_villa_6.jpg"
             ] },
             3: { title: "Aura Boutique", cat: "High-End Retail", loc: "Senayan City, Jakarta", year: "2023", services: "Commercial Interior, Bedroom & Kitchen", images: [
-                "assets/images/aura_boutique.png",
-                "assets/images/aura_boutique_det1.png",
-                "assets/images/aura_boutique_det2.png",
-                "assets/images/aura_boutique_det1.png",
-                "assets/images/aura_boutique_det2.png",
-                "assets/images/aura_boutique.png"
+                "assets/images/aura_boutique_1.jpg",
+                "assets/images/aura_boutique_2.jpg",
+                "assets/images/aura_boutique_3.jpg",
+                "assets/images/aura_boutique_4.jpg",
+                "assets/images/aura_boutique_5.jpg",
+                "assets/images/aura_boutique_6.jpg"
             ] },
             4: { title: "Azure Grand Resort", cat: "Hospitality", loc: "Lombok, NTB", year: "2021", services: "Commercial Interior, Bedroom & Kitchen", images: [
-                "assets/images/azure_resort.png",
-                "assets/images/azure_resort_det1.png",
-                "assets/images/azure_resort_det2.png",
-                "assets/images/azure_resort_det1.png",
-                "assets/images/azure_resort_det2.png",
-                "assets/images/azure_resort.png"
+                "assets/images/azure_resort_1.jpg",
+                "assets/images/azure_resort_2.jpg",
+                "assets/images/azure_resort_3.jpg",
+                "assets/images/azure_resort_4.jpg",
+                "assets/images/azure_resort_5.jpg",
+                "assets/images/azure_resort_6.jpg"
             ] },
             5: { title: "Nexus Tech Hub", cat: "Technology Hub", loc: "BSD City, Tangerang", year: "2022", services: "Commercial Interior, Bedroom & Kitchen", images: [
-                "assets/images/nexus_tech.png",
-                "assets/images/nexus_tech_det1.png",
-                "assets/images/nexus_tech_det2.png",
-                "assets/images/nexus_tech_det1.png",
-                "assets/images/nexus_tech_det2.png",
-                "assets/images/nexus_tech.png"
+                "assets/images/nexus_tech_1.jpg",
+                "assets/images/nexus_tech_2.jpg",
+                "assets/images/nexus_tech_3.jpg",
+                "assets/images/nexus_tech_4.jpg",
+                "assets/images/nexus_tech_5.jpg",
+                "assets/images/nexus_tech_6.jpg"
             ] },
             6: { title: "Sky Garden Towers", cat: "Urban Civil", loc: "Menteng, Jakarta", year: "2024", services: "Commercial Interior, Bedroom & Kitchen", images: [
-                "assets/images/sky_garden.png",
-                "assets/images/sky_garden_det1.png",
-                "assets/images/sky_garden.png",
-                "assets/images/sky_garden_det1.png",
-                "assets/images/sky_garden.png",
-                "assets/images/sky_garden_det1.png"
+                "assets/images/sky_garden_1.jpg",
+                "assets/images/sky_garden_2.jpg",
+                "assets/images/sky_garden_3.jpg",
+                "assets/images/sky_garden_4.jpg",
+                "assets/images/sky_garden_5.jpg",
+                "assets/images/sky_garden_6.jpg"
             ] }
         };
 
@@ -601,7 +601,7 @@
             item.className = `gallery-item rounded-[2.5rem] aspect-video relative shadow-lg group cursor-pointer overflow-hidden reveal-up ${delayClass}`;
             item.onclick = () => openProjectView(id);
             item.innerHTML = `
-                <img src="${p.images[0]}" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                <img src="${p.images[0]}" class="w-full h-full object-cover transition-transform duration-700 scale-[1.78] group-hover:scale-[2.0]">
                 <div class="project-text-overlay absolute inset-0 flex flex-col justify-end p-8 text-white">
                     <span class="text-baby-blue font-bold text-sm uppercase tracking-[0.2em] mb-2">${p.cat}</span>
                     <h4 class="text-3xl font-semibold leading-tight text-white drop-shadow-md">${p.title}</h4>
@@ -667,7 +667,7 @@
             grid.innerHTML = '';
             p.images.forEach((img, idx) => {
                 const delayClass = `delay-${(idx % 3) * 100 + 100}`;
-                grid.innerHTML += `<div class="rounded-[2.5rem] overflow-hidden aspect-video bg-white shadow-md group/photo reveal-up ${delayClass}"><img src="${img}" class="w-full h-full object-cover detail-photo" onclick="openLightbox(${idx})"></div>`;
+                grid.innerHTML += `<div class="rounded-[2.5rem] overflow-hidden aspect-video bg-white shadow-md group/photo reveal-up ${delayClass}"><img src="${img}" class="w-full h-full object-cover detail-photo scale-[1.78] hover:scale-[2.0] transition-transform duration-700 cursor-pointer" onclick="openLightbox(${idx})"></div>`;
             });
 
             const moreGrid = document.getElementById('more-projects-grid');
