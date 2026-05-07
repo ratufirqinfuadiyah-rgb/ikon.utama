@@ -588,8 +588,8 @@
             <span id="detail-nav-id" class="text-baby-blue font-black text-2xl opacity-60">01</span>
         </nav>
 
-        <header id="detail-hero" class="w-full h-[65vh] md:h-[85vh] relative overflow-hidden -mt-[100px] bg-slate-50">
-            <img id="detail-main-img" src="" class="w-full h-full object-contain">
+        <header id="detail-hero" class="w-full h-[65vh] md:h-[85vh] relative overflow-hidden -mt-[100px]">
+            <img id="detail-main-img" src="" class="w-full h-full object-cover">
             <div class="absolute inset-0 detail-hero-overlay flex items-end p-10 md:p-24">
                 <div class="max-w-5xl hero-text-animate">
                     <span id="detail-cat-hero"
@@ -847,7 +847,7 @@
             grid.innerHTML = '';
             p.images.forEach((img, idx) => {
                 const delayClass = `delay-${(idx % 3) * 100 + 100}`;
-                grid.innerHTML += `<div class="rounded-[2.5rem] overflow-hidden bg-white shadow-md group/photo reveal-up ${delayClass} aspect-[4/3]"><img src="${img}" class="w-full h-full object-contain p-4 detail-photo transition-transform duration-700 hover:scale-[1.05] cursor-pointer" onclick="openLightbox(${idx})"></div>`;
+                grid.innerHTML += `<div class="rounded-[2.5rem] overflow-hidden bg-white shadow-md group/photo reveal-up ${delayClass} aspect-video"><img src="${img}" class="w-full h-full object-cover detail-photo transition-transform duration-700 hover:scale-[1.1] cursor-pointer" onclick="openLightbox(${idx})"></div>`;
             });
 
             const moreGrid = document.getElementById('more-projects-grid');
