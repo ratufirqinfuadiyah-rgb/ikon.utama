@@ -588,8 +588,8 @@
             <span id="detail-nav-id" class="text-baby-blue font-black text-2xl opacity-60">01</span>
         </nav>
 
-        <header id="detail-hero" class="w-full h-[65vh] md:h-[85vh] relative overflow-hidden -mt-[100px]">
-            <img id="detail-main-img" src="" class="w-full h-full object-cover">
+        <header id="detail-hero" class="w-full h-[65vh] md:h-[85vh] relative overflow-hidden -mt-[100px] bg-slate-50">
+            <img id="detail-main-img" src="" class="w-full h-full object-contain">
             <div class="absolute inset-0 detail-hero-overlay flex items-end p-10 md:p-24">
                 <div class="max-w-5xl hero-text-animate">
                     <span id="detail-cat-hero"
@@ -673,8 +673,8 @@
             </svg>
         </button>
         <div id="lightbox-img-container"
-            class="relative max-w-full max-h-[70vh] flex items-center justify-center overflow-hidden aspect-video w-full">
-            <img id="lightbox-img" src="" class="w-full h-full object-cover rounded-xl shadow-2xl">
+            class="relative max-w-full max-h-[85vh] flex items-center justify-center overflow-hidden w-full">
+            <img id="lightbox-img" src="" class="max-w-full max-h-full object-contain rounded-xl shadow-2xl">
         </div>
         <button onclick="nextImage()"
             class="lb-nav-btn absolute right-4 md:right-8 top-1/2 -translate-y-1/2 w-16 h-16 md:w-20 md:h-20 rounded-full flex items-center justify-center text-white z-[210]">
@@ -847,7 +847,7 @@
             grid.innerHTML = '';
             p.images.forEach((img, idx) => {
                 const delayClass = `delay-${(idx % 3) * 100 + 100}`;
-                grid.innerHTML += `<div class="rounded-[2.5rem] overflow-hidden aspect-video bg-white shadow-md group/photo reveal-up ${delayClass}"><img src="${img}" class="w-full h-full object-cover detail-photo transition-transform duration-700 hover:scale-[1.1] cursor-pointer" onclick="openLightbox(${idx})"></div>`;
+                grid.innerHTML += `<div class="rounded-[2.5rem] overflow-hidden bg-white shadow-md group/photo reveal-up ${delayClass} aspect-[4/3]"><img src="${img}" class="w-full h-full object-contain p-4 detail-photo transition-transform duration-700 hover:scale-[1.05] cursor-pointer" onclick="openLightbox(${idx})"></div>`;
             });
 
             const moreGrid = document.getElementById('more-projects-grid');
