@@ -170,26 +170,8 @@
         /* Scroll Reveal Utility Classes */
         .reveal-up {
             opacity: 0;
-            transform: translateY(50px);
-            transition: all 1s cubic-bezier(0.16, 1, 0.3, 1);
-        }
-
-        .reveal-left {
-            opacity: 0;
-            transform: translateX(-50px);
-            transition: all 1s cubic-bezier(0.16, 1, 0.3, 1);
-        }
-
-        .reveal-right {
-            opacity: 0;
-            transform: translateX(50px);
-            transition: all 1s cubic-bezier(0.16, 1, 0.3, 1);
-        }
-
-        .reveal-scale {
-            opacity: 0;
-            transform: scale(0.9);
-            transition: all 1s cubic-bezier(0.16, 1, 0.3, 1);
+            transform: translateY(60px);
+            transition: all 1.2s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
         .reveal-active {
@@ -197,21 +179,29 @@
             transform: translate(0) scale(1) !important;
         }
 
-        .delay-100 {
-            transition-delay: 100ms;
+        .hover-glow {
+            position: relative;
+            overflow: hidden;
         }
 
-        .delay-200 {
-            transition-delay: 200ms;
+        .hover-glow::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(circle at var(--x) var(--y), rgba(0, 174, 239, 0.15), transparent 40%);
+            opacity: 0;
+            transition: opacity 0.3s;
+            pointer-events: none;
         }
 
-        .delay-300 {
-            transition-delay: 300ms;
+        .hover-glow:hover::after {
+            opacity: 1;
         }
 
-        .delay-400 {
-            transition-delay: 400ms;
-        }
+        .delay-100 { transition-delay: 100ms; }
+        .delay-200 { transition-delay: 200ms; }
+        .delay-300 { transition-delay: 300ms; }
+        .delay-400 { transition-delay: 400ms; }
 
         .detail-photo {
             transition: transform 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
@@ -260,28 +250,6 @@
             transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
             transform-style: preserve-3d;
             border: 1px solid transparent;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .service-card::after {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.1), transparent);
-            transform: rotate(45deg);
-            transition: all 0.6s ease;
-            opacity: 0;
-            pointer-events: none;
-        }
-
-        .service-card:hover::after {
-            opacity: 1;
-            left: 50%;
-            top: 50%;
         }
 
         .service-card:hover {
@@ -295,60 +263,34 @@
             transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), background-color 0.3s, color 0.3s, box-shadow 0.3s;
         }
 
-        /* Scroll Progress Bar */
-        #scroll-progress {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 0%;
-            height: 4px;
-            background: var(--baby-blue);
-            z-index: 1000;
-            transition: width 0.1s ease-out;
+        .service-card>div:first-child svg {
+            transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), color 0.3s;
         }
 
-        /* Custom Cursor */
-        .cursor-follower {
-            position: fixed;
-            width: 10px;
-            height: 10px;
-            background: var(--baby-blue);
-            border-radius: 50%;
-            pointer-events: none;
-            z-index: 10000;
-            transform: translate(-50%, -50%);
-            transition: transform 0.1s ease-out, width 0.3s ease, height 0.3s ease, background-color 0.3s ease;
-            mix-blend-mode: difference;
+        .service-card:hover>div:first-child {
+            transform: translateZ(40px) translateY(-10px);
+            background-color: var(--baby-blue);
+            border-color: var(--baby-blue);
+            box-shadow: 0 15px 30px -10px rgba(0, 174, 239, 0.5);
         }
 
-        .cursor-follower.active {
-            width: 60px;
-            height: 60px;
-            background: rgba(0, 174, 239, 0.2);
-            border: 1px solid var(--baby-blue);
-            mix-blend-mode: normal;
-        }
-
-        /* Parallax Hero */
-        #hero-parallax-img {
-            will-change: transform;
+        .service-card:hover>div:first-child svg {
+            color: white;
             transform: scale(1.1);
         }
 
-        /* Shared Element feel for portfolio items */
-        .gallery-item img {
-            transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        .service-card:hover h3 {
+            transform: translateZ(30px);
+            color: var(--baby-blue);
         }
 
-        .gallery-item:hover img {
-            transform: scale(1.15);
+        .service-card:hover p {
+            transform: translateZ(20px);
         }
     </style>
 </head>
 
 <body>
-    <div id="scroll-progress"></div>
-    <div class="cursor-follower"></div>
 
     <!-- Main Landing Page Wrapper -->
     <div id="main-content">
@@ -362,15 +304,15 @@
                     </div>
                     <div class="hidden md:flex space-x-10">
                         <a href="#services"
-                            class="nav-link text-slate-600 hover:text-navy font-semibold text-sm uppercase tracking-wider">Services</a>
+                            class="nav-link text-slate-600 hover:text-navy font-semibold text-sm uppercase tracking-wider">Layanan</a>
                         <a href="#portfolio"
-                            class="nav-link text-slate-600 hover:text-navy font-semibold text-sm uppercase tracking-wider">Portfolio</a>
+                            class="nav-link text-slate-600 hover:text-navy font-semibold text-sm uppercase tracking-wider">Portofolio</a>
                         <a href="#contact-section"
-                            class="nav-link text-slate-600 hover:text-navy font-semibold text-sm uppercase tracking-wider">Contact</a>
+                            class="nav-link text-slate-600 hover:text-navy font-semibold text-sm uppercase tracking-wider">Kontak</a>
                     </div>
                     <div class="hidden md:block">
                         <a href="#contact-section"
-                            class="bg-navy text-white px-7 py-3 rounded-full font-bold btn-navy-shadow hover:bg-slate-800 transition-all text-sm">Contact</a>
+                            class="bg-navy text-white px-7 py-3 rounded-full font-bold btn-navy-shadow hover:bg-slate-800 transition-all text-sm">Hubungi Kami</a>
                     </div>
                     <div class="md:hidden flex items-center">
                         <button id="mobile-menu-button" class="text-navy">
@@ -387,29 +329,29 @@
         <section class="relative h-[90vh] flex items-center overflow-hidden pt-20">
             <div class="absolute inset-0 z-0">
                 <!-- Updated background image to a bright, modern interior matching the reference -->
-                <img id="hero-parallax-img" src="assets/images/hero_interior.png" class="w-full h-full object-cover">
+                <img src="assets/images/hero_interior.png" class="w-full h-full object-cover">
                 <div class="absolute inset-0 hero-gradient"></div>
             </div>
             <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
                 <div class="max-w-2xl">
                     <div class="flex items-center space-x-3 mb-6 reveal-up">
                         <span class="h-[2px] w-8 bg-baby-blue"></span>
-                        <span class="text-baby-blue font-bold text-sm uppercase tracking-[0.3em]">Architectural
-                            Visionary</span>
+                        <span class="text-baby-blue font-bold text-sm uppercase tracking-[0.3em]">Visioner
+                            Arsitektural</span>
                     </div>
                     <h1 class="text-5xl md:text-7xl font-semibold text-navy leading-[1.1] mb-6 reveal-up delay-100">
-                        Building Spaces, <br><span class="text-baby-blue">Realizing Visions.</span></h1>
+                        Membangun Ruang, <br><span class="text-baby-blue">Mewujudkan Visi.</span></h1>
                     <p
                         class="text-lg md:text-xl text-slate-600 mb-10 leading-relaxed font-light max-w-lg reveal-up delay-200">
-                        PT IKON UTAMA combines <span class="font-semibold text-navy">architectural precision</span> with
-                        a modern, fresh perspective.</p>
+                        PT IKON UTAMA memadukan <span class="font-semibold text-navy">presisi arsitektural</span> dengan
+                        perspektif modern dan segar.</p>
                     <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4 reveal-up delay-300">
                         <a href="#portfolio"
-                            class="bg-navy text-white px-10 py-4 rounded-xl font-bold text-center btn-navy-shadow hover:bg-slate-800 transition-all">View
-                            Portfolio</a>
+                            class="bg-navy text-white px-10 py-4 rounded-xl font-bold text-center btn-navy-shadow hover:bg-slate-800 transition-all">Lihat
+                            Portofolio</a>
                         <a href="#contact-section"
-                            class="bg-white border-2 border-baby-blue text-navy px-10 py-4 rounded-xl font-bold text-center hover:bg-sky-50 transition-all">Consult
-                            with Us</a>
+                            class="bg-white border-2 border-baby-blue text-navy px-10 py-4 rounded-xl font-bold text-center hover:bg-sky-50 transition-all">Konsultasi
+                            dengan Kami</a>
                     </div>
                 </div>
             </div>
@@ -425,7 +367,7 @@
             <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-2 gap-10">
                 <!-- Service 1: Custom Furniture -->
                 <div
-                    class="service-card bg-white p-12 rounded-3xl shadow-sm flex flex-col items-center text-center reveal-up delay-100">
+                    class="service-card hover-glow bg-white p-12 rounded-3xl shadow-sm flex flex-col items-center text-center reveal-up delay-100">
                     <div class="mb-8 p-5 rounded-2xl bg-slate-50 border border-blue-50">
                         <svg class="w-10 h-10 text-baby-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
@@ -439,7 +381,7 @@
 
                 <!-- Service 2: Build In & Loose -->
                 <div
-                    class="service-card bg-white p-12 rounded-3xl shadow-sm flex flex-col items-center text-center reveal-up delay-200">
+                    class="service-card hover-glow bg-white p-12 rounded-3xl shadow-sm flex flex-col items-center text-center reveal-up delay-200">
                     <div class="mb-8 p-5 rounded-2xl bg-slate-50 border border-blue-50">
                         <svg class="w-10 h-10 text-baby-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
@@ -462,15 +404,15 @@
                         class="relative z-10 rounded-[2.5rem] shadow-2xl border-8 border-soft-gray w-full h-[500px] object-cover">
                     <div class="absolute -top-6 right-6 lg:-right-10 lg:top-10 bg-navy p-8 rounded-2xl shadow-2xl z-20">
                         <p class="text-baby-blue font-bold text-4xl">20+</p>
-                        <p class="text-white text-xs font-bold uppercase tracking-widest mt-1 text-center">Years
-                            Excellence</p>
+                        <p class="text-white text-xs font-bold uppercase tracking-widest mt-1 text-center">Tahun
+                            Keunggulan</p>
                     </div>
                 </div>
                 <div class="space-y-12 reveal-right">
                     <div>
-                        <p class="text-navy font-bold tracking-widest text-xs uppercase mb-3">Our Core Values</p>
-                        <h2 class="text-4xl font-semibold mb-10 leading-tight text-navy">The <span
-                                class="italic font-light">IKON</span> Standard</h2>
+                        <p class="text-navy font-bold tracking-widest text-xs uppercase mb-3">Nilai Utama Kami</p>
+                        <h2 class="text-4xl font-semibold mb-10 leading-tight text-navy">Standar <span
+                                class="italic font-light">IKON</span></h2>
                         <div class="space-y-10">
                             <div class="flex items-start group cursor-default">
                                 <div
@@ -484,9 +426,9 @@
                                 <div>
                                     <h4
                                         class="text-xl font-semibold mb-2 text-navy transition-colors duration-300 group-hover:text-baby-blue">
-                                        Uncompromising Quality</h4>
-                                    <p class="text-slate-500 font-light text-sm">Finest materials for high-end, lasting
-                                        finish.</p>
+                                        Kualitas Tanpa Kompromi</h4>
+                                    <p class="text-slate-500 font-light text-sm">Bahan terbaik untuk hasil akhir kelas
+                                        atas dan tahan lama.</p>
                                 </div>
                             </div>
                             <div class="flex items-start group cursor-default">
@@ -501,9 +443,9 @@
                                 <div>
                                     <h4
                                         class="text-xl font-semibold mb-2 text-navy transition-colors duration-300 group-hover:text-baby-blue">
-                                        Punctual Delivery</h4>
-                                    <p class="text-slate-500 font-light text-sm">Optimized workflows for on-time
-                                        completion.</p>
+                                        Pengiriman Tepat Waktu</h4>
+                                    <p class="text-slate-500 font-light text-sm">Alur kerja yang dioptimalkan untuk
+                                        penyelesaian tepat waktu.</p>
                                 </div>
                             </div>
                             <div class="flex items-start group cursor-default">
@@ -519,9 +461,9 @@
                                 <div>
                                     <h4
                                         class="text-xl font-semibold mb-2 text-navy transition-colors duration-300 group-hover:text-baby-blue">
-                                        Budget Transparency</h4>
-                                    <p class="text-slate-500 font-light text-sm">Clear, honest breakdowns for every
-                                        phase.</p>
+                                        Transparansi Anggaran</h4>
+                                    <p class="text-slate-500 font-light text-sm">Rincian yang jelas dan jujur untuk
+                                        setiap fase.</p>
                                 </div>
                             </div>
                         </div>
@@ -533,8 +475,8 @@
         <!-- Main Portfolio -->
         <section id="portfolio" class="py-24 bg-white">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center mb-16 reveal-up">
-                <p class="text-baby-blue font-bold tracking-widest text-xs uppercase mb-3">Portfolio</p>
-                <h2 class="text-3xl md:text-5xl font-semibold mb-6 text-navy">Featured Works</h2>
+                <p class="text-baby-blue font-bold tracking-widest text-xs uppercase mb-3">Portofolio</p>
+                <h2 class="text-3xl md:text-5xl font-semibold mb-6 text-navy">Karya Pilihan</h2>
                 <div class="accent-line mx-auto"></div>
             </div>
             <div id="portfolio-grid"
@@ -548,13 +490,13 @@
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center md:text-left reveal-scale">
                 <div class="flex flex-col md:flex-row justify-between items-center gap-12">
                     <div class="max-w-2xl">
-                        <p class="text-baby-blue font-bold tracking-widest text-xs uppercase mb-4">Connect With Us</p>
-                        <h2 class="text-4xl md:text-6xl font-semibold text-navy leading-tight mb-8">Ready to elevate
-                            <br>your space?
+                        <p class="text-baby-blue font-bold tracking-widest text-xs uppercase mb-4">Hubungi Kami</p>
+                        <h2 class="text-4xl md:text-6xl font-semibold text-navy leading-tight mb-8">Siap meningkatkan
+                            <br>ruang Anda?
                         </h2>
                         <p class="text-slate-500 text-lg font-light leading-relaxed mb-12">
-                            Consult with our expert architects and designers today. We provide comprehensive
-                            consultations to turn your ideas into executable plans.
+                            Konsultasikan dengan arsitek dan desainer ahli kami hari ini. Kami menyediakan
+                            konsultasi komprehensif untuk mengubah ide Anda menjadi rencana yang dapat dieksekusi.
                         </p>
 
                         <div class="flex flex-col sm:flex-row flex-wrap gap-8 justify-center md:justify-start">
@@ -591,26 +533,26 @@
                 <div>
                     <img src="assets/images/logo.png" alt="PT IKON UTAMA Logo" class="h-16 w-auto mb-8 brightness-0 invert opacity-90">
                     <p class="text-white text-lg font-light leading-relaxed max-w-xs">
-                        Leading the way in modern architecture and bespoke interiors since 2015.
+                        Memimpin dalam arsitektur modern dan interior pesanan sejak 2015.
                     </p>
                 </div>
 
                 <div>
-                    <h6 class="text-white font-bold text-xl mb-8">Navigation</h6>
+                    <h6 class="text-white font-bold text-xl mb-8">Navigasi</h6>
                     <ul class="space-y-4 text-slate-400">
-                        <li><a href="#" class="hover:text-white transition-colors">Home</a></li>
-                        <li><a href="#services" class="hover:text-white transition-colors">Services</a></li>
-                        <li><a href="#portfolio" class="hover:text-white transition-colors">Portfolio</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Beranda</a></li>
+                        <li><a href="#services" class="hover:text-white transition-colors">Layanan</a></li>
+                        <li><a href="#portfolio" class="hover:text-white transition-colors">Portofolio</a></li>
                     </ul>
                 </div>
 
                 <div>
-                    <h6 class="text-white font-bold text-xl mb-8">Follow Us</h6>
+                    <h6 class="text-white font-bold text-xl mb-8">Ikuti Kami</h6>
                     <ul class="space-y-4 text-slate-400 mb-10">
                         <li><a href="#" class="hover:text-white transition-colors">Instagram</a></li>
                     </ul>
 
-                    <h6 class="text-white font-bold text-lg mb-4">Location</h6>
+                    <h6 class="text-white font-bold text-lg mb-4">Lokasi</h6>
                     <p class="text-slate-400 text-sm font-light leading-relaxed">
                         Jl. Hankam Raya No.15, RT.1/RW.3, Setu, Kec. Cipayung, Kota Jakarta Timur, Daerah Khusus Ibukota
                         Jakarta 13880
@@ -634,7 +576,7 @@
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"
                         d="M10 19l-7-7m0 0l7-7m-7 7h18" />
                 </svg>
-                BACK TO PORTFOLIO
+                KEMBALI KE PORTOFOLIO
             </button>
             <span id="detail-nav-id" class="text-baby-blue font-black text-2xl opacity-60">01</span>
         </nav>
@@ -644,8 +586,8 @@
             <div class="absolute inset-0 detail-hero-overlay flex items-end p-10 md:p-24">
                 <div class="max-w-5xl hero-text-animate">
                     <span id="detail-cat-hero"
-                        class="text-navy font-bold tracking-[0.5em] uppercase text-xs mb-4 block">CATEGORY</span>
-                    <h2 id="detail-title-hero" class="text-5xl md:text-8xl font-semibold text-navy leading-none">Project Name</h2>
+                        class="text-navy font-bold tracking-[0.5em] uppercase text-xs mb-4 block">KATEGORI</span>
+                    <h2 id="detail-title-hero" class="text-5xl md:text-8xl font-semibold text-navy leading-none">Nama Proyek</h2>
                 </div>
             </div>
         </header>
@@ -655,23 +597,23 @@
             <div class="max-w-7xl mx-auto px-6">
                 <div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-12 text-left">
                     <div class="flex-1">
-                        <p class="text-baby-blue font-bold tracking-[0.2em] text-[10px] uppercase mb-2">Project Identity
+                        <p class="text-baby-blue font-bold tracking-[0.2em] text-[10px] uppercase mb-2">Identitas Proyek
                         </p>
                         <h3 id="detailing-project-name"
-                            class="text-4xl md:text-5xl font-semibold text-navy leading-tight">Project Name</h3>
+                            class="text-4xl md:text-5xl font-semibold text-navy leading-tight">Nama Proyek</h3>
                     </div>
                     <div class="flex flex-wrap gap-10 md:gap-16 text-sm font-medium">
                         <div class="border-l-2 border-baby-blue/30 pl-6">
-                            <p class="text-gray-400 text-[10px] font-bold uppercase tracking-widest mb-1">Service</p>
+                            <p class="text-gray-400 text-[10px] font-bold uppercase tracking-widest mb-1">Layanan</p>
                             <span id="detailing-service"
-                                class="text-base font-semibold text-navy leading-tight block max-w-[200px]">Commercial Interior, Bedroom & Kitchen</span>
+                                class="text-base font-semibold text-navy leading-tight block max-w-[200px]">Interior Komersial, Kamar Tidur & Dapur</span>
                         </div>
                         <div class="border-l-2 border-baby-blue/30 pl-6">
-                            <p class="text-gray-400 text-[10px] font-bold uppercase tracking-widest mb-1">Location</p>
+                            <p class="text-gray-400 text-[10px] font-bold uppercase tracking-widest mb-1">Lokasi</p>
                             <span id="detailing-location" class="text-base font-semibold text-navy"></span>
                         </div>
                         <div class="border-l-2 border-baby-blue/30 pl-6">
-                            <p class="text-gray-400 text-[10px] font-bold uppercase tracking-widest mb-1">Date</p>
+                            <p class="text-gray-400 text-[10px] font-bold uppercase tracking-widest mb-1">Tanggal</p>
                             <span id="detailing-date" class="text-base font-semibold text-navy"></span>
                         </div>
                     </div>
@@ -682,8 +624,9 @@
         <!-- Detailing Gallery Grid -->
         <section class="bg-soft-gray py-24 md:py-32">
             <div class="max-w-7xl mx-auto px-6 text-center mb-16 reveal-up">
-                <h3 class="text-3xl md:text-5xl font-semibold text-navy mb-4 tracking-tight">Precision Detailing</h3>
-                <p class="text-lg text-slate-500 font-light">Explore high-definition perspectives of our architectural results.</p>
+                <h3 class="text-3xl md:text-5xl font-semibold text-navy mb-4 tracking-tight">Detail Presisi</h3>
+                <p class="text-lg text-slate-500 font-light">Jelajahi perspektif definisi tinggi dari hasil arsitektur
+                    kami.</p>
             </div>
             <div id="detail-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10"></div>
         </section>
@@ -693,12 +636,12 @@
             <div class="max-w-7xl mx-auto px-6">
                 <div class="flex justify-between items-end mb-16 reveal-up">
                     <div>
-                        <p class="text-baby-blue font-bold tracking-widest text-xs uppercase mb-3">Discovery</p>
-                        <h3 class="text-4xl md:text-6xl font-semibold text-navy">Explore More</h3>
+                        <p class="text-baby-blue font-bold tracking-widest text-xs uppercase mb-3">Penemuan</p>
+                        <h3 class="text-4xl md:text-6xl font-semibold text-navy">Jelajahi Lebih Banyak</h3>
                     </div>
                     <button onclick="closeProjectView()"
-                        class="text-navy font-bold hover:text-baby-blue border-b-2 border-navy hover:border-baby-blue transition-all pb-1">Full
-                        Portfolio</button>
+                        class="text-navy font-bold hover:text-baby-blue border-b-2 border-navy hover:border-baby-blue transition-all pb-1">Portofolio
+                        Lengkap</button>
                 </div>
                 <div id="more-projects-grid" class="grid grid-cols-1 md:grid-cols-3 gap-10"></div>
             </div>
@@ -737,7 +680,7 @@
     <script>
         const projects = {
             1: {
-                title: "Novotel", cat: "Hotel", loc: "Yogyakarta", year: "2019", services: "Main Lobby, Lounge, Corridor Lobby", images: [
+                title: "Novotel", cat: "Hotel", loc: "Yogyakarta", year: "2019", services: "Lobi Utama, Lounge, Koridor Lobi", images: [
                     "assets/images/novotel_01.png",
                     "assets/images/novotel_02.png",
                     "assets/images/novotel_03.png",
@@ -747,7 +690,7 @@
                 ]
             },
             2: {
-                title: "Fave Hotel", cat: "Hotel", loc: "Jl. Jend. Basuki Rachmat No. 1681, Pahlawan, Kemuning, Palembang 301208", year: "2022", services: "Room Set, Restaurant, Front Office, Lobby & Ballroom", images: [
+                title: "Fave Hotel", cat: "Hotel", loc: "Jl. Jend. Basuki Rachmat No. 1681, Pahlawan, Kemuning, Palembang 301208", year: "2022", services: "Set Kamar, Restoran, Front Office, Lobi & Ballroom", images: [
                     "assets/images/fave_01.png",
                     "assets/images/fave_02.png",
                     "assets/images/fave_03.png",
@@ -763,7 +706,7 @@
                 ]
             },
             3: {
-                title: "Ibis Styles", cat: "Hotel", loc: "Jl. Kapten Patimura No. 442 Medan", year: "2023", services: "Room Set, Restaurant, Poolbar, Lobby, Function Room, Kids Corner", images: [
+                title: "Ibis Styles", cat: "Hotel", loc: "Jl. Kapten Patimura No. 442 Medan", year: "2023", services: "Set Kamar, Restoran, Poolbar, Lobi, Ruang Serbaguna, Kids Corner", images: [
                     "assets/images/ibis_01.png",
                     "assets/images/ibis_02.png",
                     "assets/images/ibis_03.png",
@@ -780,7 +723,7 @@
                 ]
             },
             4: {
-                title: "Four Points Manado", cat: "Hotel", loc: "Jl. Piere Tendean, Sario Tumpaan, Manado 95111", year: "2021", services: "Room Set", images: [
+                title: "Four Points Manado", cat: "Hotel", loc: "Jl. Piere Tendean, Sario Tumpaan, Manado 95111", year: "2021", services: "Set Kamar", images: [
                     "assets/images/fourpoints_01.png",
                     "assets/images/fourpoints_02.png",
                     "assets/images/fourpoints_03.png",
@@ -796,7 +739,7 @@
                 ]
             },
             5: {
-                title: "Barcelona The Glass House", cat: "Restaurant", loc: "Jl. Villa Duta II No.9, RT.02/RW.11, Baranangsiang, Kec. Bogor Tim, Kota Bogor", year: "2024", services: "Interior Dining Areas on the 1st & 2nd Floors, Meeting Room", images: [
+                title: "Barcelona The Glass House", cat: "Restoran", loc: "Jl. Villa Duta II No.9, RT.02/RW.11, Baranangsiang, Kec. Bogor Tim, Kota Bogor", year: "2024", services: "Area Makan Interior di Lantai 1 & 2, Ruang Rapat", images: [
                     "assets/images/barcelona_01.png",
                     "assets/images/barcelona_02.png",
                     "assets/images/barcelona_03.png",
@@ -809,49 +752,6 @@
 
         let currentImgList = [];
         let currentImgIdx = 0;
-
-        // Custom Cursor Logic
-        const cursor = document.querySelector('.cursor-follower');
-        document.addEventListener('mousemove', (e) => {
-            cursor.style.left = e.clientX + 'px';
-            cursor.style.top = e.clientY + 'px';
-        });
-
-        document.querySelectorAll('a, button, .gallery-item, .service-card, .lb-thumb').forEach(el => {
-            el.addEventListener('mouseenter', () => cursor.classList.add('active'));
-            el.addEventListener('mouseleave', () => cursor.classList.remove('active'));
-        });
-
-        // Scroll Progress Bar Logic
-        window.addEventListener('scroll', () => {
-            const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
-            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-            const scrolled = (winScroll / height) * 100;
-            document.getElementById("scroll-progress").style.width = scrolled + "%";
-
-            // Hero Parallax Logic
-            const heroImg = document.getElementById('hero-parallax-img');
-            if (heroImg) {
-                const scrollValue = window.scrollY;
-                heroImg.style.transform = `scale(1.1) translateY(${scrollValue * 0.3}px)`;
-            }
-        });
-
-        // Magnetic Effect for Navbar Links
-        const initMagneticButtons = () => {
-            document.querySelectorAll('.nav-link, .btn-navy-shadow').forEach(btn => {
-                btn.addEventListener('mousemove', (e) => {
-                    const rect = btn.getBoundingClientRect();
-                    const x = e.clientX - rect.left - rect.width / 2;
-                    const y = e.clientY - rect.top - rect.height / 2;
-                    btn.style.transform = `translate(${x * 0.3}px, ${y * 0.3}px)`;
-                });
-                btn.addEventListener('mouseleave', () => {
-                    btn.style.transform = `translate(0, 0)`;
-                });
-            });
-        };
-        initMagneticButtons();
 
         // Intersection Observer setup for scroll animations
         const revealObserver = new IntersectionObserver((entries, observer) => {
@@ -919,7 +819,27 @@
                 });
             });
         };
+        // Interactive Hover Glow Effect
+        document.querySelectorAll('.hover-glow').forEach(el => {
+            el.addEventListener('mousemove', e => {
+                const rect = el.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+                el.style.setProperty('--x', `${x}px`);
+                el.style.setProperty('--y', `${y}px`);
+            });
+        });
+
         initServiceCards3D();
+
+        // Parallax Effect for Hero
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const heroImg = document.querySelector('.absolute.inset-0.z-0 img');
+            if (heroImg) {
+                heroImg.style.transform = `translateY(${scrolled * 0.3}px)`;
+            }
+        });
 
         function openProjectView(id) {
             const p = projects[id];
