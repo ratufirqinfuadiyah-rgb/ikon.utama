@@ -292,41 +292,39 @@
 
 <body>
 
-    <!-- Main Navigation -->
-    <nav id="main-nav" class="fixed top-0 w-full z-50 bg-white/90 backdrop-blur-md border-b border-gray-100 shadow-sm transition-opacity duration-500">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center h-20">
-                <div class="flex-shrink-0 flex items-center">
-                    <a href="#" class="flex items-center">
-                        <img src="assets/images/logo.png" alt="PT IKON UTAMA Logo" class="h-12 w-auto hover:opacity-80 transition-opacity">
-                    </a>
-                </div>
-                <div class="hidden md:flex space-x-10">
-                    <a href="#services"
-                        class="nav-link text-slate-600 hover:text-navy font-semibold text-sm uppercase tracking-wider">Layanan</a>
-                    <a href="#portfolio"
-                        class="nav-link text-slate-600 hover:text-navy font-semibold text-sm uppercase tracking-wider">Portofolio</a>
-                    <a href="#contact-section"
-                        class="nav-link text-slate-600 hover:text-navy font-semibold text-sm uppercase tracking-wider">Kontak</a>
-                </div>
-                <div class="hidden md:block">
-                    <a href="#contact-section"
-                        class="bg-navy text-white px-7 py-3 rounded-full font-bold btn-navy-shadow hover:bg-slate-800 transition-all text-sm">Hubungi Kami</a>
-                </div>
-                <div class="md:hidden flex items-center">
-                    <button id="mobile-menu-button" class="text-navy">
-                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M4 6h16M4 12h16M4 18h16" />
-                        </svg>
-                    </button>
-                </div>
-            </div>
-        </div>
-    </nav>
-
     <!-- Main Landing Page Wrapper -->
     <div id="main-content">
+        <nav class="fixed top-0 w-full z-50 bg-white/90 backdrop-blur-md border-b border-gray-100 shadow-sm">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex justify-between items-center h-20">
+                    <div class="flex-shrink-0 flex items-center">
+                        <a href="#" class="flex items-center">
+                            <img src="assets/images/logo.png" alt="PT IKON UTAMA Logo" class="h-12 w-auto hover:opacity-80 transition-opacity">
+                        </a>
+                    </div>
+                    <div class="hidden md:flex space-x-10">
+                        <a href="#services"
+                            class="nav-link text-slate-600 hover:text-navy font-semibold text-sm uppercase tracking-wider">Layanan</a>
+                        <a href="#portfolio"
+                            class="nav-link text-slate-600 hover:text-navy font-semibold text-sm uppercase tracking-wider">Portofolio</a>
+                        <a href="#contact-section"
+                            class="nav-link text-slate-600 hover:text-navy font-semibold text-sm uppercase tracking-wider">Kontak</a>
+                    </div>
+                    <div class="hidden md:block">
+                        <a href="#contact-section"
+                            class="bg-navy text-white px-7 py-3 rounded-full font-bold btn-navy-shadow hover:bg-slate-800 transition-all text-sm">Hubungi Kami</a>
+                    </div>
+                    <div class="md:hidden flex items-center">
+                        <button id="mobile-menu-button" class="text-navy">
+                            <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M4 6h16M4 12h16M4 18h16" />
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </nav>
 
         <section class="relative h-[90vh] flex items-center overflow-hidden pt-20">
             <div class="absolute inset-0 z-0">
@@ -479,17 +477,17 @@
             <div class="absolute bottom-0 left-0 -ml-20 -mb-20 w-80 h-80 rounded-full bg-baby-blue/5 blur-3xl"></div>
             
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-y-12 gap-x-6 text-center">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-y-12 gap-x-6 text-center" id="animated-stats-container">
                     <div class="reveal-up delay-100 px-4">
-                        <p class="text-5xl md:text-7xl font-bold text-white mb-3 hover:scale-110 transition-transform cursor-default duration-300"><span class="counter-value" data-target="300">0</span><span class="text-baby-blue">+</span></p>
+                        <p class="text-5xl md:text-7xl font-bold text-white mb-3 hover:scale-110 transition-transform cursor-default duration-300"><span class="counter-num" data-target="300">0</span><span class="text-baby-blue opacity-0 counter-suffix transition-opacity duration-700">+</span></p>
                         <p class="text-xs uppercase tracking-[0.2em] font-semibold text-slate-400">Proyek Selesai</p>
                     </div>
                     <div class="reveal-up delay-200 px-4">
-                        <p class="text-5xl md:text-7xl font-bold text-white mb-3 hover:scale-110 transition-transform cursor-default duration-300"><span class="counter-value" data-target="23">0</span><span class="text-baby-blue">+</span></p>
+                        <p class="text-5xl md:text-7xl font-bold text-white mb-3 hover:scale-110 transition-transform cursor-default duration-300"><span class="counter-num" data-target="23">0</span><span class="text-baby-blue opacity-0 counter-suffix transition-opacity duration-700">+</span></p>
                         <p class="text-xs uppercase tracking-[0.2em] font-semibold text-slate-400">Tahun Pengalaman</p>
                     </div>
                     <div class="reveal-up delay-300 px-4">
-                        <p class="text-5xl md:text-7xl font-bold text-white mb-3 hover:scale-110 transition-transform cursor-default duration-300"><span class="counter-value" data-target="100">0</span><span class="text-baby-blue">%</span></p>
+                        <p class="text-5xl md:text-7xl font-bold text-white mb-3 hover:scale-110 transition-transform cursor-default duration-300"><span class="counter-num" data-target="100">0</span><span class="text-baby-blue opacity-0 counter-suffix transition-opacity duration-700">%</span></p>
                         <p class="text-xs uppercase tracking-[0.2em] font-semibold text-slate-400">Komitmen Kualitas</p>
                     </div>
                 </div>
@@ -1068,12 +1066,6 @@
 
             landing.classList.add('main-push-back');
             detailPage.classList.add('detail-slide-up');
-
-            const mainNav = document.getElementById('main-nav');
-            if (mainNav) {
-                mainNav.style.opacity = '0';
-                mainNav.style.pointerEvents = 'none';
-            }
         }
 
         function closeProjectView() {
@@ -1082,12 +1074,6 @@
 
             detailPage.classList.remove('detail-slide-up');
             landing.classList.remove('main-push-back');
-
-            const mainNav = document.getElementById('main-nav');
-            if (mainNav) {
-                mainNav.style.opacity = '1';
-                mainNav.style.pointerEvents = 'auto';
-            }
 
             setTimeout(() => {
                 detailPage.classList.add('hidden');
@@ -1297,37 +1283,62 @@
             renderArchiveTable();
         }
 
-        // Counter Animation Logic
-        const animateCounter = (el) => {
-            const target = +el.getAttribute('data-target');
-            const duration = 2000; // 2 seconds
-            const increment = target / (duration / 16); // 60fps approx
+        // Stats Animation
+        const statsSection = document.getElementById('animated-stats-container');
+        if (statsSection) {
+            let countersAnimated = false;
+            const statsObserver = new IntersectionObserver((entries) => {
+                if (entries[0].isIntersecting && !countersAnimated) {
+                    countersAnimated = true;
+                    
+                    const counters = statsSection.querySelectorAll('.counter-num');
+                    const suffixes = statsSection.querySelectorAll('.counter-suffix');
+                    
+                    // Easing function for premium feel (easeOutExpo)
+                    const easeOutExpo = (t) => t === 1 ? 1 : 1 - Math.pow(2, -10 * t);
+                    
+                    const animateCounter = (counter, target, duration, callback) => {
+                        let startTime = null;
+                        const step = (currentTime) => {
+                            if (!startTime) startTime = currentTime;
+                            const progress = Math.min((currentTime - startTime) / duration, 1);
+                            const easedProgress = easeOutExpo(progress);
+                            
+                            counter.innerText = Math.floor(easedProgress * target);
+                            
+                            if (progress < 1) {
+                                requestAnimationFrame(step);
+                            } else {
+                                counter.innerText = target;
+                                if (callback) callback();
+                            }
+                        };
+                        requestAnimationFrame(step);
+                    };
 
-            let current = 0;
-            const updateCounter = () => {
-                current += increment;
-                if (current < target) {
-                    el.innerText = Math.ceil(current);
-                    requestAnimationFrame(updateCounter);
-                } else {
-                    el.innerText = target;
+                    // Sequence Animation
+                    setTimeout(() => {
+                        animateCounter(counters[0], 300, 2500, () => {
+                            suffixes[0].classList.remove('opacity-0');
+                        });
+                    }, 400); // Wait for reveal-up animation to start
+
+                    setTimeout(() => {
+                        animateCounter(counters[1], 23, 2000, () => {
+                            suffixes[1].classList.remove('opacity-0');
+                        });
+                    }, 1400);
+
+                    setTimeout(() => {
+                        animateCounter(counters[2], 100, 2000, () => {
+                            suffixes[2].classList.remove('opacity-0');
+                        });
+                    }, 2200);
                 }
-            };
-            updateCounter();
-        };
-
-        const counterObserver = new IntersectionObserver((entries, observer) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    animateCounter(entry.target);
-                    observer.unobserve(entry.target);
-                }
-            });
-        }, { threshold: 0.5 });
-
-        document.querySelectorAll('.counter-value').forEach(el => {
-            counterObserver.observe(el);
-        });
+            }, { threshold: 0.5 });
+            
+            statsObserver.observe(statsSection);
+        }
     </script>
 </body>
 
