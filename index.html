@@ -304,7 +304,7 @@
                 <div class="hidden md:flex space-x-10">
                     <a href="#services"
                         class="nav-link text-slate-600 hover:text-navy font-semibold text-sm uppercase tracking-wider">Layanan</a>
-                    <a href="#portfolio"
+                    <a href="#project-archive"
                         class="nav-link text-slate-600 hover:text-navy font-semibold text-sm uppercase tracking-wider">Portofolio</a>
                     <a href="#contact-section"
                         class="nav-link text-slate-600 hover:text-navy font-semibold text-sm uppercase tracking-wider">Kontak</a>
@@ -496,18 +496,7 @@
             </div>
         </section>
 
-        <!-- Main Portfolio -->
-        <section id="portfolio" class="py-24 bg-white">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center mb-16 reveal-up">
-                <p class="text-baby-blue font-bold tracking-widest text-xs uppercase mb-3">Portofolio</p>
-                <h2 class="text-3xl md:text-5xl font-semibold mb-6 text-navy">Karya Pilihan</h2>
-                <div class="accent-line mx-auto"></div>
-            </div>
-            <div id="portfolio-grid"
-                class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
-                <!-- JS populated with White titles -->
-            </div>
-        </section>
+
 
         <!-- Project Archive -->
         <section id="project-archive" class="py-24 bg-soft-gray border-t border-gray-200">
@@ -957,25 +946,7 @@
             });
         }
 
-        function renderPortfolioItem(p, id, delayIdx = 0) {
-            const item = document.createElement('div');
-            const delayClass = `delay-${(delayIdx % 3) * 100 + 100}`;
-            item.className = `gallery-item rounded-[2.5rem] aspect-video relative shadow-lg group cursor-pointer overflow-hidden reveal-up ${delayClass}`;
-            item.onclick = () => openProjectView(id);
-            item.innerHTML = `
-                <img src="${p.images[0]}" class="w-full h-full object-cover transition-transform duration-700 hover:scale-[1.1]">
-                <div class="project-text-overlay absolute inset-0 flex flex-col justify-end p-8 text-white">
-                    <span class="text-baby-blue font-bold text-sm uppercase tracking-[0.2em] mb-2">${p.cat}</span>
-                    <h4 class="text-3xl font-semibold leading-tight text-white drop-shadow-md">${p.title}</h4>
-                </div>
-            `;
-            return item;
-        }
 
-        const gridContainer = document.getElementById('portfolio-grid');
-        Object.keys(projects).forEach((id, index) => {
-            gridContainer.appendChild(renderPortfolioItem(projects[id], id, index));
-        });
 
         document.addEventListener('DOMContentLoaded', observeReveals);
         observeReveals();
