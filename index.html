@@ -609,10 +609,9 @@
                         <table class="w-full text-left border-collapse min-w-[800px]">
                             <thead>
                                 <tr class="border-b border-gray-200 bg-gray-50/50">
-                                    <th class="py-5 px-6 font-semibold text-xs uppercase tracking-widest text-slate-400 w-1/4">Project Name</th>
-                                    <th class="py-5 px-6 font-semibold text-xs uppercase tracking-widest text-slate-400 w-1/4">Description</th>
-                                    <th class="py-5 px-6 font-semibold text-xs uppercase tracking-widest text-slate-400 w-1/5">Client / Site</th>
-                                    <th class="py-5 px-6 font-semibold text-xs uppercase tracking-widest text-slate-400 w-1/6">Location</th>
+                                    <th class="py-5 px-6 font-semibold text-xs uppercase tracking-widest text-slate-400 w-1/3">Project Name</th>
+                                    <th class="py-5 px-6 font-semibold text-xs uppercase tracking-widest text-slate-400 w-1/3">Description</th>
+                                    <th class="py-5 px-6 font-semibold text-xs uppercase tracking-widest text-slate-400 w-1/4">Location</th>
                                     <th class="py-5 px-6 font-semibold text-xs uppercase tracking-widest text-slate-400 w-32 cursor-pointer hover:text-navy transition-colors group select-none" onclick="toggleSortYear()">
                                         <div class="flex items-center">
                                             Year
@@ -1106,7 +1105,6 @@
         const generateMockArchive = () => {
             const types = ['Hotel', 'Restoran', 'Office', 'Residential', 'Commercial', 'Public Space'];
             const locations = ['Jakarta', 'Yogyakarta', 'Bali', 'Medan', 'Palembang', 'Bogor', 'Manado', 'Lampung', 'Surabaya', 'Bandung'];
-            const clients = ['PT. Aston', 'Marriott Group', 'Private Owner', 'Fave Group', 'Ibis', 'Novotel', 'Emersia', 'BCA', 'Mandiri', 'Pertamina'];
             const descriptions = [
                 'Interior design & furniture buildup.',
                 'Full custom architectural layout.',
@@ -1121,12 +1119,12 @@
             ];
 
             const mock = [];
-            mock.push({ name: 'Novotel Yogyakarta', desc: 'Lobi Utama, Lounge, Koridor Lobi', client: 'Novotel Group', loc: 'Yogyakarta', year: 2019, type: 'Hotel' });
-            mock.push({ name: 'Fave Hotel Palembang', desc: 'Set Kamar, Restoran, Front Office, Lobi & Ballroom', client: 'Fave Group', loc: 'Palembang', year: 2022, type: 'Hotel' });
-            mock.push({ name: 'Ibis Styles Medan', desc: 'Set Kamar, Restoran, Poolbar, Lobi', client: 'Ibis', loc: 'Medan', year: 2023, type: 'Hotel' });
-            mock.push({ name: 'Four Points Manado', desc: 'Set Kamar Premium', client: 'Marriott', loc: 'Manado', year: 2021, type: 'Hotel' });
-            mock.push({ name: 'Barcelona The Glass House', desc: 'Area Makan Interior & Ruang Rapat', client: 'Private Owner', loc: 'Bogor', year: 2024, type: 'Restoran' });
-            mock.push({ name: 'Emersia Hotel & Resort', desc: 'Lobi, Kamar Tidur, Restoran, Ballroom', client: 'Emersia Group', loc: 'Lampung', year: 2024, type: 'Hotel' });
+            mock.push({ name: 'Novotel Yogyakarta', desc: 'Lobi Utama, Lounge, Koridor Lobi', loc: 'Yogyakarta', year: 2019, type: 'Hotel' });
+            mock.push({ name: 'Fave Hotel Palembang', desc: 'Set Kamar, Restoran, Front Office, Lobi & Ballroom', loc: 'Palembang', year: 2022, type: 'Hotel' });
+            mock.push({ name: 'Ibis Styles Medan', desc: 'Set Kamar, Restoran, Poolbar, Lobi', loc: 'Medan', year: 2023, type: 'Hotel' });
+            mock.push({ name: 'Four Points Manado', desc: 'Set Kamar Premium', loc: 'Manado', year: 2021, type: 'Hotel' });
+            mock.push({ name: 'Barcelona The Glass House', desc: 'Area Makan Interior & Ruang Rapat', loc: 'Bogor', year: 2024, type: 'Restoran' });
+            mock.push({ name: 'Emersia Hotel & Resort', desc: 'Lobi, Kamar Tidur, Restoran, Ballroom', loc: 'Lampung', year: 2024, type: 'Hotel' });
 
             for(let i=7; i<=145; i++) {
                 const year = 2024 - Math.floor(Math.random() * 12);
@@ -1134,7 +1132,6 @@
                 mock.push({
                     name: `Project ${type} ${String.fromCharCode(65 + (i % 26))}-${i}`,
                     desc: descriptions[Math.floor(Math.random() * descriptions.length)],
-                    client: clients[Math.floor(Math.random() * clients.length)],
                     loc: locations[Math.floor(Math.random() * locations.length)],
                     year: year,
                     type: type
@@ -1202,9 +1199,6 @@
                             <p class="text-sm text-slate-500 font-light line-clamp-2 max-w-xs">${p.desc}</p>
                         </td>
                         <td class="py-5 px-6">
-                            <span class="text-sm font-medium text-slate-700">${p.client}</span>
-                        </td>
-                        <td class="py-5 px-6">
                             <div class="flex items-center text-slate-500">
                                 <svg class="w-4 h-4 mr-1.5 text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
                                 <span class="text-sm font-light">${p.loc}</span>
@@ -1226,7 +1220,7 @@
             const l = archiveFilterLocation.value;
 
             archiveFiltered = archiveData.filter(p => {
-                const matchQ = p.name.toLowerCase().includes(q) || p.client.toLowerCase().includes(q) || p.desc.toLowerCase().includes(q);
+                const matchQ = p.name.toLowerCase().includes(q) || p.desc.toLowerCase().includes(q);
                 let matchY = true;
                 if (y !== 'all') {
                     if (y === 'older') matchY = p.year <= 2018;
