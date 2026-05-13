@@ -507,6 +507,152 @@
             </div>
         </section>
 
+        <!-- Project Archive -->
+        <section id="project-archive" class="py-24 bg-soft-gray border-t border-gray-200">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <!-- Section Header -->
+                <div class="flex flex-col md:flex-row justify-between items-end mb-16 reveal-up">
+                    <div class="max-w-2xl">
+                        <p class="text-baby-blue font-bold tracking-widest text-xs uppercase mb-3">Arsip Proyek</p>
+                        <h2 class="text-4xl md:text-5xl font-semibold mb-6 text-navy">Project Archive</h2>
+                        <p class="text-slate-500 text-lg font-light leading-relaxed">
+                            A curated archive of completed architectural and interior projects across multiple locations and sectors.
+                        </p>
+                    </div>
+                    <div class="mt-6 md:mt-0">
+                        <div class="bg-white px-6 py-3 rounded-full border border-gray-200 shadow-sm flex items-center">
+                            <span class="w-2 h-2 rounded-full bg-baby-blue mr-3 animate-pulse"></span>
+                            <span class="text-sm font-semibold text-navy">300+ Completed Projects</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Featured Projects Above Table -->
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16 reveal-up delay-100">
+                    <div class="group cursor-pointer rounded-2xl overflow-hidden relative h-64 md:h-80 shadow-sm border border-gray-100" onclick="openProjectView('1')">
+                        <img src="assets/images/novotel_01.png" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                        <div class="absolute inset-0 bg-gradient-to-t from-navy/90 via-navy/20 to-transparent opacity-80 group-hover:opacity-90 transition-opacity"></div>
+                        <div class="absolute bottom-0 left-0 p-6 text-white w-full">
+                            <p class="text-[10px] uppercase tracking-widest text-baby-blue font-bold mb-1">Featured</p>
+                            <h4 class="text-2xl font-semibold mb-1">Novotel Yogyakarta</h4>
+                            <p class="text-sm text-gray-300 font-light">Hotel Interior • 2019</p>
+                        </div>
+                    </div>
+                    <div class="group cursor-pointer rounded-2xl overflow-hidden relative h-64 md:h-80 shadow-sm border border-gray-100" onclick="openProjectView('5')">
+                        <img src="assets/images/barcelona_01.png" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                        <div class="absolute inset-0 bg-gradient-to-t from-navy/90 via-navy/20 to-transparent opacity-80 group-hover:opacity-90 transition-opacity"></div>
+                        <div class="absolute bottom-0 left-0 p-6 text-white w-full">
+                            <p class="text-[10px] uppercase tracking-widest text-baby-blue font-bold mb-1">Featured</p>
+                            <h4 class="text-2xl font-semibold mb-1">The Glass House</h4>
+                            <p class="text-sm text-gray-300 font-light">Restaurant • 2024</p>
+                        </div>
+                    </div>
+                    <div class="group cursor-pointer rounded-2xl overflow-hidden relative h-64 md:h-80 shadow-sm border border-gray-100" onclick="openProjectView('6')">
+                        <img src="assets/images/emersia_01.png" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                        <div class="absolute inset-0 bg-gradient-to-t from-navy/90 via-navy/20 to-transparent opacity-80 group-hover:opacity-90 transition-opacity"></div>
+                        <div class="absolute bottom-0 left-0 p-6 text-white w-full">
+                            <p class="text-[10px] uppercase tracking-widest text-baby-blue font-bold mb-1">Featured</p>
+                            <h4 class="text-2xl font-semibold mb-1">Emersia Resort</h4>
+                            <p class="text-sm text-gray-300 font-light">Hospitality • 2024</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Search & Filter -->
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 mb-8 flex flex-col lg:flex-row gap-4 items-center justify-between reveal-up delay-200">
+                    <div class="relative w-full lg:w-1/3">
+                        <svg class="w-5 h-5 absolute left-4 top-1/2 -translate-y-1/2 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+                        <input type="text" id="archive-search" placeholder="Search projects by name, client..." class="w-full pl-12 pr-4 py-3 rounded-xl border border-gray-200 focus:outline-none focus:border-baby-blue focus:ring-1 focus:ring-baby-blue transition-all text-sm font-light text-navy placeholder-gray-400">
+                    </div>
+                    <div class="flex flex-wrap md:flex-nowrap gap-4 w-full lg:w-auto">
+                        <div class="relative flex-1 md:flex-none">
+                            <select id="filter-year" class="appearance-none w-full bg-white border border-gray-200 text-navy py-3 pl-4 pr-10 rounded-xl focus:outline-none focus:border-baby-blue focus:ring-1 focus:ring-baby-blue transition-all text-sm font-light cursor-pointer">
+                                <option value="all">All Years</option>
+                                <option value="2024">2024</option>
+                                <option value="2023">2023</option>
+                                <option value="2022">2022</option>
+                                <option value="2021">2021</option>
+                                <option value="2020">2020</option>
+                                <option value="2019">2019</option>
+                                <option value="older">2018 & Older</option>
+                            </select>
+                            <svg class="w-4 h-4 absolute right-4 top-1/2 -translate-y-1/2 text-gray-400 pointer-events-none" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                        </div>
+                        <div class="relative flex-1 md:flex-none">
+                            <select id="filter-type" class="appearance-none w-full bg-white border border-gray-200 text-navy py-3 pl-4 pr-10 rounded-xl focus:outline-none focus:border-baby-blue focus:ring-1 focus:ring-baby-blue transition-all text-sm font-light cursor-pointer">
+                                <option value="all">All Types</option>
+                                <option value="Hotel">Hotel</option>
+                                <option value="Restoran">Restoran</option>
+                                <option value="Office">Office</option>
+                                <option value="Residential">Residential</option>
+                                <option value="Commercial">Commercial</option>
+                            </select>
+                            <svg class="w-4 h-4 absolute right-4 top-1/2 -translate-y-1/2 text-gray-400 pointer-events-none" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                        </div>
+                        <div class="relative flex-1 md:flex-none">
+                            <select id="filter-location" class="appearance-none w-full bg-white border border-gray-200 text-navy py-3 pl-4 pr-10 rounded-xl focus:outline-none focus:border-baby-blue focus:ring-1 focus:ring-baby-blue transition-all text-sm font-light cursor-pointer">
+                                <option value="all">All Locations</option>
+                                <option value="Jakarta">Jakarta</option>
+                                <option value="Yogyakarta">Yogyakarta</option>
+                                <option value="Bali">Bali</option>
+                                <option value="Medan">Medan</option>
+                                <option value="Palembang">Palembang</option>
+                                <option value="Bogor">Bogor</option>
+                                <option value="Manado">Manado</option>
+                                <option value="Lampung">Lampung</option>
+                            </select>
+                            <svg class="w-4 h-4 absolute right-4 top-1/2 -translate-y-1/2 text-gray-400 pointer-events-none" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Main Project Table -->
+                <div class="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden reveal-up delay-300">
+                    <div class="overflow-x-auto">
+                        <table class="w-full text-left border-collapse min-w-[800px]">
+                            <thead>
+                                <tr class="border-b border-gray-200 bg-gray-50/50">
+                                    <th class="py-5 px-6 font-semibold text-xs uppercase tracking-widest text-slate-400 w-1/4">Project Name</th>
+                                    <th class="py-5 px-6 font-semibold text-xs uppercase tracking-widest text-slate-400 w-1/4">Description</th>
+                                    <th class="py-5 px-6 font-semibold text-xs uppercase tracking-widest text-slate-400 w-1/5">Client / Site</th>
+                                    <th class="py-5 px-6 font-semibold text-xs uppercase tracking-widest text-slate-400 w-1/6">Location</th>
+                                    <th class="py-5 px-6 font-semibold text-xs uppercase tracking-widest text-slate-400 w-32 cursor-pointer hover:text-navy transition-colors group select-none" onclick="toggleSortYear()">
+                                        <div class="flex items-center">
+                                            Year
+                                            <svg id="sort-icon" class="w-4 h-4 ml-1 text-gray-300 group-hover:text-baby-blue transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                                        </div>
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody id="archive-table-body" class="divide-y divide-gray-100">
+                                <!-- JS Populated -->
+                            </tbody>
+                        </table>
+                    </div>
+                    
+                    <!-- Empty State (Hidden by default) -->
+                    <div id="archive-empty" class="hidden py-16 text-center">
+                        <svg class="w-16 h-16 mx-auto text-gray-200 mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M9.172 16.172a4 4 0 015.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                        <h4 class="text-lg font-medium text-navy mb-1">No projects found</h4>
+                        <p class="text-sm text-slate-400 font-light">Try adjusting your search or filters.</p>
+                    </div>
+
+                    <!-- Pagination -->
+                    <div class="border-t border-gray-100 p-6 flex items-center justify-between bg-white">
+                        <span id="archive-showing-text" class="text-sm text-slate-500 font-light">Showing 1-10 of 120 projects</span>
+                        <div class="flex space-x-2">
+                            <button id="archive-prev-btn" class="w-10 h-10 rounded-full border border-gray-200 flex items-center justify-center text-navy hover:border-baby-blue hover:text-baby-blue transition-all disabled:opacity-50 disabled:cursor-not-allowed bg-white disabled:hover:border-gray-200 disabled:hover:text-navy">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>
+                            </button>
+                            <button id="archive-next-btn" class="w-10 h-10 rounded-full border border-gray-200 flex items-center justify-center text-navy hover:border-baby-blue hover:text-baby-blue transition-all disabled:opacity-50 disabled:cursor-not-allowed bg-white disabled:hover:border-gray-200 disabled:hover:text-navy">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7-7"></path></svg>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <!-- Connect With Us -->
         <section id="contact-section" class="py-24 bg-soft-gray">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center md:text-left reveal-scale">
@@ -976,6 +1122,166 @@
         const mobileBtn = document.getElementById('mobile-menu-button');
         const menu = document.querySelector('#mobile-menu');
         if (mobileBtn) mobileBtn.addEventListener('click', () => menu && menu.classList.toggle('hidden'));
+
+        // ARCHIVE PROJECT DATA & LOGIC
+        const generateMockArchive = () => {
+            const types = ['Hotel', 'Restoran', 'Office', 'Residential', 'Commercial', 'Public Space'];
+            const locations = ['Jakarta', 'Yogyakarta', 'Bali', 'Medan', 'Palembang', 'Bogor', 'Manado', 'Lampung', 'Surabaya', 'Bandung'];
+            const clients = ['PT. Aston', 'Marriott Group', 'Private Owner', 'Fave Group', 'Ibis', 'Novotel', 'Emersia', 'BCA', 'Mandiri', 'Pertamina'];
+            const descriptions = [
+                'Interior design & furniture buildup.',
+                'Full custom architectural layout.',
+                'Lobby and premium lounge interior.',
+                'Master bedroom and kitchen sets.',
+                'Complete building renovation.',
+                'Modern minimalist cafe setup.',
+                'Executive office suites design.',
+                'Ballroom and meeting room interiors.',
+                'Bespoke retail space design.',
+                'Luxury villa architecture & interior.'
+            ];
+
+            const mock = [];
+            mock.push({ name: 'Novotel Yogyakarta', desc: 'Lobi Utama, Lounge, Koridor Lobi', client: 'Novotel Group', loc: 'Yogyakarta', year: 2019, type: 'Hotel' });
+            mock.push({ name: 'Fave Hotel Palembang', desc: 'Set Kamar, Restoran, Front Office, Lobi & Ballroom', client: 'Fave Group', loc: 'Palembang', year: 2022, type: 'Hotel' });
+            mock.push({ name: 'Ibis Styles Medan', desc: 'Set Kamar, Restoran, Poolbar, Lobi', client: 'Ibis', loc: 'Medan', year: 2023, type: 'Hotel' });
+            mock.push({ name: 'Four Points Manado', desc: 'Set Kamar Premium', client: 'Marriott', loc: 'Manado', year: 2021, type: 'Hotel' });
+            mock.push({ name: 'Barcelona The Glass House', desc: 'Area Makan Interior & Ruang Rapat', client: 'Private Owner', loc: 'Bogor', year: 2024, type: 'Restoran' });
+            mock.push({ name: 'Emersia Hotel & Resort', desc: 'Lobi, Kamar Tidur, Restoran, Ballroom', client: 'Emersia Group', loc: 'Lampung', year: 2024, type: 'Hotel' });
+
+            for(let i=7; i<=145; i++) {
+                const year = 2024 - Math.floor(Math.random() * 12);
+                const type = types[Math.floor(Math.random() * types.length)];
+                mock.push({
+                    name: `Project ${type} ${String.fromCharCode(65 + (i % 26))}-${i}`,
+                    desc: descriptions[Math.floor(Math.random() * descriptions.length)],
+                    client: clients[Math.floor(Math.random() * clients.length)],
+                    loc: locations[Math.floor(Math.random() * locations.length)],
+                    year: year,
+                    type: type
+                });
+            }
+            return mock;
+        };
+
+        const archiveData = generateMockArchive();
+        let archiveFiltered = [...archiveData];
+        let archiveSortDesc = true;
+        let archivePage = 1;
+        const ARCHIVE_PER_PAGE = 10;
+
+        const archiveTbody = document.getElementById('archive-table-body');
+        const archiveSearch = document.getElementById('archive-search');
+        const archiveFilterYear = document.getElementById('filter-year');
+        const archiveFilterType = document.getElementById('filter-type');
+        const archiveFilterLocation = document.getElementById('filter-location');
+        const archiveEmpty = document.getElementById('archive-empty');
+        const archiveShowingText = document.getElementById('archive-showing-text');
+        const archivePrevBtn = document.getElementById('archive-prev-btn');
+        const archiveNextBtn = document.getElementById('archive-next-btn');
+        const archiveSortIcon = document.getElementById('sort-icon');
+
+        function renderArchiveTable() {
+            if(!archiveTbody) return;
+            archiveFiltered.sort((a, b) => archiveSortDesc ? b.year - a.year : a.year - b.year);
+            archiveSortIcon.style.transform = archiveSortDesc ? 'rotate(0deg)' : 'rotate(180deg)';
+
+            const total = archiveFiltered.length;
+            const totalPages = Math.ceil(total / ARCHIVE_PER_PAGE) || 1;
+            
+            if (archivePage > totalPages) archivePage = totalPages;
+            if (archivePage < 1) archivePage = 1;
+
+            const startIdx = (archivePage - 1) * ARCHIVE_PER_PAGE;
+            const endIdx = Math.min(startIdx + ARCHIVE_PER_PAGE, total);
+            const paginated = archiveFiltered.slice(startIdx, endIdx);
+
+            archiveTbody.innerHTML = '';
+
+            if (paginated.length === 0) {
+                archiveEmpty.classList.remove('hidden');
+                archiveTbody.parentElement.classList.add('hidden');
+                archiveShowingText.innerText = `Showing 0 projects`;
+                archivePrevBtn.disabled = true;
+                archiveNextBtn.disabled = true;
+            } else {
+                archiveEmpty.classList.add('hidden');
+                archiveTbody.parentElement.classList.remove('hidden');
+                archiveShowingText.innerText = `Showing ${startIdx + 1}-${endIdx} of ${total} projects`;
+                archivePrevBtn.disabled = archivePage === 1;
+                archiveNextBtn.disabled = archivePage === totalPages;
+
+                paginated.forEach((p, i) => {
+                    const tr = document.createElement('tr');
+                    tr.className = `group/row hover:bg-slate-50 transition-colors duration-300 border-b border-gray-100 last:border-0`;
+                    tr.innerHTML = `
+                        <td class="py-5 px-6">
+                            <span class="font-medium text-navy text-base group-hover/row:text-baby-blue transition-colors duration-300">${p.name}</span>
+                            <span class="block text-xs text-slate-400 mt-1 uppercase tracking-wider">${p.type}</span>
+                        </td>
+                        <td class="py-5 px-6">
+                            <p class="text-sm text-slate-500 font-light line-clamp-2 max-w-xs">${p.desc}</p>
+                        </td>
+                        <td class="py-5 px-6">
+                            <span class="text-sm font-medium text-slate-700">${p.client}</span>
+                        </td>
+                        <td class="py-5 px-6">
+                            <div class="flex items-center text-slate-500">
+                                <svg class="w-4 h-4 mr-1.5 text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+                                <span class="text-sm font-light">${p.loc}</span>
+                            </div>
+                        </td>
+                        <td class="py-5 px-6">
+                            <span class="inline-block px-3 py-1 bg-gray-50 text-slate-600 rounded-lg text-sm font-medium border border-gray-200 group-hover/row:bg-white group-hover/row:border-baby-blue group-hover/row:text-baby-blue transition-colors duration-300">${p.year}</span>
+                        </td>
+                    `;
+                    archiveTbody.appendChild(tr);
+                });
+            }
+        }
+
+        function filterArchive() {
+            const q = archiveSearch.value.toLowerCase();
+            const y = archiveFilterYear.value;
+            const t = archiveFilterType.value;
+            const l = archiveFilterLocation.value;
+
+            archiveFiltered = archiveData.filter(p => {
+                const matchQ = p.name.toLowerCase().includes(q) || p.client.toLowerCase().includes(q) || p.desc.toLowerCase().includes(q);
+                let matchY = true;
+                if (y !== 'all') {
+                    if (y === 'older') matchY = p.year <= 2018;
+                    else matchY = p.year.toString() === y;
+                }
+                const matchT = t === 'all' ? true : p.type === t;
+                const matchL = l === 'all' ? true : p.loc === l;
+
+                return matchQ && matchY && matchT && matchL;
+            });
+            archivePage = 1;
+            renderArchiveTable();
+        }
+
+        function toggleSortYear() {
+            archiveSortDesc = !archiveSortDesc;
+            renderArchiveTable();
+        }
+
+        if(archiveSearch) {
+            archiveSearch.addEventListener('input', filterArchive);
+            archiveFilterYear.addEventListener('change', filterArchive);
+            archiveFilterType.addEventListener('change', filterArchive);
+            archiveFilterLocation.addEventListener('change', filterArchive);
+
+            archivePrevBtn.addEventListener('click', () => {
+                if (archivePage > 1) { archivePage--; renderArchiveTable(); }
+            });
+            archiveNextBtn.addEventListener('click', () => {
+                archivePage++; renderArchiveTable();
+            });
+
+            renderArchiveTable();
+        }
     </script>
 </body>
 
