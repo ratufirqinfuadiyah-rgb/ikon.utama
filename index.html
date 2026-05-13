@@ -292,39 +292,41 @@
 
 <body>
 
-    <!-- Main Landing Page Wrapper -->
-    <div id="main-content">
-        <nav class="fixed top-0 w-full z-50 bg-white/90 backdrop-blur-md border-b border-gray-100 shadow-sm">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="flex justify-between items-center h-20">
-                    <div class="flex-shrink-0 flex items-center">
-                        <a href="#" class="flex items-center">
-                            <img src="assets/images/logo.png" alt="PT IKON UTAMA Logo" class="h-12 w-auto hover:opacity-80 transition-opacity">
-                        </a>
-                    </div>
-                    <div class="hidden md:flex space-x-10">
-                        <a href="#services"
-                            class="nav-link text-slate-600 hover:text-navy font-semibold text-sm uppercase tracking-wider">Layanan</a>
-                        <a href="#portfolio"
-                            class="nav-link text-slate-600 hover:text-navy font-semibold text-sm uppercase tracking-wider">Portofolio</a>
-                        <a href="#contact-section"
-                            class="nav-link text-slate-600 hover:text-navy font-semibold text-sm uppercase tracking-wider">Kontak</a>
-                    </div>
-                    <div class="hidden md:block">
-                        <a href="#contact-section"
-                            class="bg-navy text-white px-7 py-3 rounded-full font-bold btn-navy-shadow hover:bg-slate-800 transition-all text-sm">Hubungi Kami</a>
-                    </div>
-                    <div class="md:hidden flex items-center">
-                        <button id="mobile-menu-button" class="text-navy">
-                            <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M4 6h16M4 12h16M4 18h16" />
-                            </svg>
-                        </button>
-                    </div>
+    <!-- Main Navigation -->
+    <nav id="main-nav" class="fixed top-0 w-full z-50 bg-white/90 backdrop-blur-md border-b border-gray-100 shadow-sm transition-opacity duration-500">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <div class="flex-shrink-0 flex items-center">
+                    <a href="#" class="flex items-center">
+                        <img src="assets/images/logo.png" alt="PT IKON UTAMA Logo" class="h-12 w-auto hover:opacity-80 transition-opacity">
+                    </a>
+                </div>
+                <div class="hidden md:flex space-x-10">
+                    <a href="#services"
+                        class="nav-link text-slate-600 hover:text-navy font-semibold text-sm uppercase tracking-wider">Layanan</a>
+                    <a href="#portfolio"
+                        class="nav-link text-slate-600 hover:text-navy font-semibold text-sm uppercase tracking-wider">Portofolio</a>
+                    <a href="#contact-section"
+                        class="nav-link text-slate-600 hover:text-navy font-semibold text-sm uppercase tracking-wider">Kontak</a>
+                </div>
+                <div class="hidden md:block">
+                    <a href="#contact-section"
+                        class="bg-navy text-white px-7 py-3 rounded-full font-bold btn-navy-shadow hover:bg-slate-800 transition-all text-sm">Hubungi Kami</a>
+                </div>
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-button" class="text-navy">
+                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                    </button>
                 </div>
             </div>
-        </nav>
+        </div>
+    </nav>
+
+    <!-- Main Landing Page Wrapper -->
+    <div id="main-content">
 
         <section class="relative h-[90vh] flex items-center overflow-hidden pt-20">
             <div class="absolute inset-0 z-0">
@@ -479,15 +481,15 @@
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-y-12 gap-x-6 text-center">
                     <div class="reveal-up delay-100 px-4">
-                        <p class="text-5xl md:text-7xl font-bold text-white mb-3 hover:scale-110 transition-transform cursor-default duration-300">300<span class="text-baby-blue">+</span></p>
+                        <p class="text-5xl md:text-7xl font-bold text-white mb-3 hover:scale-110 transition-transform cursor-default duration-300"><span class="counter-value" data-target="300">0</span><span class="text-baby-blue">+</span></p>
                         <p class="text-xs uppercase tracking-[0.2em] font-semibold text-slate-400">Proyek Selesai</p>
                     </div>
                     <div class="reveal-up delay-200 px-4">
-                        <p class="text-5xl md:text-7xl font-bold text-white mb-3 hover:scale-110 transition-transform cursor-default duration-300">23<span class="text-baby-blue">+</span></p>
+                        <p class="text-5xl md:text-7xl font-bold text-white mb-3 hover:scale-110 transition-transform cursor-default duration-300"><span class="counter-value" data-target="23">0</span><span class="text-baby-blue">+</span></p>
                         <p class="text-xs uppercase tracking-[0.2em] font-semibold text-slate-400">Tahun Pengalaman</p>
                     </div>
                     <div class="reveal-up delay-300 px-4">
-                        <p class="text-5xl md:text-7xl font-bold text-white mb-3 hover:scale-110 transition-transform cursor-default duration-300">100<span class="text-baby-blue">%</span></p>
+                        <p class="text-5xl md:text-7xl font-bold text-white mb-3 hover:scale-110 transition-transform cursor-default duration-300"><span class="counter-value" data-target="100">0</span><span class="text-baby-blue">%</span></p>
                         <p class="text-xs uppercase tracking-[0.2em] font-semibold text-slate-400">Komitmen Kualitas</p>
                     </div>
                 </div>
@@ -1066,6 +1068,12 @@
 
             landing.classList.add('main-push-back');
             detailPage.classList.add('detail-slide-up');
+
+            const mainNav = document.getElementById('main-nav');
+            if (mainNav) {
+                mainNav.style.opacity = '0';
+                mainNav.style.pointerEvents = 'none';
+            }
         }
 
         function closeProjectView() {
@@ -1074,6 +1082,12 @@
 
             detailPage.classList.remove('detail-slide-up');
             landing.classList.remove('main-push-back');
+
+            const mainNav = document.getElementById('main-nav');
+            if (mainNav) {
+                mainNav.style.opacity = '1';
+                mainNav.style.pointerEvents = 'auto';
+            }
 
             setTimeout(() => {
                 detailPage.classList.add('hidden');
@@ -1282,6 +1296,38 @@
 
             renderArchiveTable();
         }
+
+        // Counter Animation Logic
+        const animateCounter = (el) => {
+            const target = +el.getAttribute('data-target');
+            const duration = 2000; // 2 seconds
+            const increment = target / (duration / 16); // 60fps approx
+
+            let current = 0;
+            const updateCounter = () => {
+                current += increment;
+                if (current < target) {
+                    el.innerText = Math.ceil(current);
+                    requestAnimationFrame(updateCounter);
+                } else {
+                    el.innerText = target;
+                }
+            };
+            updateCounter();
+        };
+
+        const counterObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    animateCounter(entry.target);
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.5 });
+
+        document.querySelectorAll('.counter-value').forEach(el => {
+            counterObserver.observe(el);
+        });
     </script>
 </body>
 
