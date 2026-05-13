@@ -765,26 +765,26 @@
         <!-- Minimalist Project Identity Row -->
         <section class="bg-white py-16 border-b border-gray-100 reveal-up">
             <div class="max-w-7xl mx-auto px-6">
-                <div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-12 text-left">
-                    <div class="flex-1">
+                <div class="flex flex-col md:flex-row items-start justify-between gap-12 text-left">
+                    <div class="flex-1 max-w-xl">
                         <p class="text-baby-blue font-bold tracking-[0.2em] text-[10px] uppercase mb-2">Identitas Proyek
                         </p>
                         <h3 id="detailing-project-name"
                             class="text-4xl md:text-5xl font-semibold text-navy leading-tight">Nama Proyek</h3>
                     </div>
-                    <div class="flex flex-wrap gap-10 md:gap-16 text-sm font-medium">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-x-12 gap-y-8 text-sm font-medium">
                         <div class="border-l-2 border-baby-blue/30 pl-6">
                             <p class="text-gray-400 text-[10px] font-bold uppercase tracking-widest mb-1">Layanan</p>
                             <span id="detailing-service"
-                                class="text-base font-semibold text-navy leading-tight block max-w-[200px]">Interior Komersial, Kamar Tidur & Dapur</span>
+                                class="text-base font-semibold text-navy leading-snug block max-w-[220px]">Interior Komersial, Kamar Tidur & Dapur</span>
                         </div>
-                        <div class="border-l-2 border-baby-blue/30 pl-6">
+                        <div class="border-l-2 border-baby-blue/30 pl-6 sm:row-span-2">
                             <p class="text-gray-400 text-[10px] font-bold uppercase tracking-widest mb-1">Lokasi</p>
-                            <span id="detailing-location" class="text-base font-semibold text-navy"></span>
+                            <span id="detailing-location" class="text-base font-semibold text-navy leading-relaxed block max-w-[280px]"></span>
                         </div>
                         <div class="border-l-2 border-baby-blue/30 pl-6">
                             <p class="text-gray-400 text-[10px] font-bold uppercase tracking-widest mb-1">Tanggal</p>
-                            <span id="detailing-date" class="text-base font-semibold text-navy"></span>
+                            <span id="detailing-date" class="text-base font-semibold text-navy block"></span>
                         </div>
                     </div>
                 </div>
@@ -1294,17 +1294,19 @@
                     const counters = statsSection.querySelectorAll('.counter-num');
                     const suffixes = statsSection.querySelectorAll('.counter-suffix');
                     
-                    // Easing function for premium feel (easeOutExpo)
-                    const easeOutExpo = (t) => t === 1 ? 1 : 1 - Math.pow(2, -10 * t);
+                    // Easing function for smoother finish without long hang (easeOutQuart)
+                    const easeOutQuart = (t) => 1 - Math.pow(1 - t, 4);
                     
                     const animateCounter = (counter, target, duration, callback) => {
                         let startTime = null;
                         const step = (currentTime) => {
                             if (!startTime) startTime = currentTime;
                             const progress = Math.min((currentTime - startTime) / duration, 1);
-                            const easedProgress = easeOutExpo(progress);
+                            const easedProgress = easeOutQuart(progress);
                             
-                            counter.innerText = Math.floor(easedProgress * target);
+                            // Use Math.round to prevent getting stuck at (target - 1)
+                            const currentVal = Math.round(easedProgress * target);
+                            counter.innerText = currentVal > target ? target : currentVal;
                             
                             if (progress < 1) {
                                 requestAnimationFrame(step);
@@ -1318,22 +1320,22 @@
 
                     // Sequence Animation
                     setTimeout(() => {
-                        animateCounter(counters[0], 300, 2500, () => {
+                        animateCounter(counters[0], 300, 2000, () => {
                             suffixes[0].classList.remove('opacity-0');
                         });
-                    }, 400); // Wait for reveal-up animation to start
+                    }, 300); // Start shortly after reveal
 
                     setTimeout(() => {
-                        animateCounter(counters[1], 23, 2000, () => {
+                        animateCounter(counters[1], 23, 1500, () => {
                             suffixes[1].classList.remove('opacity-0');
                         });
-                    }, 1400);
+                    }, 1000); // Overlap slightly with first counter
 
                     setTimeout(() => {
-                        animateCounter(counters[2], 100, 2000, () => {
+                        animateCounter(counters[2], 100, 1500, () => {
                             suffixes[2].classList.remove('opacity-0');
                         });
-                    }, 2200);
+                    }, 1700);
                 }
             }, { threshold: 0.5 });
             
