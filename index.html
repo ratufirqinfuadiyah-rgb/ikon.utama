@@ -751,8 +751,7 @@
 
                     <!-- Pagination -->
                     <div class="border-t border-gray-100 p-6 flex items-center justify-between bg-white">
-                        <span id="archive-showing-text" class="text-sm text-slate-500 font-light">Showing 1-10 of 120
-                            projects</span>
+                        <span></span>
                         <div class="flex space-x-2">
                             <button id="archive-prev-btn"
                                 class="w-10 h-10 rounded-full border border-gray-200 flex items-center justify-center text-navy hover:border-baby-blue hover:text-baby-blue transition-all disabled:opacity-50 disabled:cursor-not-allowed bg-white disabled:hover:border-gray-200 disabled:hover:text-navy">
@@ -1293,17 +1292,6 @@
             mock.push({ name: 'Barcelona The Glass House', desc: 'Area Makan Interior & Ruang Rapat', loc: 'Bogor', year: 2024, type: 'Restoran' });
             mock.push({ name: 'Hotel Kimaya Yogyakarta', desc: 'Jl. Jendral Sudirman No 89', loc: 'Yogyakarta', year: 2024, type: 'Hotel' });
 
-            for (let i = 21; i <= 145; i++) {
-                const year = 2024 - Math.floor(Math.random() * 12);
-                const type = types[Math.floor(Math.random() * types.length)];
-                mock.push({
-                    name: `Project ${type} ${String.fromCharCode(65 + (i % 26))}-${i}`,
-                    desc: descriptions[Math.floor(Math.random() * descriptions.length)],
-                    loc: locations[Math.floor(Math.random() * locations.length)],
-                    year: year,
-                    type: type
-                });
-            }
             return mock;
         };
 
@@ -1319,7 +1307,6 @@
         const archiveFilterType = document.getElementById('filter-type');
         const archiveFilterLocation = document.getElementById('filter-location');
         const archiveEmpty = document.getElementById('archive-empty');
-        const archiveShowingText = document.getElementById('archive-showing-text');
         const archivePrevBtn = document.getElementById('archive-prev-btn');
         const archiveNextBtn = document.getElementById('archive-next-btn');
         const archiveSortIcon = document.getElementById('sort-icon');
@@ -1344,13 +1331,11 @@
             if (paginated.length === 0) {
                 archiveEmpty.classList.remove('hidden');
                 archiveTbody.parentElement.classList.add('hidden');
-                archiveShowingText.innerText = `Showing 0 projects`;
                 archivePrevBtn.disabled = true;
                 archiveNextBtn.disabled = true;
             } else {
                 archiveEmpty.classList.add('hidden');
                 archiveTbody.parentElement.classList.remove('hidden');
-                archiveShowingText.innerText = `Showing ${startIdx + 1}-${endIdx} of ${total} projects`;
                 archivePrevBtn.disabled = archivePage === 1;
                 archiveNextBtn.disabled = archivePage === totalPages;
 
