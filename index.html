@@ -198,10 +198,21 @@
             opacity: 1;
         }
 
-        .delay-100 { transition-delay: 100ms; }
-        .delay-200 { transition-delay: 200ms; }
-        .delay-300 { transition-delay: 300ms; }
-        .delay-400 { transition-delay: 400ms; }
+        .delay-100 {
+            transition-delay: 100ms;
+        }
+
+        .delay-200 {
+            transition-delay: 200ms;
+        }
+
+        .delay-300 {
+            transition-delay: 300ms;
+        }
+
+        .delay-400 {
+            transition-delay: 400ms;
+        }
 
         .detail-photo {
             transition: transform 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
@@ -293,12 +304,14 @@
 <body>
 
     <!-- Main Navigation Bar -->
-    <nav class="fixed top-0 w-full z-50 bg-white/90 backdrop-blur-md border-b border-gray-100 shadow-sm transition-all duration-300">
+    <nav
+        class="fixed top-0 w-full z-50 bg-white/90 backdrop-blur-md border-b border-gray-100 shadow-sm transition-all duration-300">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-20">
                 <div class="flex-shrink-0 flex items-center">
                     <a href="#" class="flex items-center">
-                        <img src="assets/images/logo.png" alt="PT IKON UTAMA Logo" class="h-12 w-auto hover:opacity-80 transition-opacity">
+                        <img src="assets/images/logo.png" alt="PT IKON UTAMA Logo"
+                            class="h-12 w-auto hover:opacity-80 transition-opacity">
                     </a>
                 </div>
                 <div class="hidden md:flex space-x-10">
@@ -311,7 +324,8 @@
                 </div>
                 <div class="hidden md:block">
                     <a href="#contact-section"
-                        class="bg-navy text-white px-7 py-3 rounded-full font-bold btn-navy-shadow hover:bg-slate-800 transition-all text-sm">Hubungi Kami</a>
+                        class="bg-navy text-white px-7 py-3 rounded-full font-bold btn-navy-shadow hover:bg-slate-800 transition-all text-sm">Hubungi
+                        Kami</a>
                 </div>
                 <div class="md:hidden flex items-center">
                     <button id="mobile-menu-button" class="text-navy">
@@ -377,7 +391,8 @@
                         </svg>
                     </div>
                     <h3 class="text-2xl font-semibold mb-4 text-navy">Design Furniture</h3>
-                    <p class="text-slate-500 leading-relaxed">Desain furnitur eksklusif yang dibuat khusus dengan material premium dan keahlian tingkat tinggi.</p>
+                    <p class="text-slate-500 leading-relaxed">Desain furnitur eksklusif yang dibuat khusus dengan
+                        material premium dan keahlian tingkat tinggi.</p>
                 </div>
 
                 <!-- Service 2: Build In & Loose -->
@@ -390,7 +405,8 @@
                         </svg>
                     </div>
                     <h3 class="text-2xl font-semibold mb-4 text-navy">Design Interior</h3>
-                    <p class="text-slate-500 leading-relaxed">Solusi desain interior terintegrasi yang memadukan fungsi dan estetika, dirancang sempurna untuk ruang Anda.</p>
+                    <p class="text-slate-500 leading-relaxed">Solusi desain interior terintegrasi yang memadukan fungsi
+                        dan estetika, dirancang sempurna untuk ruang Anda.</p>
                 </div>
             </div>
         </section>
@@ -477,19 +493,31 @@
             <!-- Decorative Background Elements -->
             <div class="absolute top-0 right-0 -mr-20 -mt-20 w-72 h-72 rounded-full bg-baby-blue/10 blur-3xl"></div>
             <div class="absolute bottom-0 left-0 -ml-20 -mb-20 w-80 h-80 rounded-full bg-baby-blue/5 blur-3xl"></div>
-            
+
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-y-12 gap-x-6 text-center" id="animated-stats-container">
                     <div class="reveal-up delay-100 px-4">
-                        <p class="text-5xl md:text-7xl font-bold text-white mb-3 hover:scale-110 transition-transform cursor-default duration-300"><span class="counter-num" data-target="300">0</span><span class="text-baby-blue opacity-0 counter-suffix transition-opacity duration-700">+</span></p>
+                        <p
+                            class="text-5xl md:text-7xl font-bold text-white mb-3 hover:scale-110 transition-transform cursor-default duration-300">
+                            <span class="counter-num" data-target="300">0</span><span
+                                class="text-baby-blue opacity-0 counter-suffix transition-opacity duration-700">+</span>
+                        </p>
                         <p class="text-xs uppercase tracking-[0.2em] font-semibold text-slate-400">Proyek Selesai</p>
                     </div>
                     <div class="reveal-up delay-200 px-4">
-                        <p class="text-5xl md:text-7xl font-bold text-white mb-3 hover:scale-110 transition-transform cursor-default duration-300"><span class="counter-num" data-target="23">0</span><span class="text-baby-blue opacity-0 counter-suffix transition-opacity duration-700">+</span></p>
+                        <p
+                            class="text-5xl md:text-7xl font-bold text-white mb-3 hover:scale-110 transition-transform cursor-default duration-300">
+                            <span class="counter-num" data-target="23">0</span><span
+                                class="text-baby-blue opacity-0 counter-suffix transition-opacity duration-700">+</span>
+                        </p>
                         <p class="text-xs uppercase tracking-[0.2em] font-semibold text-slate-400">Tahun Pengalaman</p>
                     </div>
                     <div class="reveal-up delay-300 px-4">
-                        <p class="text-5xl md:text-7xl font-bold text-white mb-3 hover:scale-110 transition-transform cursor-default duration-300"><span class="counter-num" data-target="100">0</span><span class="text-baby-blue opacity-0 counter-suffix transition-opacity duration-700">%</span></p>
+                        <p
+                            class="text-5xl md:text-7xl font-bold text-white mb-3 hover:scale-110 transition-transform cursor-default duration-300">
+                            <span class="counter-num" data-target="100">0</span><span
+                                class="text-baby-blue opacity-0 counter-suffix transition-opacity duration-700">%</span>
+                        </p>
                         <p class="text-xs uppercase tracking-[0.2em] font-semibold text-slate-400">Komitmen Kualitas</p>
                     </div>
                 </div>
@@ -507,7 +535,8 @@
                         <p class="text-baby-blue font-bold tracking-widest text-xs uppercase mb-3">Arsip Proyek</p>
                         <h2 class="text-4xl md:text-5xl font-semibold mb-6 text-navy">Project Archive</h2>
                         <p class="text-slate-500 text-lg font-light leading-relaxed">
-                            A curated archive of completed architectural and interior projects across multiple locations and sectors.
+                            A curated archive of completed architectural and interior projects across multiple locations
+                            and sectors.
                         </p>
                     </div>
                     <div class="mt-6 md:mt-0">
@@ -522,48 +551,69 @@
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16 reveal-up delay-100">
                     <div class="group cursor-pointer" onclick="openProjectView('1')">
                         <div class="rounded-[2rem] overflow-hidden relative h-56 md:h-72 shadow-sm mb-5">
-                            <img src="assets/images/novotel_01.png" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
-                            <div class="absolute inset-0 bg-navy/5 group-hover:bg-transparent transition-colors duration-500"></div>
+                            <img src="assets/images/novotel_01.png"
+                                class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                            <div
+                                class="absolute inset-0 bg-navy/5 group-hover:bg-transparent transition-colors duration-500">
+                            </div>
                         </div>
                         <div class="border-l-2 border-gray-200 pl-4 ml-2">
-                            <p class="text-[10px] uppercase tracking-widest text-slate-400 font-bold mb-1.5">Hotel Interior</p>
-                            <h4 class="text-xl font-bold text-navy mb-1 group-hover:text-baby-blue transition-colors">Novotel Yogyakarta</h4>
+                            <p class="text-[10px] uppercase tracking-widest text-slate-400 font-bold mb-1.5">Hotel
+                                Interior</p>
+                            <h4 class="text-xl font-bold text-navy mb-1 group-hover:text-baby-blue transition-colors">
+                                Novotel Yogyakarta</h4>
                             <p class="text-sm text-slate-500 font-light">Yogyakarta, 2019</p>
                         </div>
                     </div>
                     <div class="group cursor-pointer" onclick="openProjectView('5')">
                         <div class="rounded-[2rem] overflow-hidden relative h-56 md:h-72 shadow-sm mb-5">
-                            <img src="assets/images/barcelona_01.png" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
-                            <div class="absolute inset-0 bg-navy/5 group-hover:bg-transparent transition-colors duration-500"></div>
+                            <img src="assets/images/barcelona_01.png"
+                                class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                            <div
+                                class="absolute inset-0 bg-navy/5 group-hover:bg-transparent transition-colors duration-500">
+                            </div>
                         </div>
                         <div class="border-l-2 border-gray-200 pl-4 ml-2">
-                            <p class="text-[10px] uppercase tracking-widest text-slate-400 font-bold mb-1.5">Restoran</p>
-                            <h4 class="text-xl font-bold text-navy mb-1 group-hover:text-baby-blue transition-colors">The Glass House</h4>
+                            <p class="text-[10px] uppercase tracking-widest text-slate-400 font-bold mb-1.5">Restoran
+                            </p>
+                            <h4 class="text-xl font-bold text-navy mb-1 group-hover:text-baby-blue transition-colors">
+                                The Glass House</h4>
                             <p class="text-sm text-slate-500 font-light">Kota Bogor, 2024</p>
                         </div>
                     </div>
                     <div class="group cursor-pointer" onclick="openProjectView('6')">
                         <div class="rounded-[2rem] overflow-hidden relative h-56 md:h-72 shadow-sm mb-5">
-                            <img src="assets/images/emersia_01.png" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
-                            <div class="absolute inset-0 bg-navy/5 group-hover:bg-transparent transition-colors duration-500"></div>
+                            <img src="assets/images/emersia_01.png"
+                                class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                            <div
+                                class="absolute inset-0 bg-navy/5 group-hover:bg-transparent transition-colors duration-500">
+                            </div>
                         </div>
                         <div class="border-l-2 border-gray-200 pl-4 ml-2">
                             <p class="text-[10px] uppercase tracking-widest text-slate-400 font-bold mb-1.5">Hotel</p>
-                            <h4 class="text-xl font-bold text-navy mb-1 group-hover:text-baby-blue transition-colors">Emersia Resort</h4>
+                            <h4 class="text-xl font-bold text-navy mb-1 group-hover:text-baby-blue transition-colors">
+                                Emersia Resort</h4>
                             <p class="text-sm text-slate-500 font-light">Bandar Lampung, 2024</p>
                         </div>
                     </div>
                 </div>
 
                 <!-- Search & Filter -->
-                <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 mb-8 flex flex-col lg:flex-row gap-4 items-center justify-between reveal-up delay-200">
+                <div
+                    class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 mb-8 flex flex-col lg:flex-row gap-4 items-center justify-between reveal-up delay-200">
                     <div class="relative w-full lg:w-1/3">
-                        <svg class="w-5 h-5 absolute left-4 top-1/2 -translate-y-1/2 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
-                        <input type="text" id="archive-search" placeholder="Search projects by name, client..." class="w-full pl-12 pr-4 py-3 rounded-xl border border-gray-200 focus:outline-none focus:border-baby-blue focus:ring-1 focus:ring-baby-blue transition-all text-sm font-light text-navy placeholder-gray-400">
+                        <svg class="w-5 h-5 absolute left-4 top-1/2 -translate-y-1/2 text-gray-400" fill="none"
+                            stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                        </svg>
+                        <input type="text" id="archive-search" placeholder="Search projects by name, client..."
+                            class="w-full pl-12 pr-4 py-3 rounded-xl border border-gray-200 focus:outline-none focus:border-baby-blue focus:ring-1 focus:ring-baby-blue transition-all text-sm font-light text-navy placeholder-gray-400">
                     </div>
                     <div class="flex flex-wrap md:flex-nowrap gap-4 w-full lg:w-auto">
                         <div class="relative flex-1 md:flex-none">
-                            <select id="filter-year" class="appearance-none w-full bg-white border border-gray-200 text-navy py-3 pl-4 pr-10 rounded-xl focus:outline-none focus:border-baby-blue focus:ring-1 focus:ring-baby-blue transition-all text-sm font-light cursor-pointer">
+                            <select id="filter-year"
+                                class="appearance-none w-full bg-white border border-gray-200 text-navy py-3 pl-4 pr-10 rounded-xl focus:outline-none focus:border-baby-blue focus:ring-1 focus:ring-baby-blue transition-all text-sm font-light cursor-pointer">
                                 <option value="all">All Years</option>
                                 <option value="2024">2024</option>
                                 <option value="2023">2023</option>
@@ -573,10 +623,15 @@
                                 <option value="2019">2019</option>
                                 <option value="older">2018 & Older</option>
                             </select>
-                            <svg class="w-4 h-4 absolute right-4 top-1/2 -translate-y-1/2 text-gray-400 pointer-events-none" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                            <svg class="w-4 h-4 absolute right-4 top-1/2 -translate-y-1/2 text-gray-400 pointer-events-none"
+                                fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M19 9l-7 7-7-7"></path>
+                            </svg>
                         </div>
                         <div class="relative flex-1 md:flex-none">
-                            <select id="filter-type" class="appearance-none w-full bg-white border border-gray-200 text-navy py-3 pl-4 pr-10 rounded-xl focus:outline-none focus:border-baby-blue focus:ring-1 focus:ring-baby-blue transition-all text-sm font-light cursor-pointer">
+                            <select id="filter-type"
+                                class="appearance-none w-full bg-white border border-gray-200 text-navy py-3 pl-4 pr-10 rounded-xl focus:outline-none focus:border-baby-blue focus:ring-1 focus:ring-baby-blue transition-all text-sm font-light cursor-pointer">
                                 <option value="all">All Types</option>
                                 <option value="Hotel">Hotel</option>
                                 <option value="Restoran">Restoran</option>
@@ -584,10 +639,15 @@
                                 <option value="Residential">Residential</option>
                                 <option value="Commercial">Commercial</option>
                             </select>
-                            <svg class="w-4 h-4 absolute right-4 top-1/2 -translate-y-1/2 text-gray-400 pointer-events-none" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                            <svg class="w-4 h-4 absolute right-4 top-1/2 -translate-y-1/2 text-gray-400 pointer-events-none"
+                                fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M19 9l-7 7-7-7"></path>
+                            </svg>
                         </div>
                         <div class="relative flex-1 md:flex-none">
-                            <select id="filter-location" class="appearance-none w-full bg-white border border-gray-200 text-navy py-3 pl-4 pr-10 rounded-xl focus:outline-none focus:border-baby-blue focus:ring-1 focus:ring-baby-blue transition-all text-sm font-light cursor-pointer">
+                            <select id="filter-location"
+                                class="appearance-none w-full bg-white border border-gray-200 text-navy py-3 pl-4 pr-10 rounded-xl focus:outline-none focus:border-baby-blue focus:ring-1 focus:ring-baby-blue transition-all text-sm font-light cursor-pointer">
                                 <option value="all">All Locations</option>
                                 <option value="Jakarta">Jakarta</option>
                                 <option value="Yogyakarta">Yogyakarta</option>
@@ -598,7 +658,11 @@
                                 <option value="Manado">Manado</option>
                                 <option value="Lampung">Lampung</option>
                             </select>
-                            <svg class="w-4 h-4 absolute right-4 top-1/2 -translate-y-1/2 text-gray-400 pointer-events-none" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                            <svg class="w-4 h-4 absolute right-4 top-1/2 -translate-y-1/2 text-gray-400 pointer-events-none"
+                                fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M19 9l-7 7-7-7"></path>
+                            </svg>
                         </div>
                     </div>
                 </div>
@@ -609,13 +673,25 @@
                         <table class="w-full text-left border-collapse min-w-[800px]">
                             <thead>
                                 <tr class="border-b border-gray-200 bg-gray-50/50">
-                                    <th class="py-5 px-6 font-semibold text-xs uppercase tracking-widest text-slate-400 w-1/3">Project Name</th>
-                                    <th class="py-5 px-6 font-semibold text-xs uppercase tracking-widest text-slate-400 w-1/3">Description</th>
-                                    <th class="py-5 px-6 font-semibold text-xs uppercase tracking-widest text-slate-400 w-1/4">Location</th>
-                                    <th class="py-5 px-6 font-semibold text-xs uppercase tracking-widest text-slate-400 w-32 cursor-pointer hover:text-navy transition-colors group select-none" onclick="toggleSortYear()">
+                                    <th
+                                        class="py-5 px-6 font-semibold text-xs uppercase tracking-widest text-slate-400 w-1/3">
+                                        Project Name</th>
+                                    <th
+                                        class="py-5 px-6 font-semibold text-xs uppercase tracking-widest text-slate-400 w-1/3">
+                                        Description</th>
+                                    <th
+                                        class="py-5 px-6 font-semibold text-xs uppercase tracking-widest text-slate-400 w-1/4">
+                                        Location</th>
+                                    <th class="py-5 px-6 font-semibold text-xs uppercase tracking-widest text-slate-400 w-32 cursor-pointer hover:text-navy transition-colors group select-none"
+                                        onclick="toggleSortYear()">
                                         <div class="flex items-center">
                                             Year
-                                            <svg id="sort-icon" class="w-4 h-4 ml-1 text-gray-300 group-hover:text-baby-blue transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                                            <svg id="sort-icon"
+                                                class="w-4 h-4 ml-1 text-gray-300 group-hover:text-baby-blue transition-transform duration-300"
+                                                fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                    d="M19 9l-7 7-7-7"></path>
+                                            </svg>
                                         </div>
                                     </th>
                                 </tr>
@@ -625,23 +701,37 @@
                             </tbody>
                         </table>
                     </div>
-                    
+
                     <!-- Empty State (Hidden by default) -->
                     <div id="archive-empty" class="hidden py-16 text-center">
-                        <svg class="w-16 h-16 mx-auto text-gray-200 mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M9.172 16.172a4 4 0 015.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                        <svg class="w-16 h-16 mx-auto text-gray-200 mb-4" fill="none" stroke="currentColor"
+                            viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1"
+                                d="M9.172 16.172a4 4 0 015.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z">
+                            </path>
+                        </svg>
                         <h4 class="text-lg font-medium text-navy mb-1">No projects found</h4>
                         <p class="text-sm text-slate-400 font-light">Try adjusting your search or filters.</p>
                     </div>
 
                     <!-- Pagination -->
                     <div class="border-t border-gray-100 p-6 flex items-center justify-between bg-white">
-                        <span id="archive-showing-text" class="text-sm text-slate-500 font-light">Showing 1-10 of 120 projects</span>
+                        <span id="archive-showing-text" class="text-sm text-slate-500 font-light">Showing 1-10 of 120
+                            projects</span>
                         <div class="flex space-x-2">
-                            <button id="archive-prev-btn" class="w-10 h-10 rounded-full border border-gray-200 flex items-center justify-center text-navy hover:border-baby-blue hover:text-baby-blue transition-all disabled:opacity-50 disabled:cursor-not-allowed bg-white disabled:hover:border-gray-200 disabled:hover:text-navy">
-                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>
+                            <button id="archive-prev-btn"
+                                class="w-10 h-10 rounded-full border border-gray-200 flex items-center justify-center text-navy hover:border-baby-blue hover:text-baby-blue transition-all disabled:opacity-50 disabled:cursor-not-allowed bg-white disabled:hover:border-gray-200 disabled:hover:text-navy">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M15 19l-7-7 7-7"></path>
+                                </svg>
                             </button>
-                            <button id="archive-next-btn" class="w-10 h-10 rounded-full border border-gray-200 flex items-center justify-center text-navy hover:border-baby-blue hover:text-baby-blue transition-all disabled:opacity-50 disabled:cursor-not-allowed bg-white disabled:hover:border-gray-200 disabled:hover:text-navy">
-                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                            <button id="archive-next-btn"
+                                class="w-10 h-10 rounded-full border border-gray-200 flex items-center justify-center text-navy hover:border-baby-blue hover:text-baby-blue transition-all disabled:opacity-50 disabled:cursor-not-allowed bg-white disabled:hover:border-gray-200 disabled:hover:text-navy">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M9 5l7 7-7 7"></path>
+                                </svg>
                             </button>
                         </div>
                     </div>
@@ -664,7 +754,8 @@
                         </p>
 
                         <div class="flex flex-col sm:flex-row flex-wrap gap-8 justify-center md:justify-start">
-                            <a href="https://mail.google.com/mail/?view=cm&fs=1&to=ikon.utama@gmail.com" target="_blank" rel="noopener noreferrer" class="flex items-center space-x-4 group cursor-pointer">
+                            <a href="https://mail.google.com/mail/?view=cm&fs=1&to=ikon.utama@gmail.com" target="_blank"
+                                rel="noopener noreferrer" class="flex items-center space-x-4 group cursor-pointer">
                                 <div
                                     class="w-14 h-14 bg-white rounded-full flex items-center justify-center text-navy shadow-sm group-hover:bg-[#00AEEF] group-hover:text-white transition-all duration-300 group-hover:-translate-y-1 group-hover:shadow-lg">
                                     <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -672,7 +763,8 @@
                                             d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                                     </svg>
                                 </div>
-                                <span class="text-navy font-semibold text-lg group-hover:text-[#00AEEF] transition-colors duration-300">ikon.utama@gmail.com</span>
+                                <span
+                                    class="text-navy font-semibold text-lg group-hover:text-[#00AEEF] transition-colors duration-300">ikon.utama@gmail.com</span>
                             </a>
                             <div class="flex items-center space-x-4">
                                 <div
@@ -695,7 +787,8 @@
             <div
                 class="max-w-7xl mx-auto px-8 md:px-16 grid grid-cols-1 md:grid-cols-3 gap-16 md:gap-24 text-left reveal-up">
                 <div>
-                    <img src="assets/images/logo.png" alt="PT IKON UTAMA Logo" class="h-16 w-auto mb-8 brightness-0 invert opacity-90">
+                    <img src="assets/images/logo.png" alt="PT IKON UTAMA Logo"
+                        class="h-16 w-auto mb-8 brightness-0 invert opacity-90">
                     <p class="text-white text-lg font-light leading-relaxed max-w-xs">
                         Menghadirkan solusi interior dan furnitur berkualitas sejak tahun 2003.
                     </p>
@@ -713,13 +806,16 @@
                 <div>
                     <h6 class="text-white font-bold text-xl mb-8">Ikuti Kami</h6>
                     <ul class="space-y-4 text-slate-400 mb-10">
-                        <li><a href="https://share.google/5GqCVS4Fz5OBE1nPf" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors">Instagram</a></li>
+                        <li><a href="https://share.google/5GqCVS4Fz5OBE1nPf" target="_blank" rel="noopener noreferrer"
+                                class="hover:text-white transition-colors">Instagram</a></li>
                     </ul>
 
                     <h6 class="text-white font-bold text-lg mb-4">Lokasi</h6>
                     <p class="text-slate-400 text-sm font-light leading-relaxed">
-                        <a href="https://maps.app.goo.gl/CRA5oYtKb8pQgcQU7" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors">
-                            Jl. Hankam Raya No.15, RT.1/RW.3, Setu, Kec. Cipayung, Kota Jakarta Timur, Daerah Khusus Ibukota
+                        <a href="https://maps.app.goo.gl/CRA5oYtKb8pQgcQU7" target="_blank" rel="noopener noreferrer"
+                            class="hover:text-white transition-colors">
+                            Jl. Hankam Raya No.15, RT.1/RW.3, Setu, Kec. Cipayung, Kota Jakarta Timur, Daerah Khusus
+                            Ibukota
                             Jakarta 13880
                         </a>
                     </p>
@@ -753,7 +849,8 @@
                 <div class="max-w-5xl hero-text-animate">
                     <span id="detail-cat-hero"
                         class="text-navy font-bold tracking-[0.5em] uppercase text-xs mb-4 block">KATEGORI</span>
-                    <h2 id="detail-title-hero" class="text-5xl md:text-8xl font-semibold text-navy leading-none">Nama Proyek</h2>
+                    <h2 id="detail-title-hero" class="text-5xl md:text-8xl font-semibold text-navy leading-none">Nama
+                        Proyek</h2>
                 </div>
             </div>
         </header>
@@ -772,11 +869,13 @@
                         <div class="border-l-2 border-baby-blue/30 pl-6">
                             <p class="text-gray-400 text-[10px] font-bold uppercase tracking-widest mb-1">Layanan</p>
                             <span id="detailing-service"
-                                class="text-base font-semibold text-navy leading-snug block max-w-[220px]">Interior Komersial, Kamar Tidur & Dapur</span>
+                                class="text-base font-semibold text-navy leading-snug block max-w-[220px]">Interior
+                                Komersial, Kamar Tidur & Dapur</span>
                         </div>
                         <div class="border-l-2 border-baby-blue/30 pl-6 sm:row-span-2">
                             <p class="text-gray-400 text-[10px] font-bold uppercase tracking-widest mb-1">Lokasi</p>
-                            <span id="detailing-location" class="text-base font-semibold text-navy leading-relaxed block max-w-[280px]"></span>
+                            <span id="detailing-location"
+                                class="text-base font-semibold text-navy leading-relaxed block max-w-[280px]"></span>
                         </div>
                         <div class="border-l-2 border-baby-blue/30 pl-6">
                             <p class="text-gray-400 text-[10px] font-bold uppercase tracking-widest mb-1">Tanggal</p>
@@ -1119,28 +1218,29 @@
             ];
 
             const mock = [];
-            mock.push({ name: 'Novotel Yogyakarta', desc: 'Lobi Utama, Lounge, Koridor Lobi', loc: 'Yogyakarta', year: 2019, type: 'Hotel' });
-            mock.push({ name: 'Fave Hotel Palembang', desc: 'Set Kamar, Restoran, Front Office, Lobi & Ballroom', loc: 'Palembang', year: 2022, type: 'Hotel' });
-            mock.push({ name: 'Ibis Styles Medan', desc: 'Set Kamar, Restoran, Poolbar, Lobi', loc: 'Medan', year: 2023, type: 'Hotel' });
-            mock.push({ name: 'Four Points Manado', desc: 'Set Kamar Premium', loc: 'Manado', year: 2021, type: 'Hotel' });
+            mock.push({ name: 'Monagro Kimia', desc: 'Ruang Santai', loc: 'Tangerang', year: 2021, type: 'Office' });
+            mock.push({ name: 'Ibis Styles Medan', desc: 'Room set, Restaurant, Poolbar, Lobby, Function Room, Kids Corner', loc: 'Medan', year: 2023, type: 'Hotel' });
+            mock.push({ name: 'Fave Hotel Palembang', desc: 'Room set, Restaurant, Front Office, Lobby & Ballroom', loc: 'Palembang', year: 2022, type: 'Hotel' });
+            mock.push({ name: 'Novotel Hotel Yogyakarta', desc: 'Main Lobby, Lounge, Corridor Lobby', loc: 'Yogyakarta', year: 2019, type: 'Hotel' });
+            mock.push({ name: 'Emersia Hotel Lampung', desc: 'Lobby, Meetingroom, Perfunction, Office', loc: 'Lampung', year: 2024, type: 'Hotel' });
+            mock.push({ name: 'Aston Hotel Palembang', desc: 'Ballroom', loc: 'Palembang', year: 2022, type: 'Hotel' });
+            mock.push({ name: 'PT. ASTRA International Tbk', desc: 'Interior & Furniture Showroom Branch & Head Office Auto 2000', loc: 'Jakarta', year: 2023, type: 'Office' });
+            mock.push({ name: 'Four Points Manado', desc: 'Room Set', loc: 'Manado', year: 2021, type: 'Hotel' });
+            mock.push({ name: 'Chemonics International Inc - GHSC - PSM', desc: 'AJA Center Jl. Jend. Sudirman', loc: 'Jakarta', year: 2023, type: 'Office' });
+            mock.push({ name: 'Chemonics International Inc - BIJAK', desc: 'AJA Center Jl. Jend. Sudirman', loc: 'Jakarta', year: 2022, type: 'Office' });
+            mock.push({ name: 'Unilever Indonesia', desc: '3rd Floor Graha Unilever', loc: 'Jakarta', year: 2022, type: 'Office' });
+            mock.push({ name: 'Chemonics International Inc - PROREP', desc: 'Jl. Jend. Sudirman No Kav. 44 - 46', loc: 'Jakarta', year: 2021, type: 'Office' });
+            mock.push({ name: 'Chemonics International Inc - C4J Project', desc: 'Thamrin Nine Plaza 34 Floor', loc: 'Jakarta', year: 2021, type: 'Office' });
+            mock.push({ name: 'Chemonics International Inc - IMAC', desc: 'Menara Thamrin', loc: 'Jakarta', year: 2020, type: 'Office' });
+            mock.push({ name: 'Bank Syariah Mandiri', desc: 'Jl. MH Thamrin', loc: 'Jakarta', year: 2019, type: 'Office' });
+            mock.push({ name: 'PT Expeditors Indonesia', desc: 'Graha Indochem, 5th Floor', loc: 'Jakarta', year: 2023, type: 'Office' });
+            mock.push({ name: 'Audio Plaza', desc: 'Interior and Furniture Kelapa Gading and Puri Indah Mall', loc: 'Jakarta', year: 2022, type: 'Commercial' });
+            mock.push({ name: 'Samsung Service Center', desc: 'Mangga Dua Jakarta and Makassar', loc: 'Jakarta', year: 2021, type: 'Commercial' });
+            mock.push({ name: 'Panasonic Gobel Indonesia', desc: 'Showroom BSD, Kalibata, Kelapa Gading, Puri', loc: 'Jakarta', year: 2023, type: 'Commercial' });
             mock.push({ name: 'Barcelona The Glass House', desc: 'Area Makan Interior & Ruang Rapat', loc: 'Bogor', year: 2024, type: 'Restoran' });
-            mock.push({ name: 'Emersia Hotel & Resort', desc: 'Lobi, Kamar Tidur, Restoran, Ballroom', loc: 'Lampung', year: 2024, type: 'Hotel' });
-            mock.push({ name: 'Sheraton Mustika Yogyakarta', desc: 'Hotel Interior & Suite Rooms', loc: 'Yogyakarta', year: 2021, type: 'Hotel' });
-            mock.push({ name: 'Pullman Jakarta Central Park', desc: 'Ballroom Renovation & Pre-function Area', loc: 'Jakarta', year: 2022, type: 'Hotel' });
-            mock.push({ name: 'Hyatt Regency Bali', desc: 'Luxury Villa Interior & Landscape Integration', loc: 'Bali', year: 2023, type: 'Hotel' });
-            mock.push({ name: 'BCA Learning Institute', desc: 'Modern Office Interior & Training Center', loc: 'Bogor', year: 2020, type: 'Office' });
-            mock.push({ name: 'Pertamina Head Office', desc: 'Executive Lounge & Meeting Suites', loc: 'Jakarta', year: 2024, type: 'Office' });
-            mock.push({ name: 'Starbucks Reserve Dewata', desc: 'Bespoke Cafe Interior & Retail Space', loc: 'Bali', year: 2019, type: 'Restoran' });
-            mock.push({ name: 'Mandiri University', desc: 'Auditorium & Academic Facility Interior', loc: 'Jakarta', year: 2022, type: 'Public Space' });
-            mock.push({ name: 'Aston Priority Simatupang', desc: 'Premium Suite Rooms & Executive Floor', loc: 'Jakarta', year: 2023, type: 'Hotel' });
-            mock.push({ name: 'Mercure Serpong Alam Sutera', desc: 'All-day Dining Restaurant & Kitchen Set', loc: 'Tangerang', year: 2021, type: 'Hotel' });
-            mock.push({ name: 'Swiss-Belhotel Balikpapan', desc: 'Lobby Interior & Reception Area', loc: 'Balikpapan', year: 2024, type: 'Hotel' });
-            mock.push({ name: 'The Ritz-Carlton Mega Kuningan', desc: 'Penthouse Architecture & Interior Design', loc: 'Jakarta', year: 2020, type: 'Residential' });
-            mock.push({ name: 'Holiday Inn Express Semarang', desc: 'Modern Guest Rooms & Buffet Area', loc: 'Semarang', year: 2022, type: 'Hotel' });
-            mock.push({ name: 'Santika Premiere Slipi', desc: 'Grand Ballroom & Meeting Room Interiors', loc: 'Jakarta', year: 2023, type: 'Hotel' });
-            mock.push({ name: 'Harris Hotel Batam Center', desc: 'Pool Area Interior & Lounge Cafe', loc: 'Batam', year: 2021, type: 'Hotel' });
+            mock.push({ name: 'Hotel Kimaya Yogyakarta', desc: 'Jl. Jendral Sudirman No 89', loc: 'Yogyakarta', year: 2024, type: 'Hotel' });
 
-            for(let i=21; i<=145; i++) {
+            for (let i = 21; i <= 145; i++) {
                 const year = 2024 - Math.floor(Math.random() * 12);
                 const type = types[Math.floor(Math.random() * types.length)];
                 mock.push({
@@ -1172,13 +1272,13 @@
         const archiveSortIcon = document.getElementById('sort-icon');
 
         function renderArchiveTable() {
-            if(!archiveTbody) return;
+            if (!archiveTbody) return;
             archiveFiltered.sort((a, b) => archiveSortDesc ? b.year - a.year : a.year - b.year);
             archiveSortIcon.style.transform = archiveSortDesc ? 'rotate(0deg)' : 'rotate(180deg)';
 
             const total = archiveFiltered.length;
             const totalPages = Math.ceil(total / ARCHIVE_PER_PAGE) || 1;
-            
+
             if (archivePage > totalPages) archivePage = totalPages;
             if (archivePage < 1) archivePage = 1;
 
@@ -1254,7 +1354,7 @@
             renderArchiveTable();
         }
 
-        if(archiveSearch) {
+        if (archiveSearch) {
             archiveSearch.addEventListener('input', filterArchive);
             archiveFilterYear.addEventListener('change', filterArchive);
             archiveFilterType.addEventListener('change', filterArchive);
@@ -1277,24 +1377,24 @@
             const statsObserver = new IntersectionObserver((entries) => {
                 if (entries[0].isIntersecting && !countersAnimated) {
                     countersAnimated = true;
-                    
+
                     const counters = statsSection.querySelectorAll('.counter-num');
                     const suffixes = statsSection.querySelectorAll('.counter-suffix');
-                    
+
                     // Easing function for smoother finish without long hang (easeOutQuart)
                     const easeOutQuart = (t) => 1 - Math.pow(1 - t, 4);
-                    
+
                     const animateCounter = (counter, target, duration, callback) => {
                         let startTime = null;
                         const step = (currentTime) => {
                             if (!startTime) startTime = currentTime;
                             const progress = Math.min((currentTime - startTime) / duration, 1);
                             const easedProgress = easeOutQuart(progress);
-                            
+
                             // Use Math.round to prevent getting stuck at (target - 1)
                             const currentVal = Math.round(easedProgress * target);
                             counter.innerText = currentVal > target ? target : currentVal;
-                            
+
                             if (progress < 1) {
                                 requestAnimationFrame(step);
                             } else {
@@ -1325,7 +1425,7 @@
                     }, 1700);
                 }
             }, { threshold: 0.5 });
-            
+
             statsObserver.observe(statsSection);
         }
     </script>
