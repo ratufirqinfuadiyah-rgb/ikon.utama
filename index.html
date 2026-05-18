@@ -623,13 +623,6 @@
                             A curated archive of completed architectural and interior projects across multiple locations
                             and sectors.
                         </p>
-                    </div>
-                    <div class="mt-6 md:mt-0">
-                        <div class="bg-white px-6 py-3 rounded-full border border-gray-200 shadow-sm flex items-center">
-                            <span class="w-2 h-2 rounded-full bg-baby-blue mr-3 animate-pulse"></span>
-                            <span class="text-sm font-semibold text-navy">300+ Completed Projects</span>
-                        </div>
-                    </div>
                 </div>
 
                 <!-- Search & Filter -->
@@ -663,12 +656,6 @@
                                         onclick="toggleSortYear()">
                                         <div class="flex items-center">
                                             Year
-                                            <svg id="sort-icon"
-                                                class="w-4 h-4 ml-1 text-gray-300 group-hover:text-baby-blue transition-transform duration-300"
-                                                fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                                    d="M19 9l-7 7-7-7"></path>
-                                            </svg>
                                         </div>
                                     </th>
                                 </tr>
@@ -1248,12 +1235,10 @@
         const archiveEmpty = document.getElementById('archive-empty');
         const archivePrevBtn = document.getElementById('archive-prev-btn');
         const archiveNextBtn = document.getElementById('archive-next-btn');
-        const archiveSortIcon = document.getElementById('sort-icon');
 
         function renderArchiveTable() {
             if (!archiveTbody) return;
             archiveFiltered.sort((a, b) => archiveSortDesc ? b.year - a.year : a.year - b.year);
-            archiveSortIcon.style.transform = archiveSortDesc ? 'rotate(0deg)' : 'rotate(180deg)';
 
             const total = archiveFiltered.length;
             const totalPages = Math.ceil(total / ARCHIVE_PER_PAGE) || 1;
