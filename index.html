@@ -641,63 +641,6 @@
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                 d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
                         </svg>
-                        <input type="text" id="archive-search" placeholder="Search projects by name, client..."
-                            class="w-full pl-12 pr-4 py-3 rounded-xl border border-gray-200 focus:outline-none focus:border-baby-blue focus:ring-1 focus:ring-baby-blue transition-all text-sm font-light text-navy placeholder-gray-400">
-                    </div>
-                    <div class="flex flex-wrap md:flex-nowrap gap-4 w-full lg:w-auto">
-                        <div class="relative flex-1 md:flex-none">
-                            <select id="filter-year"
-                                class="appearance-none w-full bg-white border border-gray-200 text-navy py-3 pl-4 pr-10 rounded-xl focus:outline-none focus:border-baby-blue focus:ring-1 focus:ring-baby-blue transition-all text-sm font-light cursor-pointer">
-                                <option value="all">All Years</option>
-                                <option value="2024">2024</option>
-                                <option value="2023">2023</option>
-                                <option value="2022">2022</option>
-                                <option value="2021">2021</option>
-                                <option value="2020">2020</option>
-                                <option value="2019">2019</option>
-                                <option value="older">2018 & Older</option>
-                            </select>
-                            <svg class="w-4 h-4 absolute right-4 top-1/2 -translate-y-1/2 text-gray-400 pointer-events-none"
-                                fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M19 9l-7 7-7-7"></path>
-                            </svg>
-                        </div>
-                        <div class="relative flex-1 md:flex-none">
-                            <select id="filter-type"
-                                class="appearance-none w-full bg-white border border-gray-200 text-navy py-3 pl-4 pr-10 rounded-xl focus:outline-none focus:border-baby-blue focus:ring-1 focus:ring-baby-blue transition-all text-sm font-light cursor-pointer">
-                                <option value="all">All Types</option>
-                                <option value="Hotel">Hotel</option>
-                                <option value="Restoran">Restoran</option>
-                                <option value="Office">Office</option>
-                                <option value="Residential">Residential</option>
-                                <option value="Commercial">Commercial</option>
-                            </select>
-                            <svg class="w-4 h-4 absolute right-4 top-1/2 -translate-y-1/2 text-gray-400 pointer-events-none"
-                                fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M19 9l-7 7-7-7"></path>
-                            </svg>
-                        </div>
-                        <div class="relative flex-1 md:flex-none">
-                            <select id="filter-location"
-                                class="appearance-none w-full bg-white border border-gray-200 text-navy py-3 pl-4 pr-10 rounded-xl focus:outline-none focus:border-baby-blue focus:ring-1 focus:ring-baby-blue transition-all text-sm font-light cursor-pointer">
-                                <option value="all">All Locations</option>
-                                <option value="Jakarta">Jakarta</option>
-                                <option value="Yogyakarta">Yogyakarta</option>
-                                <option value="Bali">Bali</option>
-                                <option value="Medan">Medan</option>
-                                <option value="Palembang">Palembang</option>
-                                <option value="Bogor">Bogor</option>
-                                <option value="Manado">Manado</option>
-                                <option value="Lampung">Lampung</option>
-                            </select>
-                            <svg class="w-4 h-4 absolute right-4 top-1/2 -translate-y-1/2 text-gray-400 pointer-events-none"
-                                fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M19 9l-7 7-7-7"></path>
-                            </svg>
-                        </div>
                     </div>
                 </div>
 
@@ -1302,9 +1245,6 @@
 
         const archiveTbody = document.getElementById('archive-table-body');
         const archiveSearch = document.getElementById('archive-search');
-        const archiveFilterYear = document.getElementById('filter-year');
-        const archiveFilterType = document.getElementById('filter-type');
-        const archiveFilterLocation = document.getElementById('filter-location');
         const archiveEmpty = document.getElementById('archive-empty');
         const archivePrevBtn = document.getElementById('archive-prev-btn');
         const archiveNextBtn = document.getElementById('archive-next-btn');
@@ -1366,21 +1306,9 @@
 
         function filterArchive() {
             const q = archiveSearch.value.toLowerCase();
-            const y = archiveFilterYear.value;
-            const t = archiveFilterType.value;
-            const l = archiveFilterLocation.value;
 
             archiveFiltered = archiveData.filter(p => {
-                const matchQ = p.name.toLowerCase().includes(q) || p.desc.toLowerCase().includes(q);
-                let matchY = true;
-                if (y !== 'all') {
-                    if (y === 'older') matchY = p.year <= 2018;
-                    else matchY = p.year.toString() === y;
-                }
-                const matchT = t === 'all' ? true : p.type === t;
-                const matchL = l === 'all' ? true : p.loc === l;
-
-                return matchQ && matchY && matchT && matchL;
+                return p.name.toLowerCase().includes(q) || p.desc.toLowerCase().includes(q);
             });
             archivePage = 1;
             renderArchiveTable();
@@ -1393,9 +1321,6 @@
 
         if (archiveSearch) {
             archiveSearch.addEventListener('input', filterArchive);
-            archiveFilterYear.addEventListener('change', filterArchive);
-            archiveFilterType.addEventListener('change', filterArchive);
-            archiveFilterLocation.addEventListener('change', filterArchive);
 
             archivePrevBtn.addEventListener('click', () => {
                 if (archivePage > 1) { archivePage--; renderArchiveTable(); }
