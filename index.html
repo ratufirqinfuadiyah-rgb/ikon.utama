@@ -1297,7 +1297,11 @@
             const q = archiveSearch.value.toLowerCase();
 
             archiveFiltered = archiveData.filter(p => {
-                return p.name.toLowerCase().includes(q) || p.desc.toLowerCase().includes(q);
+                return p.name.toLowerCase().includes(q) || 
+                       p.desc.toLowerCase().includes(q) ||
+                       p.loc.toLowerCase().includes(q) ||
+                       p.type.toLowerCase().includes(q) ||
+                       p.year.toString().includes(q);
             });
             archivePage = 1;
             renderArchiveTable();
