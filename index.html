@@ -609,6 +609,18 @@
                             <p class="text-sm text-slate-500 font-light mt-1">Medan, 2023</p>
                         </div>
                     </div>
+                    <!-- Astra International -->
+                    <div class="group cursor-pointer" onclick="openProjectView('7')">
+                        <div class="rounded-[2.5rem] overflow-hidden relative aspect-[4/3] shadow-lg mb-8">
+                            <img src="assets/images/astra_fitness_01.png" class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110">
+                            <div class="absolute inset-0 bg-navy/10 group-hover:bg-transparent transition-colors duration-500"></div>
+                        </div>
+                        <div class="pl-4 border-l-2 border-slate-100 group-hover:border-baby-blue transition-colors">
+                            <p class="text-[10px] uppercase tracking-[0.2em] text-slate-400 font-bold mb-2">Office Interior</p>
+                            <h4 class="text-2xl font-bold text-navy group-hover:text-baby-blue transition-colors">PT ASTRA INTERNATIONAL TBK</h4>
+                            <p class="text-sm text-slate-500 font-light mt-1">Jakarta, 2013</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -1003,6 +1015,13 @@
                     "assets/images/emersia_05.png",
                     "assets/images/emersia_06.png"
                 ]
+            },
+            7: {
+                title: "PT ASTRA INTERNATIONAL TBK", cat: "Office Interior", loc: "Jakarta", year: "2013", services: "Fitness Center", images: [
+                    "assets/images/astra_fitness_01.png",
+                    "assets/images/astra_fitness_02.png",
+                    "assets/images/astra_fitness_03.png"
+                ]
             }
         };
 
@@ -1224,6 +1243,7 @@
             mock.push({ name: 'Emersia Hotel Lampung', desc: 'Lobby, Meetingroom, Perfunction, Office', loc: 'Lampung', year: 2024, type: 'Hotel' });
             mock.push({ name: 'Aston Hotel Palembang', desc: 'Ballroom', loc: 'Palembang', year: 2022, type: 'Hotel' });
             mock.push({ name: 'PT. ASTRA International Tbk', desc: 'Interior & Furniture Showroom Branch & Head Office Auto 2000', loc: 'Jakarta', year: 2023, type: 'Office' });
+            mock.push({ name: 'PT ASTRA INTERNATIONAL TBK', desc: 'Fitness Center', loc: 'Jakarta', year: 2013, type: 'Office' });
             mock.push({ name: 'Four Points Manado', desc: 'Room Set', loc: 'Manado', year: 2021, type: 'Hotel' });
             mock.push({ name: 'Chemonics International Inc - GHSC - PSM', desc: 'AJA Center Jl. Jend. Sudirman', loc: 'Jakarta', year: 2023, type: 'Office' });
             mock.push({ name: 'Chemonics International Inc - BIJAK', desc: 'AJA Center Jl. Jend. Sudirman', loc: 'Jakarta', year: 2022, type: 'Office' });
