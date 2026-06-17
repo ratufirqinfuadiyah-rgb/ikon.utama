@@ -544,8 +544,8 @@
                             <div class="absolute inset-0 bg-navy/10 group-hover:bg-transparent transition-colors duration-500"></div>
                         </div>
                         <div class="pl-4 border-l-2 border-slate-100 group-hover:border-baby-blue transition-colors">
-                            <p class="text-[10px] uppercase tracking-[0.2em] text-slate-400 font-bold mb-2">Restoran</p>
-                            <h4 class="text-2xl font-bold text-navy group-hover:text-baby-blue transition-colors">The Glass House</h4>
+                            <p class="text-[10px] uppercase tracking-[0.2em] text-slate-400 font-bold mb-2">Restaurant</p>
+                            <h4 class="text-2xl font-bold text-navy group-hover:text-baby-blue transition-colors">Barcelona The Glass House</h4>
                             <p class="text-sm text-slate-500 font-light mt-1">Bogor, 2024</p>
                         </div>
                     </div>
@@ -604,7 +604,7 @@
                             <div class="absolute inset-0 bg-navy/10 group-hover:bg-transparent transition-colors duration-500"></div>
                         </div>
                         <div class="pl-4 border-l-2 border-slate-100 group-hover:border-baby-blue transition-colors">
-                            <p class="text-[10px] uppercase tracking-[0.2em] text-slate-400 font-bold mb-2">Hotel Interior</p>
+                            <p class="text-[10px] uppercase tracking-[0.2em] text-slate-400 font-bold mb-2">Hotel</p>
                             <h4 class="text-2xl font-bold text-navy group-hover:text-baby-blue transition-colors">Ibis Styles Medan</h4>
                             <p class="text-sm text-slate-500 font-light mt-1">Medan, 2023</p>
                         </div>
@@ -871,8 +871,6 @@
             <div class="max-w-7xl mx-auto px-6">
                 <div class="flex flex-col md:flex-row items-start justify-between gap-12 text-left">
                     <div class="flex-1 max-w-xl">
-                        <p class="text-baby-blue font-bold tracking-[0.2em] text-[10px] uppercase mb-2">Identitas Proyek
-                        </p>
                         <h3 id="detailing-project-name"
                             class="text-4xl md:text-5xl font-semibold text-navy leading-tight">Nama Proyek</h3>
                     </div>
@@ -982,7 +980,7 @@
                 ]
             },
             3: {
-                title: "Ibis Styles", cat: "Hotel", loc: "Jl. Kapten Patimura No. 442 Medan", year: "2023", services: "Set Kamar, Restoran, Poolbar, Lobi, Ruang Serbaguna, Kids Corner", images: [
+                title: "Ibis Styles", cat: "Hotel", loc: "Jl. Kapten Patimura No. 442 Medan", locLink: "https://www.google.com/maps/place/Ibis+Styles+Medan+Pattimura/@3.5739002,98.6609414,17z/data=!4m10!3m9!1s0x303130295289341b:0xc10a41e616d3b53a!5m3!1s2026-06-19!4m1!1i2!8m2!3d3.5739002!4d98.6635217!16s%2Fg%2F11f1z19dkc?entry=ttu&g_ep=EgoyMDI2MDYxMy4wIKXMDSoASAFQAw%3D%3D", year: "2023", services: "Set Kamar, Restoran, Poolbar, Lobi, Ruang Serbaguna, Kids Corner", images: [
                     "assets/images/ibis_01.png",
                     "assets/images/ibis_02.png",
                     "assets/images/ibis_03.png",
@@ -1015,7 +1013,7 @@
                 ]
             },
             5: {
-                title: "Barcelona The Glass House", cat: "Restoran", loc: "Jl. Villa Duta II No.9, RT.02/RW.11, Baranangsiang, Kec. Bogor Tim, Kota Bogor", year: "2024", services: "Area Makan Interior di Lantai 1 & 2, Ruang Rapat", images: [
+                title: "Barcelona The Glass House", cat: "Restaurant", loc: "Jl. Villa Duta II No.9, RT.02/RW.11, Baranangsiang, Kec. Bogor Tim, Kota Bogor", locLink: "https://www.google.com/maps/place/Barcelona+The+Glass+House/data=!4m2!3m1!1s0x2e69c54ccfa3f10d:0x2697a5604661c8c8?sa=X&ved=1t:242&ictx=111", year: "2024", services: "Area Makan Interior di Lantai 1 & 2, Ruang Rapat", images: [
                     "assets/images/barcelona_01.png",
                     "assets/images/barcelona_02.png",
                     "assets/images/barcelona_03.png",
@@ -1025,7 +1023,7 @@
                 ]
             },
             6: {
-                title: "Emersia Hotel & Resort", cat: "Hotel", loc: "Jl. Wolter Monginsidi No. 70, Bandar Lampung", year: "2024", services: "Lobi, Kamar Tidur, Restoran, Ballroom, Lounge", images: [
+                title: "Emersia Hotel & Resort", cat: "Hotel", loc: "Jl. Wolter Monginsidi No. 70, Bandar Lampung", locLink: "https://www.google.com/maps/place/Emersia+Hotel+%26+Resort/@-5.4262877,105.2486401,17z/data=!4m10!3m9!1s0x2e40da30653b92ab:0x7ab0b801c0458c3f!5m3!1s2026-06-19!4m1!1i2!8m2!3d-5.4262877!4d105.2512204!16s%2Fg%2F11xdkjsd9?entry=ttu&g_ep=EgoyMDI2MDYxMy4wIKXMDSoASAFQAw%3D%3D", year: "2024", services: "Lobi, Kamar Tidur, Restoran, Ballroom, Lounge", images: [
                     "assets/images/emersia_01.png",
                     "assets/images/emersia_02.png",
                     "assets/images/emersia_03.png",
@@ -1147,7 +1145,11 @@
 
             document.getElementById('detailing-project-name').innerText = p.title;
             document.getElementById('detailing-service').innerText = p.services;
-            document.getElementById('detailing-location').innerText = p.loc;
+            if (p.locLink) {
+                document.getElementById('detailing-location').innerHTML = `<a href="${p.locLink}" target="_blank" class="hover:text-baby-blue transition-colors underline decoration-baby-blue/30 underline-offset-4">${p.loc}</a>`;
+            } else {
+                document.getElementById('detailing-location').innerText = p.loc;
+            }
             document.getElementById('detailing-date').innerText = p.year;
 
             const grid = document.getElementById('detail-grid');
