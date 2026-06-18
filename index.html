@@ -298,6 +298,90 @@
         .service-card:hover p {
             transform: translateZ(20px);
         }
+
+        /* ── Klien Marquee ── */
+        @keyframes marquee-scroll {
+            0%   { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+
+        .marquee-track {
+            display: flex;
+            width: max-content;
+            animation: marquee-scroll 35s linear infinite;
+        }
+
+        .marquee-wrapper:hover .marquee-track {
+            animation-play-state: paused;
+        }
+
+        .marquee-fade {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .marquee-fade::before,
+        .marquee-fade::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            width: 100px;
+            z-index: 2;
+            pointer-events: none;
+        }
+
+        .marquee-fade::before {
+            left: 0;
+            background: linear-gradient(to right, var(--pure-white), transparent);
+        }
+
+        .marquee-fade::after {
+            right: 0;
+            background: linear-gradient(to left, var(--pure-white), transparent);
+        }
+
+        @media (max-width: 640px) {
+            .marquee-fade::before,
+            .marquee-fade::after {
+                width: 40px;
+            }
+        }
+
+        .client-card {
+            flex-shrink: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: white;
+            border-radius: 1rem;
+            border: 1px solid #e2e8f0;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+            transition: box-shadow 0.3s ease, transform 0.3s ease, border-color 0.3s ease;
+            padding: 1.25rem 2rem;
+            margin: 0 1rem;
+            width: 200px;
+            height: 90px;
+        }
+
+        @media (min-width: 768px) {
+            .client-card {
+                width: 240px;
+                height: 100px;
+                padding: 1.5rem 2.5rem;
+            }
+        }
+
+        .client-card:hover {
+            box-shadow: 0 8px 30px rgba(0,174,239,0.12);
+            transform: translateY(-4px);
+            border-color: var(--baby-blue);
+        }
+
+        .client-card svg {
+            max-width: 100%;
+            max-height: 100%;
+        }
     </style>
 </head>
 
@@ -711,6 +795,117 @@
                                 </svg>
                             </button>
                         </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Klien Kami -->
+        <section id="clients" class="py-24 bg-white reveal-up">
+            <div class="max-w-7xl mx-auto px-6 text-center mb-16">
+                <p class="text-baby-blue font-bold tracking-widest text-xs uppercase mb-3">Dipercaya Oleh</p>
+                <h2 class="text-4xl md:text-5xl font-semibold text-navy mb-4">Klien Kami</h2>
+                <p class="text-slate-500 text-lg font-light leading-relaxed max-w-2xl mx-auto">Kami bangga telah berkolaborasi dengan brand-brand terkemuka di industri perhotelan, kuliner, dan korporasi.</p>
+            </div>
+            <div class="marquee-wrapper marquee-fade">
+                <div class="marquee-track">
+                    <!-- Set 1 -->
+                    <div class="client-card">
+                        <svg viewBox="0 0 200 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <text x="100" y="28" text-anchor="middle" font-family="Outfit, sans-serif" font-weight="700" font-size="14" fill="#0F172A" letter-spacing="2">NOVOTEL</text>
+                            <line x1="60" y1="38" x2="140" y2="38" stroke="#00AEEF" stroke-width="2"/>
+                        </svg>
+                    </div>
+                    <div class="client-card">
+                        <svg viewBox="0 0 200 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <text x="100" y="22" text-anchor="middle" font-family="Outfit, sans-serif" font-weight="700" font-size="13" fill="#0F172A" letter-spacing="1.5">FAVE</text>
+                            <text x="100" y="38" text-anchor="middle" font-family="Inter, sans-serif" font-weight="400" font-size="9" fill="#64748B" letter-spacing="3">HOTEL</text>
+                        </svg>
+                    </div>
+                    <div class="client-card">
+                        <svg viewBox="0 0 200 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <text x="100" y="22" text-anchor="middle" font-family="Outfit, sans-serif" font-weight="700" font-size="13" fill="#0F172A" letter-spacing="1.5">IBIS</text>
+                            <text x="100" y="38" text-anchor="middle" font-family="Inter, sans-serif" font-weight="400" font-size="9" fill="#64748B" letter-spacing="3">STYLES</text>
+                        </svg>
+                    </div>
+                    <div class="client-card">
+                        <svg viewBox="0 0 200 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <text x="100" y="22" text-anchor="middle" font-family="Outfit, sans-serif" font-weight="700" font-size="11" fill="#0F172A" letter-spacing="1">FOUR POINTS</text>
+                            <text x="100" y="38" text-anchor="middle" font-family="Inter, sans-serif" font-weight="400" font-size="8" fill="#64748B" letter-spacing="3">BY SHERATON</text>
+                        </svg>
+                    </div>
+                    <div class="client-card">
+                        <svg viewBox="0 0 200 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <text x="100" y="22" text-anchor="middle" font-family="Outfit, sans-serif" font-weight="700" font-size="11" fill="#0F172A" letter-spacing="1">BARCELONA</text>
+                            <text x="100" y="38" text-anchor="middle" font-family="Inter, sans-serif" font-weight="400" font-size="8" fill="#64748B" letter-spacing="3">THE GLASS HOUSE</text>
+                        </svg>
+                    </div>
+                    <div class="client-card">
+                        <svg viewBox="0 0 200 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <text x="100" y="22" text-anchor="middle" font-family="Outfit, sans-serif" font-weight="700" font-size="12" fill="#0F172A" letter-spacing="1.5">EMERSIA</text>
+                            <text x="100" y="38" text-anchor="middle" font-family="Inter, sans-serif" font-weight="400" font-size="8" fill="#64748B" letter-spacing="3">HOTEL &amp; RESORT</text>
+                        </svg>
+                    </div>
+                    <div class="client-card">
+                        <svg viewBox="0 0 200 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <text x="100" y="22" text-anchor="middle" font-family="Outfit, sans-serif" font-weight="700" font-size="11" fill="#0F172A" letter-spacing="1">PT ASTRA</text>
+                            <text x="100" y="38" text-anchor="middle" font-family="Inter, sans-serif" font-weight="400" font-size="8" fill="#64748B" letter-spacing="3">INTERNATIONAL</text>
+                        </svg>
+                    </div>
+                    <div class="client-card">
+                        <svg viewBox="0 0 200 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <text x="100" y="22" text-anchor="middle" font-family="Outfit, sans-serif" font-weight="700" font-size="12" fill="#0F172A" letter-spacing="2">SHERATON</text>
+                            <text x="100" y="38" text-anchor="middle" font-family="Inter, sans-serif" font-weight="400" font-size="8" fill="#64748B" letter-spacing="3">HOTELS &amp; RESORTS</text>
+                        </svg>
+                    </div>
+                    <!-- Set 2 (duplicate for seamless loop) -->
+                    <div class="client-card">
+                        <svg viewBox="0 0 200 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <text x="100" y="28" text-anchor="middle" font-family="Outfit, sans-serif" font-weight="700" font-size="14" fill="#0F172A" letter-spacing="2">NOVOTEL</text>
+                            <line x1="60" y1="38" x2="140" y2="38" stroke="#00AEEF" stroke-width="2"/>
+                        </svg>
+                    </div>
+                    <div class="client-card">
+                        <svg viewBox="0 0 200 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <text x="100" y="22" text-anchor="middle" font-family="Outfit, sans-serif" font-weight="700" font-size="13" fill="#0F172A" letter-spacing="1.5">FAVE</text>
+                            <text x="100" y="38" text-anchor="middle" font-family="Inter, sans-serif" font-weight="400" font-size="9" fill="#64748B" letter-spacing="3">HOTEL</text>
+                        </svg>
+                    </div>
+                    <div class="client-card">
+                        <svg viewBox="0 0 200 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <text x="100" y="22" text-anchor="middle" font-family="Outfit, sans-serif" font-weight="700" font-size="13" fill="#0F172A" letter-spacing="1.5">IBIS</text>
+                            <text x="100" y="38" text-anchor="middle" font-family="Inter, sans-serif" font-weight="400" font-size="9" fill="#64748B" letter-spacing="3">STYLES</text>
+                        </svg>
+                    </div>
+                    <div class="client-card">
+                        <svg viewBox="0 0 200 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <text x="100" y="22" text-anchor="middle" font-family="Outfit, sans-serif" font-weight="700" font-size="11" fill="#0F172A" letter-spacing="1">FOUR POINTS</text>
+                            <text x="100" y="38" text-anchor="middle" font-family="Inter, sans-serif" font-weight="400" font-size="8" fill="#64748B" letter-spacing="3">BY SHERATON</text>
+                        </svg>
+                    </div>
+                    <div class="client-card">
+                        <svg viewBox="0 0 200 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <text x="100" y="22" text-anchor="middle" font-family="Outfit, sans-serif" font-weight="700" font-size="11" fill="#0F172A" letter-spacing="1">BARCELONA</text>
+                            <text x="100" y="38" text-anchor="middle" font-family="Inter, sans-serif" font-weight="400" font-size="8" fill="#64748B" letter-spacing="3">THE GLASS HOUSE</text>
+                        </svg>
+                    </div>
+                    <div class="client-card">
+                        <svg viewBox="0 0 200 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <text x="100" y="22" text-anchor="middle" font-family="Outfit, sans-serif" font-weight="700" font-size="12" fill="#0F172A" letter-spacing="1.5">EMERSIA</text>
+                            <text x="100" y="38" text-anchor="middle" font-family="Inter, sans-serif" font-weight="400" font-size="8" fill="#64748B" letter-spacing="3">HOTEL &amp; RESORT</text>
+                        </svg>
+                    </div>
+                    <div class="client-card">
+                        <svg viewBox="0 0 200 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <text x="100" y="22" text-anchor="middle" font-family="Outfit, sans-serif" font-weight="700" font-size="11" fill="#0F172A" letter-spacing="1">PT ASTRA</text>
+                            <text x="100" y="38" text-anchor="middle" font-family="Inter, sans-serif" font-weight="400" font-size="8" fill="#64748B" letter-spacing="3">INTERNATIONAL</text>
+                        </svg>
+                    </div>
+                    <div class="client-card">
+                        <svg viewBox="0 0 200 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <text x="100" y="22" text-anchor="middle" font-family="Outfit, sans-serif" font-weight="700" font-size="12" fill="#0F172A" letter-spacing="2">SHERATON</text>
+                            <text x="100" y="38" text-anchor="middle" font-family="Inter, sans-serif" font-weight="400" font-size="8" fill="#64748B" letter-spacing="3">HOTELS &amp; RESORTS</text>
+                        </svg>
                     </div>
                 </div>
             </div>
