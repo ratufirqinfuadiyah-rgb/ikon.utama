@@ -964,7 +964,7 @@
                 ]
             },
             2: {
-                title: "Fave Hotel", cat: "Hotel", loc: "Jl. Jend. Basuki Rachmat No. 1681, Pahlawan, Kemuning, Palembang 301208", year: "2022", services: "Set Kamar, Restoran, Front Office, Lobi & Ballroom", images: [
+                title: "Fave Hotel", cat: "Hotel", loc: "Jl. Jend. Basuki Rachmat No. 1681, Pahlawan, Kemuning, Palembang 301208", locLink: "https://www.google.com/maps/place/fave%2B+hotel+Palembang/@-2.9562768,104.7436578,17z/data=!4m10!3m9!1s0x2e3b742d30c9f9f9:0x4cdbb4e45e58a0d6!5m3!1s2026-06-19!4m1!1i2!8m2!3d-2.9562822!4d104.7462327!16s%2Fg%2F11btlnn8yz?entry=ttu&g_ep=EgoyMDI2MDYxMy4wIKXMDSoASAFQAw%3D%3D", year: "2022", services: "Set Kamar, Restoran, Front Office, Lobi & Ballroom", images: [
                     "assets/images/fave_01.png",
                     "assets/images/fave_02.png",
                     "assets/images/fave_03.png",
@@ -1455,6 +1455,24 @@
             container.classList.remove('cursor-pointer', 'group');
         }
     </script>
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/6281219290190" target="_blank" rel="noopener noreferrer"
+        id="wa-float-btn"
+        title="Chat via WhatsApp"
+        style="position:fixed;bottom:28px;right:28px;z-index:9999;
+               width:60px;height:60px;border-radius:50%;
+               background:linear-gradient(135deg,#25D366,#128C7E);
+               display:flex;align-items:center;justify-content:center;
+               box-shadow:0 6px 24px rgba(37,211,102,0.45),0 2px 8px rgba(0,0,0,0.18);
+               transition:transform .25s cubic-bezier(.34,1.56,.64,1),box-shadow .25s ease;
+               text-decoration:none;"
+        onmouseenter="this.style.transform='scale(1.15)';this.style.boxShadow='0 10px 32px rgba(37,211,102,0.6),0 4px 12px rgba(0,0,0,0.2)';"
+        onmouseleave="this.style.transform='scale(1)';this.style.boxShadow='0 6px 24px rgba(37,211,102,0.45),0 2px 8px rgba(0,0,0,0.18)';">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32" fill="white">
+            <path d="M16 0C7.163 0 0 7.163 0 16c0 2.822.737 5.469 2.027 7.77L0 32l8.466-2.001A15.93 15.93 0 0016 32c8.837 0 16-7.163 16-16S24.837 0 16 0zm0 29.5a13.44 13.44 0 01-6.845-1.872l-.491-.291-5.025 1.188 1.227-4.895-.32-.504A13.437 13.437 0 012.5 16C2.5 8.544 8.544 2.5 16 2.5S29.5 8.544 29.5 16 23.456 29.5 16 29.5zm7.39-10.078c-.405-.202-2.395-1.18-2.766-1.316-.37-.135-.64-.202-.91.202-.27.405-1.045 1.316-1.281 1.587-.236.27-.472.304-.877.101-.405-.202-1.71-.63-3.258-2.01-1.204-1.073-2.017-2.398-2.253-2.803-.236-.405-.025-.624.178-.824.181-.18.405-.472.607-.708.202-.236.27-.405.405-.675.135-.27.067-.506-.034-.708-.101-.202-.91-2.195-1.246-3.005-.328-.789-.66-.682-.91-.695l-.775-.013c-.27 0-.708.101-1.078.506-.37.405-1.416 1.383-1.416 3.374 0 1.99 1.45 3.913 1.652 4.183.202.27 2.853 4.357 6.912 6.109.967.417 1.72.666 2.308.852.97.308 1.854.264 2.553.16.778-.115 2.395-.978 2.733-1.923.337-.944.337-1.753.236-1.923-.1-.168-.37-.27-.775-.472z"/>
+        </svg>
+    </a>
+
 </body>
 
 </html>
