@@ -382,6 +382,18 @@
             max-width: 100%;
             max-height: 100%;
         }
+
+        .client-card img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+            filter: grayscale(0%);
+            transition: filter 0.3s ease;
+        }
+
+        .client-card:hover img {
+            filter: grayscale(0%);
+        }
     </style>
 </head>
 
@@ -810,68 +822,54 @@
                 <div class="marquee-track">
                     <!-- Set 1 -->
                     <div class="client-card">
-                        <svg viewBox="0 0 200 50" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <text x="100" y="28" text-anchor="middle" font-family="Outfit, sans-serif" font-weight="700" font-size="14" fill="#0F172A" letter-spacing="2">NOVOTEL</text>
-                            <line x1="60" y1="38" x2="140" y2="38" stroke="#00AEEF" stroke-width="2"/>
-                        </svg>
+                        <img src="assets/images/logo_aston.png" alt="Aston Hotel">
                     </div>
                     <div class="client-card">
-                        <svg viewBox="0 0 200 50" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <text x="100" y="22" text-anchor="middle" font-family="Outfit, sans-serif" font-weight="700" font-size="13" fill="#0F172A" letter-spacing="1.5">FAVE</text>
-                            <text x="100" y="38" text-anchor="middle" font-family="Inter, sans-serif" font-weight="400" font-size="9" fill="#64748B" letter-spacing="3">HOTEL</text>
-                        </svg>
+                        <img src="assets/images/logo_astra.png" alt="PT Astra International">
                     </div>
                     <div class="client-card">
-                        <svg viewBox="0 0 200 50" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <text x="100" y="22" text-anchor="middle" font-family="Outfit, sans-serif" font-weight="700" font-size="13" fill="#0F172A" letter-spacing="1.5">IBIS</text>
-                            <text x="100" y="38" text-anchor="middle" font-family="Inter, sans-serif" font-weight="400" font-size="9" fill="#64748B" letter-spacing="3">STYLES</text>
-                        </svg>
-                    </div>
-
-                    <div class="client-card">
-                        <svg viewBox="0 0 200 50" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <text x="100" y="22" text-anchor="middle" font-family="Outfit, sans-serif" font-weight="700" font-size="12" fill="#0F172A" letter-spacing="1.5">EMERSIA</text>
-                            <text x="100" y="38" text-anchor="middle" font-family="Inter, sans-serif" font-weight="400" font-size="8" fill="#64748B" letter-spacing="3">HOTEL &amp; RESORT</text>
-                        </svg>
+                        <img src="assets/images/logo_emersia.png" alt="Emersia Hotel & Resort">
                     </div>
                     <div class="client-card">
-                        <svg viewBox="0 0 200 50" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <text x="100" y="22" text-anchor="middle" font-family="Outfit, sans-serif" font-weight="700" font-size="11" fill="#0F172A" letter-spacing="1">PT ASTRA</text>
-                            <text x="100" y="38" text-anchor="middle" font-family="Inter, sans-serif" font-weight="400" font-size="8" fill="#64748B" letter-spacing="3">INTERNATIONAL</text>
-                        </svg>
+                        <img src="assets/images/logo_fave.png" alt="Fave Hotel">
+                    </div>
+                    <div class="client-card">
+                        <img src="assets/images/logo_fourpoints.png" alt="Four Points by Sheraton">
+                    </div>
+                    <div class="client-card">
+                        <img src="assets/images/logo_ibis.png" alt="Ibis Styles">
+                    </div>
+                    <div class="client-card">
+                        <img src="assets/images/logo_mandiri.png" alt="Mandiri Syariah">
+                    </div>
+                    <div class="client-card">
+                        <img src="assets/images/logo_samsung.png" alt="Samsung Service Center">
                     </div>
 
                     <!-- Set 2 (duplicate for seamless loop) -->
                     <div class="client-card">
-                        <svg viewBox="0 0 200 50" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <text x="100" y="28" text-anchor="middle" font-family="Outfit, sans-serif" font-weight="700" font-size="14" fill="#0F172A" letter-spacing="2">NOVOTEL</text>
-                            <line x1="60" y1="38" x2="140" y2="38" stroke="#00AEEF" stroke-width="2"/>
-                        </svg>
+                        <img src="assets/images/logo_aston.png" alt="Aston Hotel">
                     </div>
                     <div class="client-card">
-                        <svg viewBox="0 0 200 50" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <text x="100" y="22" text-anchor="middle" font-family="Outfit, sans-serif" font-weight="700" font-size="13" fill="#0F172A" letter-spacing="1.5">FAVE</text>
-                            <text x="100" y="38" text-anchor="middle" font-family="Inter, sans-serif" font-weight="400" font-size="9" fill="#64748B" letter-spacing="3">HOTEL</text>
-                        </svg>
+                        <img src="assets/images/logo_astra.png" alt="PT Astra International">
                     </div>
                     <div class="client-card">
-                        <svg viewBox="0 0 200 50" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <text x="100" y="22" text-anchor="middle" font-family="Outfit, sans-serif" font-weight="700" font-size="13" fill="#0F172A" letter-spacing="1.5">IBIS</text>
-                            <text x="100" y="38" text-anchor="middle" font-family="Inter, sans-serif" font-weight="400" font-size="9" fill="#64748B" letter-spacing="3">STYLES</text>
-                        </svg>
-                    </div>
-
-                    <div class="client-card">
-                        <svg viewBox="0 0 200 50" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <text x="100" y="22" text-anchor="middle" font-family="Outfit, sans-serif" font-weight="700" font-size="12" fill="#0F172A" letter-spacing="1.5">EMERSIA</text>
-                            <text x="100" y="38" text-anchor="middle" font-family="Inter, sans-serif" font-weight="400" font-size="8" fill="#64748B" letter-spacing="3">HOTEL &amp; RESORT</text>
-                        </svg>
+                        <img src="assets/images/logo_emersia.png" alt="Emersia Hotel & Resort">
                     </div>
                     <div class="client-card">
-                        <svg viewBox="0 0 200 50" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <text x="100" y="22" text-anchor="middle" font-family="Outfit, sans-serif" font-weight="700" font-size="11" fill="#0F172A" letter-spacing="1">PT ASTRA</text>
-                            <text x="100" y="38" text-anchor="middle" font-family="Inter, sans-serif" font-weight="400" font-size="8" fill="#64748B" letter-spacing="3">INTERNATIONAL</text>
-                        </svg>
+                        <img src="assets/images/logo_fave.png" alt="Fave Hotel">
+                    </div>
+                    <div class="client-card">
+                        <img src="assets/images/logo_fourpoints.png" alt="Four Points by Sheraton">
+                    </div>
+                    <div class="client-card">
+                        <img src="assets/images/logo_ibis.png" alt="Ibis Styles">
+                    </div>
+                    <div class="client-card">
+                        <img src="assets/images/logo_mandiri.png" alt="Mandiri Syariah">
+                    </div>
+                    <div class="client-card">
+                        <img src="assets/images/logo_samsung.png" alt="Samsung Service Center">
                     </div>
 
                 </div>
