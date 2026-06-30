@@ -333,12 +333,12 @@
 
         .marquee-fade::before {
             left: 0;
-            background: linear-gradient(to right, var(--pure-white), transparent);
+            background: linear-gradient(to right, #0d1b3e, transparent);
         }
 
         .marquee-fade::after {
             right: 0;
-            background: linear-gradient(to left, var(--pure-white), transparent);
+            background: linear-gradient(to left, #0d1b3e, transparent);
         }
 
         @media (max-width: 640px) {
@@ -353,28 +353,29 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            background: white;
-            border-radius: 1rem;
-            border: 1px solid #e2e8f0;
-            box-shadow: 0 1px 3px rgba(0,0,0,0.04);
-            transition: box-shadow 0.3s ease, transform 0.3s ease, border-color 0.3s ease;
-            padding: 1.25rem 2rem;
-            margin: 0 1rem;
-            width: 200px;
-            height: 90px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 1.25rem;
+            border: 1px solid rgba(255,255,255,0.18);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+            transition: box-shadow 0.3s ease, transform 0.3s ease, background 0.3s ease, border-color 0.3s ease;
+            padding: 1.5rem 2.5rem;
+            margin: 0 1.25rem;
+            width: 260px;
+            height: 130px;
         }
 
         @media (min-width: 768px) {
             .client-card {
-                width: 240px;
-                height: 100px;
-                padding: 1.5rem 2.5rem;
+                width: 300px;
+                height: 150px;
+                padding: 1.75rem 3rem;
             }
         }
 
         .client-card:hover {
-            box-shadow: 0 8px 30px rgba(0,174,239,0.12);
-            transform: translateY(-4px);
+            background: rgba(255,255,255,0.18);
+            box-shadow: 0 12px 40px rgba(0,174,239,0.25);
+            transform: translateY(-5px);
             border-color: var(--baby-blue);
         }
 
@@ -387,12 +388,13 @@
             max-width: 100%;
             max-height: 100%;
             object-fit: contain;
-            filter: grayscale(0%);
-            transition: filter 0.3s ease;
+            filter: brightness(0) invert(1);
+            transition: filter 0.3s ease, transform 0.3s ease;
         }
 
         .client-card:hover img {
-            filter: grayscale(0%);
+            filter: brightness(0) invert(1) drop-shadow(0 0 8px rgba(0,174,239,0.8));
+            transform: scale(1.05);
         }
     </style>
 </head>
@@ -812,11 +814,11 @@
         </section>
 
         <!-- Klien Kami -->
-        <section id="clients" class="py-24 bg-white reveal-up">
+        <section id="clients" class="py-24 reveal-up" style="background-color: #0d1b3e;">
             <div class="max-w-7xl mx-auto px-6 text-center mb-16">
                 <p class="text-baby-blue font-bold tracking-widest text-xs uppercase mb-3">Dipercaya Oleh</p>
-                <h2 class="text-4xl md:text-5xl font-semibold text-navy mb-4">Klien Kami</h2>
-                <p class="text-slate-500 text-lg font-light leading-relaxed max-w-2xl mx-auto">Kami bangga telah berkolaborasi dengan brand-brand terkemuka di industri perhotelan, kuliner, dan korporasi.</p>
+                <h2 class="text-4xl md:text-5xl font-semibold text-white mb-4">Klien Kami</h2>
+                <p class="text-slate-300 text-lg font-light leading-relaxed max-w-2xl mx-auto">Kami bangga telah berkolaborasi dengan brand-brand terkemuka di industri perhotelan, kuliner, dan korporasi.</p>
             </div>
             <div class="marquee-wrapper marquee-fade">
                 <div class="marquee-track">
@@ -956,20 +958,6 @@
                     </ul>
                 </div>
 
-                <div>
-                    <h6 class="text-white font-bold text-xl mb-8">Legalitas Perusahaan</h6>
-                    <ul class="space-y-4 text-slate-400 text-sm">
-                        <li>
-                            <span class="block text-white font-semibold mb-1">Badan Hukum:</span>
-                            Ikon Utama
-                        </li>
-                        <li>
-                            <span class="block text-white font-semibold mb-1">NIB:</span>
-                            9120207570183
-                        </li>
-
-                    </ul>
-                </div>
 
                 <div>
                     <h6 class="text-white font-bold text-xl mb-8">Ikuti Kami</h6>
