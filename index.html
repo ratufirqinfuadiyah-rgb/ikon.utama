@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PT IKON UTAMA | Building Spaces, Realizing Visions</title>
+    <link rel="icon" type="image/png" href="assets/images/logo.png">
     <script src="https://cdn.tailwindcss.com"></script>
     <link
         href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700&display=swap"
@@ -476,6 +477,10 @@
                         class="nav-link text-slate-600 hover:text-navy font-semibold text-sm uppercase tracking-wider">Layanan</a>
                     <a href="#portfolio"
                         class="nav-link text-slate-600 hover:text-navy font-semibold text-sm uppercase tracking-wider">Portofolio</a>
+                    <a href="#proyek-cibubur"
+                        class="nav-link text-slate-600 hover:text-navy font-semibold text-sm uppercase tracking-wider flex items-center gap-1.5">
+                        <span class="relative flex h-2 w-2"><span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-amber-400 opacity-75"></span><span class="relative inline-flex rounded-full h-2 w-2 bg-amber-500"></span></span>
+                        Proyek Cibubur</a>
                     <a href="#contact-section"
                         class="nav-link text-slate-600 hover:text-navy font-semibold text-sm uppercase tracking-wider">Kontak</a>
                 </div>
@@ -792,6 +797,167 @@
                 </div>
             </div>
         </section>
+
+        <!-- Proyek Cibubur - Ongoing -->
+        <section id="proyek-cibubur" class="py-24 reveal-up" style="background: linear-gradient(135deg, #0F172A 0%, #1e3a5f 50%, #0F172A 100%);">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <!-- Section Header -->
+                <div class="text-center mb-16 reveal-up">
+                    <div class="inline-flex items-center gap-3 bg-amber-500/20 border border-amber-500/40 rounded-full px-6 py-2.5 mb-8">
+                        <span class="relative flex h-2.5 w-2.5">
+                            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-amber-400 opacity-75"></span>
+                            <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-amber-500"></span>
+                        </span>
+                        <span class="text-amber-400 font-bold tracking-[0.3em] text-[10px] uppercase">Sedang Berjalan</span>
+                    </div>
+                    <p class="text-baby-blue font-bold tracking-[0.4em] text-[10px] uppercase mb-4">Proyek Terkini</p>
+                    <h2 class="text-4xl md:text-6xl font-semibold text-white leading-tight mb-6">Proyek <span style="color: #00AEEF;">Cibubur</span></h2>
+                    <p class="text-slate-300 text-lg font-light leading-relaxed max-w-2xl mx-auto">Proyek interior eksklusif yang sedang dalam proses pengerjaan. Menyaksikan transformasi ruang menjadi karya yang memukau.</p>
+                    <div class="accent-line mx-auto mt-8" style="background: linear-gradient(90deg, transparent, #00AEEF, transparent);"></div>
+                </div>
+
+                <!-- Progress Badge -->
+                <div class="flex justify-center mb-12">
+                    <div class="bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl px-8 py-5 flex items-center gap-8">
+                        <div class="text-center">
+                            <p class="text-3xl font-bold text-white">2025</p>
+                            <p class="text-xs text-slate-400 uppercase tracking-wider mt-1">Tahun Mulai</p>
+                        </div>
+                        <div class="w-px h-12 bg-white/20"></div>
+                        <div class="text-center">
+                            <p class="text-3xl font-bold" style="color: #00AEEF;">On Going</p>
+                            <p class="text-xs text-slate-400 uppercase tracking-wider mt-1">Status Proyek</p>
+                        </div>
+                        <div class="w-px h-12 bg-white/20"></div>
+                        <div class="text-center">
+                            <p class="text-3xl font-bold text-white">Cibubur</p>
+                            <p class="text-xs text-slate-400 uppercase tracking-wider mt-1">Lokasi</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Photo Grid - Portrait 880x1188 -->
+                <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4" id="cibubur-gallery">
+                    <div class="group cursor-pointer reveal-up delay-100" onclick="openCibuburLightbox(0)">
+                        <div class="rounded-2xl overflow-hidden shadow-lg" style="aspect-ratio: 880/1188;">
+                            <img src="assets/images/cibubur_01.png" alt="Proses Proyek Cibubur 01" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                        </div>
+                    </div>
+                    <div class="group cursor-pointer reveal-up delay-200" onclick="openCibuburLightbox(1)">
+                        <div class="rounded-2xl overflow-hidden shadow-lg" style="aspect-ratio: 880/1188;">
+                            <img src="assets/images/cibubur_02.png" alt="Proses Proyek Cibubur 02" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                        </div>
+                    </div>
+                    <div class="group cursor-pointer reveal-up delay-300" onclick="openCibuburLightbox(2)">
+                        <div class="rounded-2xl overflow-hidden shadow-lg" style="aspect-ratio: 880/1188;">
+                            <img src="assets/images/cibubur_03.png" alt="Proses Proyek Cibubur 03" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                        </div>
+                    </div>
+                    <div class="group cursor-pointer reveal-up delay-100" onclick="openCibuburLightbox(3)">
+                        <div class="rounded-2xl overflow-hidden shadow-lg" style="aspect-ratio: 880/1188;">
+                            <img src="assets/images/cibubur_04.png" alt="Proses Proyek Cibubur 04" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                        </div>
+                    </div>
+                    <div class="group cursor-pointer reveal-up delay-200" onclick="openCibuburLightbox(4)">
+                        <div class="rounded-2xl overflow-hidden shadow-lg" style="aspect-ratio: 880/1188;">
+                            <img src="assets/images/cibubur_05.png" alt="Proses Proyek Cibubur 05" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                        </div>
+                    </div>
+                    <div class="group cursor-pointer reveal-up delay-300" onclick="openCibuburLightbox(5)">
+                        <div class="rounded-2xl overflow-hidden shadow-lg" style="aspect-ratio: 880/1188;">
+                            <img src="assets/images/cibubur_06.png" alt="Proses Proyek Cibubur 06" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                        </div>
+                    </div>
+                    <div class="group cursor-pointer reveal-up delay-100" onclick="openCibuburLightbox(6)">
+                        <div class="rounded-2xl overflow-hidden shadow-lg" style="aspect-ratio: 880/1188;">
+                            <img src="assets/images/cibubur_07.png" alt="Proses Proyek Cibubur 07" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                        </div>
+                    </div>
+                    <div class="group cursor-pointer reveal-up delay-200" onclick="openCibuburLightbox(7)">
+                        <div class="rounded-2xl overflow-hidden shadow-lg" style="aspect-ratio: 880/1188;">
+                            <img src="assets/images/cibubur_08.png" alt="Proses Proyek Cibubur 08" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                        </div>
+                    </div>
+                    <div class="group cursor-pointer reveal-up delay-300" onclick="openCibuburLightbox(8)">
+                        <div class="rounded-2xl overflow-hidden shadow-lg" style="aspect-ratio: 880/1188;">
+                            <img src="assets/images/cibubur_09.png" alt="Proses Proyek Cibubur 09" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                        </div>
+                    </div>
+                    <div class="group cursor-pointer reveal-up delay-100" onclick="openCibuburLightbox(9)">
+                        <div class="rounded-2xl overflow-hidden shadow-lg" style="aspect-ratio: 880/1188;">
+                            <img src="assets/images/cibubur_10.png" alt="Proses Proyek Cibubur 10" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                        </div>
+                    </div>
+                    <div class="group cursor-pointer reveal-up delay-100" onclick="openCibuburLightbox(10)">
+                        <div class="rounded-2xl overflow-hidden shadow-lg" style="aspect-ratio: 880/1188;">
+                            <img src="assets/images/cibubur_11.png" alt="Proses Proyek Cibubur 11" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                        </div>
+                    </div>
+                    <div class="group cursor-pointer reveal-up delay-200" onclick="openCibuburLightbox(11)">
+                        <div class="rounded-2xl overflow-hidden shadow-lg" style="aspect-ratio: 880/1188;">
+                            <img src="assets/images/cibubur_12.png" alt="Proses Proyek Cibubur 12" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                        </div>
+                    </div>
+                    <div class="group cursor-pointer reveal-up delay-300" onclick="openCibuburLightbox(12)">
+                        <div class="rounded-2xl overflow-hidden shadow-lg" style="aspect-ratio: 880/1188;">
+                            <img src="assets/images/cibubur_13.png" alt="Proses Proyek Cibubur 13" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                        </div>
+                    </div>
+                    <div class="group cursor-pointer reveal-up delay-100" onclick="openCibuburLightbox(13)">
+                        <div class="rounded-2xl overflow-hidden shadow-lg" style="aspect-ratio: 880/1188;">
+                            <img src="assets/images/cibubur_14.png" alt="Proses Proyek Cibubur 14" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                        </div>
+                    </div>
+                    <div class="group cursor-pointer reveal-up delay-200" onclick="openCibuburLightbox(14)">
+                        <div class="rounded-2xl overflow-hidden shadow-lg" style="aspect-ratio: 880/1188;">
+                            <img src="assets/images/cibubur_15.png" alt="Proses Proyek Cibubur 15" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                        </div>
+                    </div>
+                    <div class="group cursor-pointer reveal-up delay-300" onclick="openCibuburLightbox(15)">
+                        <div class="rounded-2xl overflow-hidden shadow-lg" style="aspect-ratio: 880/1188;">
+                            <img src="assets/images/cibubur_16.png" alt="Proses Proyek Cibubur 16" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                        </div>
+                    </div>
+                    <div class="group cursor-pointer reveal-up delay-100" onclick="openCibuburLightbox(16)">
+                        <div class="rounded-2xl overflow-hidden shadow-lg" style="aspect-ratio: 880/1188;">
+                            <img src="assets/images/cibubur_17.png" alt="Proses Proyek Cibubur 17" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                        </div>
+                    </div>
+                    <div class="group cursor-pointer reveal-up delay-200" onclick="openCibuburLightbox(17)">
+                        <div class="rounded-2xl overflow-hidden shadow-lg" style="aspect-ratio: 880/1188;">
+                            <img src="assets/images/cibubur_18.png" alt="Proses Proyek Cibubur 18" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                        </div>
+                    </div>
+                    <div class="group cursor-pointer reveal-up delay-300" onclick="openCibuburLightbox(18)">
+                        <div class="rounded-2xl overflow-hidden shadow-lg" style="aspect-ratio: 880/1188;">
+                            <img src="assets/images/cibubur_19.png" alt="Proses Proyek Cibubur 19" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                        </div>
+                    </div>
+                    <div class="group cursor-pointer reveal-up delay-100" onclick="openCibuburLightbox(19)">
+                        <div class="rounded-2xl overflow-hidden shadow-lg" style="aspect-ratio: 880/1188;">
+                            <img src="assets/images/cibubur_20.png" alt="Proses Proyek Cibubur 20" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Cibubur Lightbox -->
+        <div id="cibubur-lightbox" class="fixed inset-0 z-[300] hidden items-center justify-center" style="background: rgba(0,0,0,0.95);">
+            <button onclick="closeCibuburLightbox()" class="absolute top-6 right-6 text-white hover:text-gray-300 transition-colors z-[310]">
+                <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+            </button>
+            <button onclick="prevCibuburImage()" class="lb-nav-btn absolute left-4 md:left-8 top-1/2 -translate-y-1/2 w-16 h-16 rounded-full flex items-center justify-center text-white z-[310]">
+                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M15 19l-7-7 7-7"/></svg>
+            </button>
+            <div class="relative max-h-[90vh] flex items-center justify-center px-20">
+                <img id="cibubur-lb-img" src="" class="max-h-[85vh] max-w-full object-contain rounded-xl shadow-2xl">
+                <p id="cibubur-lb-counter" class="absolute bottom-0 left-1/2 -translate-x-1/2 text-white/60 text-sm font-light pb-2"></p>
+            </div>
+            <button onclick="nextCibuburImage()" class="lb-nav-btn absolute right-4 md:right-8 top-1/2 -translate-y-1/2 w-16 h-16 rounded-full flex items-center justify-center text-white z-[310]">
+                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M9 5l7 7-7 7"/></svg>
+            </button>
+        </div>
 
         <!-- Project Archive -->
         <section id="project-archive" class="py-24 bg-soft-gray border-t border-gray-200">
@@ -1555,6 +1721,46 @@
         });
 
         lb.addEventListener('click', (e) => { if (e.target === lb || e.target.id === 'lightbox-img-container') closeLightbox(); });
+
+        // Cibubur Lightbox
+        const cibuburImages = Array.from({length: 20}, (_, i) => `assets/images/cibubur_${String(i+1).padStart(2,'0')}.png`);
+        let cibuburIdx = 0;
+        const cibuburLb = document.getElementById('cibubur-lightbox');
+        const cibuburLbImg = document.getElementById('cibubur-lb-img');
+        const cibuburLbCounter = document.getElementById('cibubur-lb-counter');
+
+        function openCibuburLightbox(idx) {
+            cibuburIdx = idx;
+            cibuburLbImg.src = cibuburImages[cibuburIdx];
+            cibuburLbCounter.innerText = `${cibuburIdx + 1} / ${cibuburImages.length}`;
+            cibuburLb.classList.remove('hidden');
+            cibuburLb.classList.add('flex');
+            document.body.style.overflow = 'hidden';
+        }
+        function closeCibuburLightbox() {
+            cibuburLb.classList.add('hidden');
+            cibuburLb.classList.remove('flex');
+            document.body.style.overflow = 'auto';
+        }
+        function prevCibuburImage() {
+            cibuburIdx = (cibuburIdx - 1 + cibuburImages.length) % cibuburImages.length;
+            cibuburLbImg.src = cibuburImages[cibuburIdx];
+            cibuburLbCounter.innerText = `${cibuburIdx + 1} / ${cibuburImages.length}`;
+        }
+        function nextCibuburImage() {
+            cibuburIdx = (cibuburIdx + 1) % cibuburImages.length;
+            cibuburLbImg.src = cibuburImages[cibuburIdx];
+            cibuburLbCounter.innerText = `${cibuburIdx + 1} / ${cibuburImages.length}`;
+        }
+        if (cibuburLb) {
+            cibuburLb.addEventListener('click', (e) => { if (e.target === cibuburLb) closeCibuburLightbox(); });
+            document.addEventListener('keydown', (e) => {
+                if (cibuburLb.classList.contains('hidden')) return;
+                if (e.key === 'ArrowRight') nextCibuburImage();
+                if (e.key === 'ArrowLeft') prevCibuburImage();
+                if (e.key === 'Escape') closeCibuburLightbox();
+            });
+        }
 
         const mobileBtn = document.getElementById('mobile-menu-button');
         const menu = document.querySelector('#mobile-menu');
