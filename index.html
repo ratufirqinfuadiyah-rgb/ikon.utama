@@ -247,6 +247,65 @@
             transform: translateY(-5px);
         }
 
+        /* Photo card caption overlay */
+        .photo-card {
+            position: relative;
+        }
+        .photo-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 10px 16px 12px;
+            background: linear-gradient(to top, rgba(10,25,47,0.82) 60%, transparent);
+            color: #fff;
+            font-size: 0.75rem;
+            font-weight: 600;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            pointer-events: none;
+            border-radius: 0 0 2rem 2rem;
+        }
+
+        /* Grouped frame: 3 photos in one card */
+        .photo-group-frame {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 6px;
+            height: 100%;
+        }
+        .photo-group-item {
+            position: relative;
+            overflow: hidden;
+        }
+        .photo-group-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 6px 8px 8px;
+            background: linear-gradient(to top, rgba(10,25,47,0.85) 60%, transparent);
+            color: #fff;
+            font-size: 0.6rem;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            text-align: center;
+            pointer-events: none;
+        }
+
+        /* Lightbox caption */
+        #lightbox-caption {
+            color: rgba(255,255,255,0.75);
+            font-size: 0.75rem;
+            font-weight: 600;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            margin-top: 10px;
+            text-align: center;
+            min-height: 1.2em;
+        }
+
         .lb-nav-btn {
             background: rgba(255, 255, 255, 0.1);
             transition: all 0.3s ease;
@@ -1096,8 +1155,9 @@
             </svg>
         </button>
         <div id="lightbox-img-container"
-            class="relative max-w-full max-h-[85vh] flex items-center justify-center overflow-hidden w-full">
-            <img id="lightbox-img" src="" class="max-w-full max-h-full object-contain rounded-xl shadow-2xl">
+            class="relative max-w-full max-h-[75vh] flex flex-col items-center justify-center overflow-hidden w-full">
+            <img id="lightbox-img" src="" class="max-w-full max-h-[70vh] object-contain rounded-xl shadow-2xl">
+            <p id="lightbox-caption"></p>
         </div>
         <button onclick="nextImage()"
             class="lb-nav-btn absolute right-4 md:right-8 top-1/2 -translate-y-1/2 w-16 h-16 md:w-20 md:h-20 rounded-full flex items-center justify-center text-white z-[210]">
@@ -1199,23 +1259,36 @@
             },
             8: {
                 title: "Herjuno Residence", cat: "Interior Rumah", loc: "Cibubur", locLink: "", city: "Cibubur", year: "2017", services: "Interior Rumah", images: [
-                    "assets/images/herjuno_01.png",
-                    "assets/images/herjuno_02.png",
-                    "assets/images/herjuno_03.png",
-                    "assets/images/herjuno_04.png",
-                    "assets/images/herjuno_05.png",
-                    "assets/images/herjuno_06.png",
-                    "assets/images/herjuno_07.png",
-                    "assets/images/herjuno_08.png",
-                    "assets/images/herjuno_09.png",
-                    "assets/images/herjuno_10.png",
-                    "assets/images/herjuno_11.png",
-                    "assets/images/herjuno_12.png"
+                    { src: "assets/images/herjuno_01.png", caption: "Living & Dining Room" },
+                    { src: "assets/images/herjuno_02.png", caption: "Living & Dining Room" },
+                    { src: "assets/images/herjuno_03.png", caption: "Living & Dining Room" },
+                    { src: "assets/images/herjuno_04.png", caption: "Living & Dining Room" },
+                    { src: "assets/images/herjuno_05.png", caption: "Living & Dining Room" },
+                    { src: "assets/images/herjuno_06.png", caption: "Living & Dining Room" },
+                    { src: "assets/images/herjuno_07.png", caption: "Master Bedroom" },
+                    { src: "assets/images/herjuno_08.png", caption: "Master Bedroom" },
+                    { src: "assets/images/herjuno_09.png", caption: "Working Room" },
+                    { src: "assets/images/herjuno_10.png", caption: "Master Bathroom" },
+                    { src: "assets/images/herjuno_11.png", caption: "Master Bathroom" },
+                    { src: "assets/images/herjuno_12.png", caption: "Master Bathroom" },
+                    { src: "assets/images/herjuno_13.png", caption: "Upper Living Room" },
+                    { src: "assets/images/herjuno_14.png", caption: "Upper Living Room" },
+                    { src: "assets/images/herjuno_15.png", caption: "Upper Living Room" },
+                    {
+                        group: true,
+                        photos: [
+                            { src: "assets/images/herjuno_16.png", caption: "Corridor Upper Living" },
+                            { src: "assets/images/herjuno_17.png", caption: "Corridor Upper Living" },
+                            { src: "assets/images/herjuno_18.png", caption: "Musholla" }
+                        ]
+                    },
+                    { src: "assets/images/herjuno_19.png", caption: "Gym" },
+                    { src: "assets/images/herjuno_20.png", caption: "Gym" }
                 ]
             }
         };
 
-        let currentImgList = [];
+        let currentImgList = []; // flat list of {src, caption} for lightbox
         let currentImgIdx = 0;
 
         // Intersection Observer setup for scroll animations
@@ -1311,12 +1384,27 @@
 
         function openProjectView(id) {
             const p = projects[id];
-            currentImgList = p.images;
+
+            // Build flat list of {src, caption} for lightbox (expand groups)
+            currentImgList = [];
+            p.images.forEach(item => {
+                if (item && item.group) {
+                    item.photos.forEach(ph => currentImgList.push({ src: ph.src, caption: ph.caption || '' }));
+                } else if (item && typeof item === 'object' && item.src) {
+                    currentImgList.push({ src: item.src, caption: item.caption || '' });
+                } else {
+                    currentImgList.push({ src: item, caption: '' });
+                }
+            });
+
             const detailPage = document.getElementById('detail-page');
             const landing = document.getElementById('main-content');
 
             document.getElementById('detail-nav-id').innerText = `0${id}`;
-            document.getElementById('detail-main-img').src = p.images[0];
+            // First image src for hero
+            const firstSrc = (p.images[0] && p.images[0].group) ? p.images[0].photos[0].src
+                           : (p.images[0] && p.images[0].src ? p.images[0].src : p.images[0]);
+            document.getElementById('detail-main-img').src = firstSrc;
             document.getElementById('detail-cat-hero').innerText = p.cat;
             document.getElementById('detail-title-hero').innerText = p.title;
 
@@ -1351,9 +1439,40 @@
 
             const grid = document.getElementById('detail-grid');
             grid.innerHTML = '';
-            p.images.forEach((img, idx) => {
+            let flatIdx = 0; // index into currentImgList for lightbox
+            p.images.forEach((item, idx) => {
                 const delayClass = `delay-${(idx % 3) * 100 + 100}`;
-                grid.innerHTML += `<div class="rounded-[2.5rem] overflow-hidden bg-white shadow-md group/photo reveal-up ${delayClass} aspect-video"><img src="${img}" class="w-full h-full object-cover detail-photo transition-transform duration-700 hover:scale-[1.1] cursor-pointer" onclick="openLightbox(${idx})"></div>`;
+
+                if (item && item.group) {
+                    // Grouped frame: multiple photos in one card
+                    const groupStartIdx = flatIdx;
+                    const card = document.createElement('div');
+                    card.className = `rounded-[2.5rem] overflow-hidden bg-white shadow-md group/photo reveal-up ${delayClass} aspect-video photo-card`;
+                    const frameDiv = document.createElement('div');
+                    frameDiv.className = 'photo-group-frame h-full';
+                    item.photos.forEach((ph, phIdx) => {
+                        const phDiv = document.createElement('div');
+                        phDiv.className = 'photo-group-item';
+                        const lbIdx = groupStartIdx + phIdx;
+                        phDiv.innerHTML = `<img src="${ph.src}" class="w-full h-full object-cover detail-photo transition-transform duration-700 hover:scale-[1.1] cursor-pointer" onclick="openLightbox(${lbIdx})">
+                            <div class="photo-group-caption">${ph.caption}</div>`;
+                        frameDiv.appendChild(phDiv);
+                    });
+                    card.appendChild(frameDiv);
+                    grid.appendChild(card);
+                    flatIdx += item.photos.length;
+                } else {
+                    // Single photo card
+                    const src = (item && item.src) ? item.src : item;
+                    const caption = (item && item.caption) ? item.caption : '';
+                    const lbIdx = flatIdx;
+                    const card = document.createElement('div');
+                    card.className = `rounded-[2.5rem] overflow-hidden bg-white shadow-md group/photo reveal-up ${delayClass} aspect-video photo-card`;
+                    card.innerHTML = `<img src="${src}" class="w-full h-full object-cover detail-photo transition-transform duration-700 hover:scale-[1.1] cursor-pointer" onclick="openLightbox(${lbIdx})">
+                        ${caption ? `<div class="photo-caption">${caption}</div>` : ''}`;
+                    grid.appendChild(card);
+                    flatIdx++;
+                }
             });
 
             const moreGrid = document.getElementById('more-projects-grid');
@@ -1407,11 +1526,17 @@
         }
 
         function updateLightboxUI() {
-            lbImg.src = currentImgList[currentImgIdx];
+            const current = currentImgList[currentImgIdx];
+            const src = (current && current.src) ? current.src : current;
+            const caption = (current && current.caption) ? current.caption : '';
+            lbImg.src = src;
+            const lbCaption = document.getElementById('lightbox-caption');
+            if (lbCaption) lbCaption.textContent = caption;
             lbThumbs.innerHTML = '';
-            currentImgList.forEach((src, index) => {
+            currentImgList.forEach((item, index) => {
+                const thumbSrc = (item && item.src) ? item.src : item;
                 const thumb = document.createElement('img');
-                thumb.src = src;
+                thumb.src = thumbSrc;
                 thumb.className = `lb-thumb w-20 h-20 md:w-32 object-cover rounded-xl cursor-pointer ${index === currentImgIdx ? 'active' : 'opacity-40 hover:opacity-70'}`;
                 thumb.onclick = () => { currentImgIdx = index; updateLightboxUI(); };
                 lbThumbs.appendChild(thumb);
