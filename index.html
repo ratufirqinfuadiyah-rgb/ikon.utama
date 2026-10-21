@@ -5,7 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PT IKON UTAMA | Building Spaces, Realizing Visions</title>
-    <link rel="icon" type="image/png" href="assets/images/logo.png">
+    <link rel="icon" type="image/png" href="assets/images/logogram.png">
+    <link rel="apple-touch-icon" href="assets/images/logogram.png">
     <script src="https://cdn.tailwindcss.com"></script>
     <link
         href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700&display=swap"
@@ -254,18 +255,22 @@
         }
         .photo-caption {
             position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            padding: 10px 16px 12px;
-            background: linear-gradient(to top, rgba(10,25,47,0.82) 60%, transparent);
+            top: 16px;
+            left: 16px;
+            padding: 8px 16px;
+            background: rgba(15, 23, 42, 0.85);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
             color: #fff;
             font-size: 0.75rem;
             font-weight: 600;
-            letter-spacing: 0.1em;
+            letter-spacing: 0.08em;
             text-transform: uppercase;
             pointer-events: none;
-            border-radius: 0 0 2rem 2rem;
+            border-radius: 9999px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 4px 14px rgba(0, 0, 0, 0.3);
+            z-index: 10;
         }
 
         /* Grouped frame: 3 photos in one card */
@@ -281,18 +286,23 @@
         }
         .photo-group-caption {
             position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            padding: 6px 8px 8px;
-            background: linear-gradient(to top, rgba(10,25,47,0.85) 60%, transparent);
+            top: 8px;
+            left: 8px;
+            padding: 4px 10px;
+            background: rgba(15, 23, 42, 0.85);
+            backdrop-filter: blur(6px);
+            -webkit-backdrop-filter: blur(6px);
             color: #fff;
             font-size: 0.6rem;
             font-weight: 700;
-            letter-spacing: 0.08em;
+            letter-spacing: 0.06em;
             text-transform: uppercase;
-            text-align: center;
+            text-align: left;
             pointer-events: none;
+            border-radius: 9999px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+            z-index: 10;
         }
 
         /* Lightbox caption */
@@ -577,10 +587,10 @@
                     <div class="absolute -top-10 -left-10 w-48 h-48 bg-blue-50/50 rounded-full blur-3xl"></div>
                     <img src="assets/images/service_interior.png"
                         class="relative z-10 rounded-[2.5rem] shadow-2xl border-8 border-soft-gray w-full h-[500px] object-cover">
-                    <div class="absolute -top-6 right-6 lg:-right-10 lg:top-10 bg-navy p-8 rounded-2xl shadow-2xl z-20">
-                        <p class="text-baby-blue font-bold text-4xl">23+</p>
-                        <p class="text-white text-xs font-bold uppercase tracking-widest mt-1 text-center">Tahun
-                            Pengalaman</p>
+                    <div class="absolute -top-6 right-6 lg:-right-10 lg:top-10 bg-navy px-6 py-5 md:px-8 md:py-6 rounded-2xl shadow-2xl z-20 max-w-[200px] text-center border border-white/10">
+                        <p class="text-white text-sm md:text-base font-semibold leading-relaxed">
+                            Sudah berpengalaman lebih dari <span class="text-baby-blue font-bold">20 tahun.</span>
+                        </p>
                     </div>
                 </div>
                 <div class="space-y-12 reveal-right">
@@ -706,7 +716,7 @@
                         <div class="pl-4 border-l-2 border-slate-100 group-hover:border-baby-blue transition-colors">
                             <p class="text-[10px] uppercase tracking-[0.2em] text-slate-400 font-bold mb-2">Restaurant</p>
                             <h4 class="text-2xl font-bold text-navy group-hover:text-baby-blue transition-colors">Barcelona The Glass House</h4>
-                            <p class="text-sm text-slate-500 font-light mt-1">Bogor, 2024</p>
+                            <p class="text-sm text-slate-500 font-light mt-1">Bogor</p>
                         </div>
                     </div>
                     <!-- Novotel -->
@@ -719,7 +729,7 @@
                             <p class="text-[10px] uppercase tracking-[0.2em] text-slate-400 font-bold mb-2">Hotel Interior</p>
                             <h4 class="text-2xl font-bold text-navy group-hover:text-baby-blue transition-colors">Novotel Yogyakarta</h4>
                             <p class="text-xs text-amber-600 font-semibold mt-1">sudah beroperasi menjadi Hotel Kimaya</p>
-                            <p class="text-sm text-slate-500 font-light mt-1">Yogyakarta, 2019</p>
+                            <p class="text-sm text-slate-500 font-light mt-1">Yogyakarta</p>
                         </div>
                     </div>
                     <!-- Emersia -->
@@ -731,7 +741,7 @@
                         <div class="pl-4 border-l-2 border-slate-100 group-hover:border-baby-blue transition-colors">
                             <p class="text-[10px] uppercase tracking-[0.2em] text-slate-400 font-bold mb-2">Hotel</p>
                             <h4 class="text-2xl font-bold text-navy group-hover:text-baby-blue transition-colors">Emersia Resort</h4>
-                            <p class="text-sm text-slate-500 font-light mt-1">Lampung, 2024</p>
+                            <p class="text-sm text-slate-500 font-light mt-1">Lampung</p>
                         </div>
                     </div>
                     <!-- Fave Hotel -->
@@ -743,7 +753,7 @@
                         <div class="pl-4 border-l-2 border-slate-100 group-hover:border-baby-blue transition-colors">
                             <p class="text-[10px] uppercase tracking-[0.2em] text-slate-400 font-bold mb-2">Hotel Interior</p>
                             <h4 class="text-2xl font-bold text-navy group-hover:text-baby-blue transition-colors">Fave Hotel Palembang</h4>
-                            <p class="text-sm text-slate-500 font-light mt-1">Palembang, 2022</p>
+                            <p class="text-sm text-slate-500 font-light mt-1">Palembang</p>
                         </div>
                     </div>
                     <!-- Fourpoints -->
@@ -755,7 +765,7 @@
                         <div class="pl-4 border-l-2 border-slate-100 group-hover:border-baby-blue transition-colors">
                             <p class="text-[10px] uppercase tracking-[0.2em] text-slate-400 font-bold mb-2">Hotel Interior</p>
                             <h4 class="text-2xl font-bold text-navy group-hover:text-baby-blue transition-colors">Four Points Manado</h4>
-                            <p class="text-sm text-slate-500 font-light mt-1">Manado, 2022</p>
+                            <p class="text-sm text-slate-500 font-light mt-1">Manado</p>
                         </div>
                     </div>
                     <!-- Ibis Hotel -->
@@ -767,7 +777,7 @@
                         <div class="pl-4 border-l-2 border-slate-100 group-hover:border-baby-blue transition-colors">
                             <p class="text-[10px] uppercase tracking-[0.2em] text-slate-400 font-bold mb-2">Hotel</p>
                             <h4 class="text-2xl font-bold text-navy group-hover:text-baby-blue transition-colors">Ibis Styles Medan</h4>
-                            <p class="text-sm text-slate-500 font-light mt-1">Medan, 2023</p>
+                            <p class="text-sm text-slate-500 font-light mt-1">Medan</p>
                         </div>
                     </div>
                     <!-- Astra International -->
@@ -779,7 +789,7 @@
                         <div class="pl-4 border-l-2 border-slate-100 group-hover:border-baby-blue transition-colors">
                             <p class="text-[10px] uppercase tracking-[0.2em] text-slate-400 font-bold mb-2">Office Interior</p>
                             <h4 class="text-2xl font-bold text-navy group-hover:text-baby-blue transition-colors">PT Astra International tbk</h4>
-                            <p class="text-sm text-slate-500 font-light mt-1">Jakarta, 2013</p>
+                            <p class="text-sm text-slate-500 font-light mt-1">Jakarta</p>
                         </div>
                     </div>
                     <!-- Herjuno Residence -->
@@ -791,7 +801,7 @@
                         <div class="pl-4 border-l-2 border-slate-100 group-hover:border-baby-blue transition-colors">
                             <p class="text-[10px] uppercase tracking-[0.2em] text-slate-400 font-bold mb-2">Interior Rumah</p>
                             <h4 class="text-2xl font-bold text-navy group-hover:text-baby-blue transition-colors">Herjuno Residence</h4>
-                            <p class="text-sm text-slate-500 font-light mt-1">Cibubur, 2017</p>
+                            <p class="text-sm text-slate-500 font-light mt-1">Cibubur</p>
                         </div>
                     </div>
                 </div>
@@ -820,7 +830,7 @@
                 <div class="flex justify-center mb-12">
                     <div class="bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl px-8 py-5 flex items-center gap-8">
                         <div class="text-center">
-                            <p class="text-3xl font-bold text-white">2025</p>
+                            <p class="text-3xl font-bold text-white">2026</p>
                             <p class="text-xs text-slate-400 uppercase tracking-wider mt-1">Tahun Mulai</p>
                         </div>
                         <div class="w-px h-12 bg-white/20"></div>
@@ -1269,7 +1279,7 @@
                             <span id="detailing-location"
                                 class="text-base font-semibold text-navy leading-relaxed block max-w-[280px]"></span>
                         </div>
-                        <div class="border-l-2 border-baby-blue/30 pl-6">
+                        <div class="border-l-2 border-baby-blue/30 pl-6 hidden">
                             <p class="text-gray-400 text-[10px] font-bold uppercase tracking-widest mb-1">Tanggal</p>
                             <span id="detailing-date" class="text-base font-semibold text-navy block"></span>
                         </div>
@@ -1308,8 +1318,13 @@
     <!-- Lightbox Pop-up -->
     <div id="lightbox"
         class="hidden fixed inset-0 z-[200] bg-navy/98 flex flex-col items-center justify-center p-6 opacity-0">
+        <!-- Caption di atas pojok kiri -->
+        <div class="absolute top-6 left-6 md:top-8 md:left-10 z-[210] flex items-center gap-3 bg-white/10 backdrop-blur-md px-5 py-2.5 rounded-full border border-white/15 shadow-xl">
+            <span class="w-2.5 h-2.5 rounded-full bg-baby-blue animate-pulse"></span>
+            <p id="lightbox-caption" class="text-white text-xs md:text-sm font-semibold tracking-wider uppercase"></p>
+        </div>
         <button onclick="closeLightbox()"
-            class="absolute top-8 right-8 text-white/40 hover:text-white transition-all z-[210]">
+            class="absolute top-6 right-6 md:top-8 md:right-8 text-white/40 hover:text-white transition-all z-[210]">
             <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
             </svg>
@@ -1323,7 +1338,6 @@
         <div id="lightbox-img-container"
             class="relative max-w-full max-h-[75vh] flex flex-col items-center justify-center overflow-hidden w-full">
             <img id="lightbox-img" src="" class="max-w-full max-h-[70vh] object-contain rounded-xl shadow-2xl">
-            <p id="lightbox-caption"></p>
         </div>
         <button onclick="nextImage()"
             class="lb-nav-btn absolute right-4 md:right-8 top-1/2 -translate-y-1/2 w-16 h-16 md:w-20 md:h-20 rounded-full flex items-center justify-center text-white z-[210]">
@@ -1542,7 +1556,7 @@
                     <p class="text-[10px] uppercase tracking-[0.2em] text-slate-400 font-bold mb-2">${p.cat}</p>
                     <h4 class="text-2xl font-bold text-navy group-hover:text-baby-blue transition-colors">${p.title}</h4>
                     ${subtitleHtml}
-                    <p class="text-sm text-slate-500 font-light mt-1">${displayLoc}, ${p.year}</p>
+                    <p class="text-sm text-slate-500 font-light mt-1">${displayLoc}</p>
                 </div>
             `;
             return div;
